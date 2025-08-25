@@ -137,7 +137,7 @@ export default function DonationModal() {
               />
             ) : (
               <div className="h-full min-h-[600px] flex flex-col items-center justify-center text-center p-8">
-                <h3 className="text-lg font-semibold mb-2">Marketing cookies required</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Marketing cookies required</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md">
                   To display our embedded donation form, please enable Marketing cookies in your preferences.
                 </p>

@@ -54,8 +54,7 @@ export default function CookieConsentBanner() {
               onClick={openPreferences}
               className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 hover:cursor-pointer"
             >
-              <span className="sm:hidden">Preferences</span>
-              <span className="hidden sm:inline">Manage preferences</span>
+              Preferences
             </button>
             <button
               type="button"
