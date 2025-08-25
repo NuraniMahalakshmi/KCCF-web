@@ -248,7 +248,9 @@ export default function Volunteer() {
               Ready to make a difference? Complete this form to start your volunteer journey with KCCF.
             </p>
 
-            <form className="space-y-6">
+            <form className="space-y-6" method="post" action="/api/submit">
+              <input type="hidden" name="formType" value="volunteer_application" />
+              <input type="hidden" name="pagePath" value="/volunteer" />
               {/* Personal Information */}
               <div className="border-b border-violet-200 pb-6">
                 <h3 className="text-xl font-bold text-violet-700 mb-4">Personal Information</h3>
@@ -436,7 +438,7 @@ export default function Volunteer() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200"
+                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 cursor-pointer"
                 >
                   Submit Volunteer Application
                 </button>

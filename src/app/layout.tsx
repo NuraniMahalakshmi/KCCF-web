@@ -8,6 +8,10 @@ import { DonationModalProvider } from "@/contexts/DonationModalContext";
 import DonationModal from "@/components/DonationModal";
 import { SlideshowProvider } from "@/contexts/SlideshowContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
+import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
+import ConsentPreferencesModal from "@/components/ConsentPreferencesModal";
+import SubmissionModal from "@/components/SubmissionModal";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -41,17 +45,22 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
-          <DonationModalProvider>
-            <SlideshowProvider>
-              <LoadingSpinner />
-              <Navigation />
-              <main className="min-h-screen">
-                {children}
-              </main>
-              <Footer />
-              <DonationModal />
-            </SlideshowProvider>
-          </DonationModalProvider>
+          <CookieConsentProvider>
+            <DonationModalProvider>
+              <SlideshowProvider>
+                <LoadingSpinner />
+                <Navigation />
+                <main className="min-h-screen">
+                  {children}
+                </main>
+                <CookieConsentBanner />
+                <ConsentPreferencesModal />
+                <Footer />
+                <DonationModal />
+                <SubmissionModal />
+              </SlideshowProvider>
+            </DonationModalProvider>
+          </CookieConsentProvider>
         </ThemeProvider>
       </body>
     </html>

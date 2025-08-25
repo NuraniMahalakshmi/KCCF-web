@@ -1,7 +1,10 @@
+"use client"
 import Link from 'next/link'
 import Image from 'next/image'
+import { useCookieConsent } from "@/contexts/CookieConsentContext"
 
 export default function Footer() {
+  const { openPreferences } = useCookieConsent()
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-200 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -45,27 +48,32 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-gray-700">
           <div className="max-w-md">
             <h4 className="text-lg font-semibold mb-4 text-white">Get the Latest Nonprofit News in Our Newsletter</h4>
-            <form className="space-y-4">
+            <form className="space-y-4" method="post" action="/api/submit">
+              <input type="hidden" name="formType" value="footer_newsletter" />
+              <input type="hidden" name="pagePath" value="footer" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
                   placeholder="First name"
+                  name="firstName"
                   className="px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors bg-gray-800 text-white border border-gray-600 placeholder-gray-400"
                 />
                 <input
                   type="text"
                   placeholder="Last name"
+                  name="lastName"
                   className="px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors bg-gray-800 text-white border border-gray-600 placeholder-gray-400"
                 />
               </div>
               <input
                 type="email"
                 placeholder="E.g. john@doe.com"
+                name="email"
                 className="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors bg-gray-800 text-white border border-gray-600 placeholder-gray-400"
               />
               <button
                 type="submit"
-                className="w-full px-4 py-2 rounded-md font-medium transition-all duration-200 hover:opacity-90 bg-orange-600 hover:bg-orange-700 text-white"
+                className="w-full px-4 py-2 rounded-md font-medium transition-all duration-200 hover:opacity-90 bg-orange-600 hover:bg-orange-700 text-white cursor-pointer"
               >
                 Keep Me Posted
               </button>
@@ -122,6 +130,10 @@ export default function Footer() {
           <p className="mt-2">
             Koenig Childhood Cancer Foundation is committed to equal employment and volunteer opportunity without regard to age, ancestry, disability, national or ethnic origin, race, religious belief, sex, sexual orientation, gender identity, marital or veteran status.
           </p>
+          <div className="mt-3 flex items-center justify-center gap-4">
+            <Link href="/privacy" className="hover:underline">Privacy</Link>
+            <button type="button" onClick={openPreferences} className="hover:underline hover:cursor-pointer">Cookie settings</button>
+          </div>
         </div>
       </div>
     </footer>

@@ -101,7 +101,9 @@ export default function Contact() {
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-2xl font-bold text-violet-700 mb-6">Send Us a Message</h2>
               
-              <form className="space-y-6">
+              <form className="space-y-6" method="post" action="/api/submit">
+                <input type="hidden" name="formType" value="contact" />
+                <input type="hidden" name="pagePath" value="/contact" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-violet-700 mb-2">
@@ -204,7 +206,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 cursor-pointer"
                 >
                   Send Message
                 </button>

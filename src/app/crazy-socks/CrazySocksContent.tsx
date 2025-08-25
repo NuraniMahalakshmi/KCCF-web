@@ -379,7 +379,9 @@ export default function CrazySocksContent() {
           
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-gray-900">
-              <form className="space-y-6">
+              <form className="space-y-6" method="post" action="/api/submit">
+                <input type="hidden" name="formType" value="crazy_socks_sponsor" />
+                <input type="hidden" name="pagePath" value="/crazy-socks" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-2">
@@ -557,7 +559,7 @@ export default function CrazySocksContent() {
                 <div className="text-center">
                   <button
                     type="submit"
-                    className="bg-[#732154] hover:bg-[#732154]/90 dark:bg-[#732154] dark:hover:bg-[#732154]/90 text-white py-4 px-10 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="bg-[#732154] hover:bg-[#732154]/90 dark:bg-[#732154] dark:hover:bg-[#732154]/90 text-white py-4 px-10 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer"
                   >
                     Submit Application
                   </button>

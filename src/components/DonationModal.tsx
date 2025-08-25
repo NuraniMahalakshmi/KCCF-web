@@ -1,59 +1,20 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useDonationModal } from '@/contexts/DonationModalContext'
 // Stripe removed; using GiveLively iframe
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCookieConsent } from '@/contexts/CookieConsentContext'
  
 
-interface DonationForm {
-  amount: number
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-  address: string
-  city: string
-  state: string
-  zipCode: string
-  isAnonymous: boolean
-  message: string
-  paymentMethod: 'card' | 'paypal' | 'apple-pay'
-  isMonthly: boolean
-}
-
-const presetAmounts = [25, 50, 100, 250, 500, 1000]
+// All previous multi-step and amount form logic removed in favor of Zeffy embed
 
 export default function DonationModal() {
-  const { isOpen, closeModal, presetAmount, campaign } = useDonationModal()
+  const { isOpen, closeModal, campaign } = useDonationModal()
   const { theme } = useTheme()
+  const { consent, openPreferences } = useCookieConsent()
   
-  const [formData, setFormData] = useState<DonationForm>({
-    amount: presetAmount,
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    state: '',
-    zipCode: '',
-    isAnonymous: false,
-    message: '',
-    paymentMethod: 'card',
-    isMonthly: false
-  })
-
-  const [errors, setErrors] = useState<{[key: string]: string}>({})
-  const [step, setStep] = useState<'amount' | 'payment'>('amount')
-  // Stripe state removed
-  
-
-  // Update form data when presetAmount changes
-  useEffect(() => {
-    setFormData(prev => ({ ...prev, amount: presetAmount }))
-  }, [presetAmount])
 
   // Close modal on escape key
   useEffect(() => {
@@ -70,27 +31,7 @@ export default function DonationModal() {
     }
   }, [isOpen, closeModal])
 
-  // No personal details step; only validate amount before proceeding
-
-  // Removed address/success submit logic (using GiveLively iframe instead)
-
-  const handleNext = () => {
-    if (step === 'amount') {
-      if (formData.amount >= 1) {
-        setStep('payment')
-      } else {
-        setErrors({ amount: 'Please select an amount' })
-      }
-    }
-  }
-
-  const handleBack = () => {
-    if (step === 'payment') {
-      setStep('amount')
-    }
-  }
-
-  // Stripe PaymentIntent logic removed
+  // All previous step handlers removed
 
   if (!isOpen) return null
 
@@ -162,180 +103,54 @@ export default function DonationModal() {
           </div>
         </div>
         
-        {/* Donation Form - Right Side */}
+        {/* Donation Form - Right Side replaced entirely by Zeffy */}
         <div className="lg:w-1/2 w-full max-h-[90vh] flex flex-col overflow-hidden">
-        {/* Sticky Header + Progress */}
-        <div className="sticky top-0 z-10 bg-white dark:bg-gray-800">
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Make a Donation
-            </h2>
-            {campaign && (
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                Campaign: {campaign}
-              </p>
-            )}
-          </div>
-          <button
-            onClick={closeModal}
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors hover:cursor-pointer"
-          >
-            <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Progress Steps */}
-        <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-center space-x-4">
-            <div className="flex items-center">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                step === 'amount' ? 'bg-[#732154] text-white' : 'bg-green-500 text-white'
-              }`}>
-                1
-              </div>
-              <div className={`w-12 h-1 mx-2 ${step === 'payment' ? 'bg-green-500' : 'bg-gray-200 dark:bg-gray-600'}`} />
-                </div>
-            <div className="flex items-center">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                step === 'payment' ? 'bg-[#732154] text-white' : 'bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-400'
-              }`}>
-                2
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-
-        {step === 'amount' && (
-        <div className="p-6 flex-1 overflow-y-auto">
-          {/* Step 1: Amount Selection */}
-            <div className="space-y-6">
+          <div className="sticky top-0 z-10 bg-white dark:bg-gray-800">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  Select Donation Amount
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  Your donation helps provide Crazy Socks Gift Bags to hospitalized children battling cancer.
-                </p>
-              </div>
-
-              {/* Preset Amounts */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {presetAmounts.map((amount) => (
-                  <button
-                    key={amount}
-                    type="button"
-                    onClick={() => setFormData({ ...formData, amount })}
-                    className={`p-4 rounded-xl border-2 transition-all hover:cursor-pointer ${
-                      formData.amount === amount
-                        ? 'border-[#732154] bg-[#732154]/10 dark:bg-[#732154]/20'
-                        : 'border-gray-200 dark:border-gray-600 hover:border-[#732154]/50'
-                    }`}
-                  >
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                      ${amount}
-                    </div>
-                  </button>
-                ))}
-              </div>
-
-              {/* Custom Amount */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Or enter a custom amount
-                </label>
-                <div className="relative">
-                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
-                  <input
-                    type="number"
-                    min="1"
-                    step="0.01"
-                    value={formData.amount === presetAmount ? '' : formData.amount}
-                    onChange={(e) => setFormData({ ...formData, amount: parseFloat(e.target.value) || 0 })}
-                    className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#732154] focus:border-transparent dark:bg-gray-700 dark:text-white"
-                    placeholder="Enter amount"
-                  />
-                </div>
-                {errors.amount && (
-                  <p className="text-red-500 text-sm mt-1">{errors.amount}</p>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Make a Donation</h2>
+                {campaign && (
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Campaign: {campaign}</p>
                 )}
               </div>
-
-              {/* Monthly vs One-time Donation */}
-              <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                  Donation Frequency
-                </label>
-                <div className="space-y-2">
-                  <label className="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <input
-                      type="radio"
-                      name="donationType"
-                      checked={!formData.isMonthly}
-                      onChange={() => setFormData({ ...formData, isMonthly: false })}
-                      className="w-4 h-4 text-[#732154] border-gray-300 focus:ring-[#732154]"
-                    />
-                    <div className="ml-3">
-                      <div className="text-sm font-medium text-gray-900 dark:text-white">One-time donation</div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400">Make a single donation today</div>
-                    </div>
-                  </label>
-
-                  <label className="flex items-center p-3 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <input
-                      type="radio"
-                      name="donationType"
-                      checked={formData.isMonthly}
-                      onChange={() => setFormData({ ...formData, isMonthly: true })}
-                      className="w-4 h-4 text-[#732154] border-gray-300 focus:ring-[#732154]"
-                    />
-                    <div className="ml-3">
-                      <div className="text-sm font-medium text-gray-900 dark:text-white">Monthly donation</div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400">Support us every month with automatic recurring donations</div>
-                    </div>
-                  </label>
-                </div>
-              </div>
-
               <button
-                type="button"
-                onClick={handleNext}
-                className="w-full bg-[#732154] hover:bg-[#732154]/90 text-white py-3 px-6 rounded-lg font-semibold transition-colors hover:cursor-pointer"
+                onClick={closeModal}
+                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors hover:cursor-pointer"
               >
-                Continue
-                </button>
-              </div>
+                <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
-          )}
-          {/* Step 2: Payment (GiveLively iframe) */}
-          {step === 'payment' && (
-            <div className="flex-1 overflow-hidden flex flex-col">
-              <div className="flex-1 overflow-y-auto overflow-x-hidden">
-                <iframe
-                  allow="payment"
-                  className="gl-modal__iframe block w-full h-full min-h-[800px] max-w-full"
-                  frameBorder={0}
-                  id="gl-widget-modal-iframe"
-                  scrolling="no"
-                  src={`https://secure.givelively.org/donate/koenig-childhood-cancer-foundation?recurring=false&override_amount=${encodeURIComponent(String(formData.amount))}&dedication_name=&dedication_email=&dedication_type=&widget_type=simple_donation&widget_url=${encodeURIComponent('https://thekccf.org/donate/')}&referrer_url=${encodeURIComponent('https://thekccf.org/')}&isWixEmbedded=false`}
-                  title="Donation form"
-                />
-              </div>
-              <div className="sticky bottom-0 left-0 right-0 p-4 bg-white/90 dark:bg-gray-800/90 border-t border-gray-200 dark:border-gray-700 backdrop-blur">
+          </div>
+
+          <div className="flex-1 overflow-y-auto overflow-x-hidden">
+            {consent.marketing ? (
+              <iframe
+                className="block w-full h-full min-h-[800px] max-w-full"
+                src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
+                title="Zeffy donation form"
+                frameBorder={0}
+                scrolling="yes"
+                allow="payment"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+              />
+            ) : (
+              <div className="h-full min-h-[600px] flex flex-col items-center justify-center text-center p-8">
+                <h3 className="text-lg font-semibold mb-2">Marketing cookies required</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md">
+                  To display our embedded donation form, please enable Marketing cookies in your preferences.
+                </p>
                 <button
                   type="button"
-                  onClick={handleBack}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors hover:cursor-pointer"
+                  onClick={openPreferences}
+                  className="mt-6 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-[#732154] text-white hover:bg-[#732154]/90 hover:cursor-pointer"
                 >
-                  Back
+                  Manage cookie preferences
                 </button>
               </div>
-            </div>
-          )}
-
+            )}
+          </div>
         </div>
       </div>
     </div>

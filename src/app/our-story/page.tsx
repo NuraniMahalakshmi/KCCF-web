@@ -207,7 +207,9 @@ export default function OurStory() {
             </div>
             
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-              <form className="space-y-6">
+              <form className="space-y-6" method="post" action="/api/submit">
+                <input type="hidden" name="formType" value="book_elana" />
+                <input type="hidden" name="pagePath" value="/our-story" />
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="organization" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
@@ -216,6 +218,7 @@ export default function OurStory() {
                     <input
                       type="text"
                       id="organization"
+                      name="organization"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                       required
                     />
@@ -227,6 +230,7 @@ export default function OurStory() {
                     <input
                       type="text"
                       id="name"
+                      name="fullName"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                       required
                     />
@@ -241,6 +245,7 @@ export default function OurStory() {
                     <input
                       type="number"
                       id="participants"
+                      name="participants"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                       required
                     />
@@ -252,6 +257,7 @@ export default function OurStory() {
                     <input
                       type="text"
                       id="role"
+                      name="role"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                       required
                     />
@@ -266,6 +272,7 @@ export default function OurStory() {
                     <input
                       type="text"
                       id="budget"
+                      name="budget"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                       required
                     />
@@ -277,6 +284,7 @@ export default function OurStory() {
                     <input
                       type="email"
                       id="email"
+                      name="email"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                       required
                     />
@@ -291,6 +299,7 @@ export default function OurStory() {
                     <input
                       type="email"
                       id="confirm-email"
+                      name="confirmEmail"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                       required
                     />
@@ -302,6 +311,7 @@ export default function OurStory() {
                     <input
                       type="tel"
                       id="phone"
+                      name="phone"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                     />
                   </div>
@@ -315,6 +325,7 @@ export default function OurStory() {
                     <input
                       type="text"
                       id="address"
+                      name="address"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                       required
                     />
@@ -326,6 +337,7 @@ export default function OurStory() {
                     <input
                       type="text"
                       id="date"
+                      name="eventDate"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                       placeholder="e.g., March 15, 2024 or March 15-20, 2024"
                       required
@@ -340,6 +352,7 @@ export default function OurStory() {
                   <input
                     type="text"
                     id="contact-time"
+                    name="contactTime"
                     className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                     required
                   />
@@ -370,6 +383,7 @@ export default function OurStory() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
                     className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-fandango-500 dark:focus:ring-fandango-400 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                     placeholder="If there's anything else you'd like to share, please let us know here"
@@ -378,7 +392,7 @@ export default function OurStory() {
                 
                 <button
                   type="submit"
-                  className="w-full bg-fandango-600 hover:bg-fandango-700 dark:bg-fandango-500 dark:hover:bg-fandango-600 text-white py-3 px-6 rounded-full transition duration-300 font-semibold text-lg"
+                  className="w-full bg-fandango-600 hover:bg-fandango-700 dark:bg-fandango-500 dark:hover:bg-fandango-600 text-white py-3 px-6 rounded-full transition duration-300 font-semibold text-lg cursor-pointer"
                 >
                   Submit Application
                 </button>

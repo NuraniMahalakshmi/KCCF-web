@@ -34,7 +34,9 @@ export default function NewsletterSignup() {
           <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
             <h2 className="text-3xl font-bold text-center text-violet-700 mb-8">Subscribe to Our Newsletter</h2>
             
-                         <form className="space-y-6">
+                         <form className="space-y-6" method="post" action="/api/submit">
+               <input type="hidden" name="formType" value="newsletter_signup" />
+               <input type="hidden" name="pagePath" value="/newsletter-signup" />
                {/* Personal Information */}
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                  <div>
@@ -97,7 +99,7 @@ export default function NewsletterSignup() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-fandango-500 to-violet-600 hover:from-fandango-600 hover:to-violet-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
+                  className="bg-gradient-to-r from-fandango-500 to-violet-600 hover:from-fandango-600 hover:to-violet-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg cursor-pointer"
                 >
                   Subscribe to Newsletter
                 </button>
