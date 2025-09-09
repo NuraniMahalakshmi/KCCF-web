@@ -1,13 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  // Generate a fully static site suitable for GitHub Pages
+  output: 'export',
+  trailingSlash: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'thekccf.org',
-      },
-    ],
+    // Disable Image Optimization (no server on GitHub Pages)
+    unoptimized: true,
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if

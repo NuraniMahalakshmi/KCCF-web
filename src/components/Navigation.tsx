@@ -91,18 +91,18 @@ export default function Navigation() {
         <div className="flex justify-between h-24">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0">
+            <Link href="/" className="flex-shrink-0 flex items-center h-24">
               <Image
                 src={theme === 'dark' 
                   ? "/images/cropped-Koenig-Foundation-Logo-01.png"
                   : "/KCCF logo.png"
                 }
                 alt="Koenig Childhood Cancer Foundation"
-                width={140}
-                height={45}
-                className="h-11 w-auto"
-                style={{ width: 'auto', height: 'auto' }}
+                width={180}
+                height={56}
+                className="h-24 w-auto md:h-28"
                 priority
+                draggable={false}
               />
             </Link>
           </div>
