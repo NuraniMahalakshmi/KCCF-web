@@ -10,6 +10,7 @@ export type FormType =
   | 'book-elana'
   | 'volunteer'
   | 'contact'
+  | 'aid-application'
 
 interface FormConfig {
   title: string
@@ -60,6 +61,12 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     subtitle: 'Get in touch with us. We\'re here to help and answer any questions you may have.',
     src: 'https://forms.monday.com/forms/embed/7d2a1baf81662443852a38886ac80dd4?r=use1',
     height: '1100px'
+  },
+  'aid-application': {
+    title: 'Apply for Financial Assistance',
+    subtitle: 'Complete this form to apply for financial assistance during your child\'s cancer treatment.',
+    src: 'https://forms.monday.com/forms/embed/972de98e599d383218e348dd923eec38?r=use1',
+    height: '2500px'
   }
 }
 

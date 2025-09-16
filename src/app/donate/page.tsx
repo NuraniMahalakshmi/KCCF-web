@@ -1,23 +1,6 @@
-import type { Metadata } from 'next';
 import React from 'react';
 import PageHeader from '@/components/PageHeader';
 import DonationButton from '@/components/DonationButton';
-
-export const metadata: Metadata = {
-  title: "Donate - Support Childhood Cancer Families | Koenig Childhood Cancer Foundation",
-  description: "Make a difference in the lives of children battling cancer. Your donation directly supports families with medical bills, transportation, lodging, and essential expenses.",
-  keywords: ["donate", "childhood cancer", "cancer foundation", "charity", "donation", "help families", "medical bills"],
-  openGraph: {
-    title: "Donate - Support Childhood Cancer Families | Koenig Childhood Cancer Foundation",
-    description: "Make a difference in the lives of children battling cancer. Your donation directly supports families with medical bills, transportation, lodging, and essential expenses.",
-    type: "website",
-    url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/donate` : "https://thekccf.org/donate",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
 
 export default function Donate() {
   return (

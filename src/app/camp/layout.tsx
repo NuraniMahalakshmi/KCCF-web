@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Camp - Join Our Experience | Koenig Childhood Cancer Foundation",
-  description: "Join our unforgettable camp experience designed for children with cancer and their families. Register as a camper or apply to be a counselor.",
-  keywords: ["camp", "summer camp", "children with cancer", "camp counselor", "camper registration", "cancer support", "family camp", "therapeutic camp"],
+  title: "Corporate Team-Building Camp Volunteering - Children's Cancer Support | KCCF",
+  description: "Corporate volunteering opportunities at our therapeutic camp for children with cancer. Employee engagement through camp counselor programs and team-building volunteer experiences in a meaningful cause.",
+  keywords: ["corporate team-building", "camp volunteering", "employee engagement programs", "corporate social responsibility", "CSR", "therapeutic camp", "camp counselor volunteering", "team-building volunteer events", "corporate volunteer opportunities", "camp", "summer camp", "children with cancer", "camp counselor", "camper registration", "cancer support", "family camp"],
   openGraph: {
-    title: "Camp - Join Our Experience | Koenig Childhood Cancer Foundation",
-    description: "Join our unforgettable camp experience designed for children with cancer and their families. Register as a camper or apply to be a counselor.",
+    title: "Corporate Team-Building Camp Volunteering - Children's Cancer Support | KCCF",
+    description: "Corporate volunteering opportunities at our therapeutic camp for children with cancer. Employee engagement through camp counselor programs and team-building volunteer experiences in a meaningful cause.",
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/camp` : "https://thekccf.org/camp",
   },
