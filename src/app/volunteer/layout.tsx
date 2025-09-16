@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Volunteer - Join Our Mission | Koenig Childhood Cancer Foundation",
-  description: "Make a difference in the lives of children battling cancer. Volunteer with KCCF and help support families through various opportunities and programs.",
-  keywords: ["volunteer", "volunteering", "help", "support", "childhood cancer", "community service", "make a difference"],
+  title: "Corporate Volunteer Opportunities - Employee Engagement Programs | KCCF",
+  description: "Corporate Social Responsibility (CSR) and employee volunteering opportunities. Join workplace giving programs, volunteer days, and team-building events supporting children battling cancer in NYC.",
+  keywords: ["corporate volunteering opportunities", "employee volunteering", "CSR", "corporate social responsibility", "employee engagement programs", "volunteer days", "volunteer time off", "VTO", "workplace giving programs", "team-building volunteer events", "volunteering in NYC", "employee giving back", "corporate volunteer programs", "volunteer", "volunteering", "help", "support", "childhood cancer", "community service", "make a difference"],
   openGraph: {
-    title: "Volunteer - Join Our Mission | Koenig Childhood Cancer Foundation",
-    description: "Make a difference in the lives of children battling cancer. Volunteer with KCCF and help support families through various opportunities and programs.",
+    title: "Corporate Volunteer Opportunities - Employee Engagement Programs | KCCF",
+    description: "Corporate Social Responsibility (CSR) and employee volunteering opportunities. Join workplace giving programs, volunteer days, and team-building events supporting children battling cancer in NYC.",
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/volunteer` : "https://thekccf.org/volunteer",
   },
