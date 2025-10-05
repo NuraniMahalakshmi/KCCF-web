@@ -151,7 +151,7 @@ export default function Footer() {
                     height={120}
                     className="mb-2"
                   />
-                  <p className="text-sm text-gray-300 text-center">GreatNonprofits 2024 Top-Rated Nonprofit</p>
+                  <p className="text-sm text-gray-300 text-center">GreatNonprofits 2025 Top-Rated Nonprofit</p>
                 </a>
               </div>
             </div>
