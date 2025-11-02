@@ -158,7 +158,7 @@ export default function HomeContent() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Family Financial Assistance */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 flex flex-col">
               <div className="rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
                 <Image
                   src="/images/family-assistance-impact-program.jpeg"
@@ -169,10 +169,10 @@ export default function HomeContent() {
                 />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Family Assistance</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
                 We can help with emergency medical expenses during your child's cancer treatment, such as medical bills, transportation, lodging, food, and more.
               </p>
-              <Link href="/aid" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors">
+              <Link href="/aid" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
                 Apply for Help
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -181,7 +181,7 @@ export default function HomeContent() {
             </div>
 
             {/* Crazy Socks Day */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 flex flex-col">
               <div className="rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
                 <Image
                   src="/images/crazy-socks-impact-program.jpg"
@@ -192,10 +192,10 @@ export default function HomeContent() {
                 />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Crazy Socks</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
                 Use your company's Corporate Social Responsibility (CSR) program to sponsor and host gift bag events for hospitalized children - bring smiles to their faces.
               </p>
-              <Link href="/crazy-socks" className="inline-flex items-center text-saffron-600 dark:text-saffron-400 hover:text-saffron-700 dark:hover:text-saffron-300 font-semibold transition-colors">
+              <Link href="/crazy-socks" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
                 Sponsor Event
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -204,7 +204,7 @@ export default function HomeContent() {
             </div>
 
             {/* KCCF Camp */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 flex flex-col">
               <div className="rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
                 <Image
                   src="/images/camp-impact-program.jpg"
@@ -215,10 +215,10 @@ export default function HomeContent() {
                 />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">KCCF Camp</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
                 Join our international summer camp in an exotic country, Azerbaijan for children diagnosed with cancer.
               </p>
-              <Link href="/camp" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors">
+              <Link href="/camp" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
                 Join Camp
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
