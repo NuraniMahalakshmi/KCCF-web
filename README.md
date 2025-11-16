@@ -152,6 +152,7 @@ thekccf.org/
 - Cookie consent: `src/contexts/CookieConsentContext.tsx`
 - Donation modal: `src/components/DonationModal.tsx`
 - Form modals: `src/components/FormModal.tsx` and `src/contexts/FormModalContext.tsx`
+- **Form documentation:** See "Form Integration" section below for complete inventory of all 9 forms
 
 ## Images and optimization
 - Static files live in `public/`
@@ -159,30 +160,354 @@ thekccf.org/
 
 ## Form integration
 
-### Donation system
-- The site uses Zeffy for donations via embedded iframe
-- No API keys or server-side processing required
-- Donation modal is controlled by `src/components/DonationModal.tsx`
-- Cookie consent is required for donation form display
-- Campaign-specific donation forms can be configured in the modal
+### Overview of all forms on the website
+The KCCF website uses two main form systems:
+1. **Monday.com Forms** - Embedded via modal system for applications, registrations, and contact
+2. **Donation Forms** - Zeffy and GiveLively for processing donations
 
-### Form modal system
-- All Monday.com forms are integrated via a unified modal system
-- Form configurations are managed in `src/contexts/FormModalContext.tsx`
-- Forms include: camp registration, volunteer applications, contact forms, newsletter signup, aid applications, and corporate sponsorship
-- Modal system provides consistent UX across all forms
-- Cookie consent is required for form display
-- Forms open in responsive modals (85% screen height) with proper scrolling
+All forms require Marketing cookies to be enabled via the cookie consent banner for display.
 
-### Adding new forms
+### Quick Reference Table
+
+| # | Form Name | Type | Location(s) | Integration | Form ID |
+|---|-----------|------|-------------|-------------|---------|
+| 1 | Donation Form | Donation | Navigation bar, Home page, Donate page | Zeffy/GiveLively | N/A |
+| 2 | Camp Camper Registration | Application | `/camp` | Monday.com | `camp-camper` |
+| 3 | Camp Counselor Application | Application | `/camp` | Monday.com | `camp-counselor` |
+| 4 | Crazy Socks Sponsorship | Corporate Inquiry | `/crazy-socks` | Monday.com | `crazy-socks-sponsor` |
+| 5 | Newsletter Signup | Email Subscription | Footer (all pages), `/newsletter-signup` | Mailchimp | `newsletter-signup` |
+| 6 | Book Elana Speaking | Booking Request | `/our-story` | Monday.com | `book-elana` |
+| 7 | Volunteer Application | Application | `/volunteer` | Monday.com | `volunteer` |
+| 8 | Contact Form | General Inquiry | `/contact` | Monday.com | `contact` |
+| 9 | Financial Aid Application | Application | `/aid` | Monday.com | `aid-application` |
+
+---
+
+## Complete Form Inventory
+
+### 1. Donation Form (Zeffy/GiveLively)
+**Type:** Donation processing  
+**Purpose:** Accept monetary donations to support KCCF's mission  
+**Location(s):**
+- Navigation bar (all pages) - "Donate" button
+- Home page (`/`) - Hero section "Donate Now" button
+- Donate page (`/donate`) - Primary CTA and multiple donation buttons
+
+**Technical Details:**
+- **Component:** `src/components/DonationModal.tsx`
+- **Context:** `src/contexts/DonationModalContext.tsx`
+- **Integration:** Embedded iframes from Zeffy and GiveLively platforms
+- **Providers Available:**
+  - Zeffy: https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649
+  - GiveLively: https://secure.givelively.org/donate/koenig-childhood-cancer-foundation (external redirect)
+- **Features:** 
+  - Campaign-specific tracking
+  - Preset donation amounts
+  - One-time and monthly donation options
+  - Provider selection (Zeffy or GiveLively)
+
+**How to Test:**
+1. Click any "Donate" button on the website
+2. Ensure cookie consent has enabled Marketing cookies (manage in footer or banner)
+3. Modal should open showing donation options
+4. Select donation provider (Zeffy embedded or GiveLively redirect)
+5. For Zeffy: Complete embedded form with test payment details
+6. For GiveLively: Verify redirect to external secure page
+7. Confirm donation processing on respective platform dashboards
+
+**External Verification:**
+- Check Zeffy dashboard for donation records
+- Check GiveLively dashboard for external donations
+- No server-side processing on KCCF website
+
+---
+
+### 2. Camp Camper Registration Form
+**Type:** Application/Registration  
+**Purpose:** Register children with cancer for KCCF summer camp programs  
+**Location(s):**
+- Camp page (`/camp`) - "Join as a Camper" card
+
+**Technical Details:**
+- **Form ID:** `camp-camper`
+- **Monday.com URL:** https://forms.monday.com/forms/embed/41086441b740b6e179cbde8b574bd794?r=use1
+- **Modal Title:** "Join as a Camper"
+- **Modal Subtitle:** "Register your child for our upcoming camp session. We'll contact you with more details and confirm your spot."
+- **Component:** `src/components/FormButton.tsx` triggers modal
+- **Iframe Height:** 1550px
+
+**How to Test:**
+1. Navigate to `/camp`
+2. Ensure Marketing cookies are enabled
+3. Click "Register Now" button on the "Join as a Camper" card
+4. Modal opens with Monday.com form embedded
+5. Fill out registration form with child's information
+6. Submit form
+
+**External Verification:**
+- Check Monday.com board for new camp camper registrations
+- Form submissions appear as new items in the configured Monday.com board
+- KCCF staff receive notifications per Monday.com automation settings
+
+---
+
+### 3. Camp Counselor Application Form
+**Type:** Application/Registration  
+**Purpose:** Apply to be a volunteer camp counselor  
+**Location(s):**
+- Camp page (`/camp`) - "Join as a Counselor" card
+
+**Technical Details:**
+- **Form ID:** `camp-counselor`
+- **Monday.com URL:** https://forms.monday.com/forms/embed/87920448930e50b7a0554e414662d32b?r=use1
+- **Modal Title:** "Join as a Counselor"
+- **Modal Subtitle:** "Join our team of dedicated counselors and help create an amazing camp experience for children with cancer."
+- **Component:** `src/components/FormButton.tsx` triggers modal
+- **Iframe Height:** 1900px
+
+**How to Test:**
+1. Navigate to `/camp`
+2. Ensure Marketing cookies are enabled
+3. Click "Apply Now" button on the "Join as a Counselor" card
+4. Modal opens with Monday.com form embedded
+5. Fill out counselor application with volunteer information
+6. Submit form
+
+**External Verification:**
+- Check Monday.com board for new counselor applications
+- Form submissions appear as new items in the configured Monday.com board
+- KCCF staff receive notifications per Monday.com automation settings
+
+---
+
+### 4. Crazy Socks Gift Bag Sponsorship Form
+**Type:** Corporate sponsorship inquiry  
+**Purpose:** Allow companies to sponsor gift bag events for hospitalized children  
+**Location(s):**
+- Crazy Socks page (`/crazy-socks`) - Two buttons: one in hero section, one at bottom CTA
+
+**Technical Details:**
+- **Form ID:** `crazy-socks-sponsor`
+- **Monday.com URL:** https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1
+- **Modal Title:** "Sponsor Gift Bag Event"
+- **Modal Subtitle:** "For hospitalized children battling cancer"
+- **Component:** `src/components/FormButton.tsx` triggers modal
+- **Iframe Height:** 2000px
+
+**How to Test:**
+1. Navigate to `/crazy-socks`
+2. Ensure Marketing cookies are enabled
+3. Click either "Sponsor Gift Bag Event" button (top or bottom of page)
+4. Modal opens with Monday.com form embedded
+5. Fill out corporate sponsorship inquiry
+6. Submit form
+
+**External Verification:**
+- Check Monday.com board for new sponsorship inquiries
+- Form submissions appear as new items in the configured Monday.com board
+- KCCF staff receive notifications per Monday.com automation settings
+
+---
+
+### 5. Newsletter Signup Form
+**Type:** Email list subscription  
+**Purpose:** Subscribe to KCCF newsletter for updates and news  
+**Location(s):**
+- Footer (all pages) - "Subscribe to Newsletter" button
+- Newsletter Signup page (`/newsletter-signup`) - "Sign Up for Newsletter" button
+
+**Technical Details:**
+- **Form ID:** `newsletter-signup`
+- **External Service URL:** https://thekccf.us17.list-manage.com/subscribe?u=041a777be61cc7e1bc20e3517&id=8696f27783
+- **Modal Title:** "Stay Connected"
+- **Modal Subtitle:** "Join our newsletter to receive updates about our programs, events, and the families we help."
+- **Component:** `src/components/FormButton.tsx` triggers modal
+- **Iframe Height:** 650px
+- **Note:** This uses Mailchimp instead of Monday.com
+
+**How to Test:**
+1. Navigate to any page footer OR `/newsletter-signup`
+2. Ensure Marketing cookies are enabled
+3. Click "Subscribe to Newsletter" button
+4. Modal opens with Mailchimp form embedded
+5. Enter email address
+6. Submit form
+7. Check for confirmation email from Mailchimp
+
+**External Verification:**
+- Check Mailchimp audience dashboard for new subscribers
+- Subscriber receives welcome/confirmation email
+- Email address appears in KCCF's Mailchimp list
+
+---
+
+### 6. Book Elana Speaking Engagement Form
+**Type:** Booking/Contact request  
+**Purpose:** Request Elana Koenig for speaking engagements at schools and events  
+**Location(s):**
+- Our Story page (`/our-story`) - "Book Elana for Event" button
+
+**Technical Details:**
+- **Form ID:** `book-elana`
+- **Monday.com URL:** https://forms.monday.com/forms/embed/0caf48b3cfeede4c889e59ac52ce5fb1?r=use1
+- **Modal Title:** "Book Elana Koenig"
+- **Modal Subtitle:** "Elana shares her inspiring story at schools, organizations, and events to raise awareness about childhood cancer."
+- **Component:** `src/components/FormButton.tsx` triggers modal
+- **Iframe Height:** 1900px
+
+**How to Test:**
+1. Navigate to `/our-story`
+2. Scroll to "Share Elana's Story" section
+3. Ensure Marketing cookies are enabled
+4. Click "Book Elana for Event" button
+5. Modal opens with Monday.com form embedded
+6. Fill out speaking engagement request details
+7. Submit form
+
+**External Verification:**
+- Check Monday.com board for new booking requests
+- Form submissions appear as new items in the configured Monday.com board
+- KCCF staff receive notifications per Monday.com automation settings
+
+---
+
+### 7. Volunteer Application Form
+**Type:** Application/Registration  
+**Purpose:** Apply to volunteer with KCCF programs and events  
+**Location(s):**
+- Volunteer page (`/volunteer`) - "Volunteer Application" button
+
+**Technical Details:**
+- **Form ID:** `volunteer`
+- **Monday.com URL:** https://forms.monday.com/forms/embed/650d6c93433108a85097471c822b4cbf?r=use1
+- **Modal Title:** "Become a Volunteer"
+- **Modal Subtitle:** "Ready to make a difference? Complete this form to start your volunteer journey with KCCF."
+- **Component:** `src/components/FormButton.tsx` triggers modal
+- **Iframe Height:** 3100px
+
+**How to Test:**
+1. Navigate to `/volunteer`
+2. Scroll to "Become a Volunteer" section
+3. Ensure Marketing cookies are enabled
+4. Click "Volunteer Application" button
+5. Modal opens with Monday.com form embedded
+6. Fill out volunteer application with personal information and interests
+7. Submit form
+
+**External Verification:**
+- Check Monday.com board for new volunteer applications
+- Form submissions appear as new items in the configured Monday.com board
+- KCCF staff receive notifications per Monday.com automation settings
+
+---
+
+### 8. Contact Form
+**Type:** General inquiry  
+**Purpose:** Send general messages, questions, or partnership inquiries to KCCF  
+**Location(s):**
+- Contact page (`/contact`) - "Contact Us" button
+
+**Technical Details:**
+- **Form ID:** `contact`
+- **Monday.com URL:** https://forms.monday.com/forms/embed/7d2a1baf81662443852a38886ac80dd4?r=use1
+- **Modal Title:** "Send Us a Message"
+- **Modal Subtitle:** "Get in touch with us. We're here to help and answer any questions you may have."
+- **Component:** `src/components/FormButton.tsx` triggers modal
+- **Iframe Height:** 1100px
+
+**How to Test:**
+1. Navigate to `/contact`
+2. Ensure Marketing cookies are enabled
+3. Click "Contact Us" button
+4. Modal opens with Monday.com form embedded
+5. Fill out contact form with name, email, and message
+6. Submit form
+
+**External Verification:**
+- Check Monday.com board for new contact submissions
+- Form submissions appear as new items in the configured Monday.com board
+- KCCF staff receive notifications per Monday.com automation settings
+
+---
+
+### 9. Financial Aid Application Form
+**Type:** Application for assistance  
+**Purpose:** Apply for financial assistance during a child's cancer treatment  
+**Location(s):**
+- Aid page (`/aid`) - "Apply for Aid" button
+
+**Technical Details:**
+- **Form ID:** `aid-application`
+- **Monday.com URL:** https://forms.monday.com/forms/embed/972de98e599d383218e348dd923eec38?r=use1
+- **Modal Title:** "Apply for Financial Assistance"
+- **Modal Subtitle:** "Complete this form to apply for financial assistance during your child's cancer treatment."
+- **Component:** `src/components/FormButton.tsx` triggers modal
+- **Iframe Height:** 2500px
+
+**How to Test:**
+1. Navigate to `/aid`
+2. Scroll to "Start Your Application" section
+3. Ensure Marketing cookies are enabled
+4. Click "Apply for Aid" button
+5. Modal opens with Monday.com form embedded
+6. Fill out comprehensive application including child information, treatment details, and financial needs
+7. Submit form with any required documentation uploads (handled within Monday.com form)
+
+**External Verification:**
+- Check Monday.com board for new aid applications
+- Form submissions appear as new items in the configured Monday.com board
+- File uploads are attached to Monday.com items
+- KCCF staff receive notifications per Monday.com automation settings
+
+---
+
+## Form Testing Prerequisites
+
+### Cookie Consent Requirement
+**All forms require Marketing cookies to be enabled.** If cookies are not enabled:
+1. User sees a message: "Marketing cookies required"
+2. User can click "Manage cookie preferences" to enable Marketing cookies
+3. Once enabled, forms display properly
+
+**To test cookie consent flow:**
+1. Visit website in incognito/private mode
+2. Cookie consent banner appears at bottom
+3. Click "Customize" to see cookie preferences
+4. Enable "Marketing" cookies
+5. Forms should now work
+
+### Modal System Architecture
+All Monday.com forms use a unified modal system:
+- **Context Provider:** `src/contexts/FormModalContext.tsx` - manages form state and configurations
+- **Modal Component:** `src/components/FormModal.tsx` - renders the modal UI
+- **Button Component:** `src/components/FormButton.tsx` - triggers modal opening
+- **Modal Features:**
+  - Responsive design (85vh height)
+  - Escape key to close
+  - Click outside to close
+  - Scrollable iframe content
+  - Consistent branding across all forms
+
+### Adding New Forms
 To add a new Monday.com form to the modal system:
 
-1. **Add form type** to `FormType` union in `src/contexts/FormModalContext.tsx`
-2. **Add form configuration** to `FORM_CONFIGS` object with:
-   - `title`: Modal header title
-   - `subtitle`: Optional description
-   - `src`: Monday.com embed URL
-   - `height`: Recommended iframe height
+1. **Add form type** to `FormType` union in `src/contexts/FormModalContext.tsx`:
+   ```typescript
+   export type FormType = 
+     | 'camp-camper'
+     | 'your-new-form' // Add here
+   ```
+
+2. **Add form configuration** to `FORM_CONFIGS` object:
+   ```typescript
+   'your-new-form': {
+     title: 'Your Form Title',
+     subtitle: 'Optional description for users',
+     src: 'https://forms.monday.com/forms/embed/YOUR_FORM_ID',
+     height: '1500px' // Adjust based on form length
+   }
+   ```
+
 3. **Use FormButton** component on any page:
    ```tsx
    <FormButton formType="your-new-form" variant="violet" size="lg">
@@ -190,15 +515,71 @@ To add a new Monday.com form to the modal system:
    </FormButton>
    ```
 
-### Form types available
+### Form Types Reference
 - `camp-camper`: Camp registration for children
 - `camp-counselor`: Camp counselor applications
 - `crazy-socks-sponsor`: Corporate gift bag sponsorship
-- `newsletter-signup`: Newsletter subscription
+- `newsletter-signup`: Newsletter subscription (Mailchimp)
 - `book-elana`: Elana speaking engagements
 - `volunteer`: Volunteer applications
 - `contact`: General contact form
 - `aid-application`: Financial assistance applications
+
+---
+
+## External Services Used
+
+### Monday.com
+- **Purpose:** Form data collection and workflow management
+- **Forms:** 7 of 9 forms use Monday.com
+- **Access:** Requires Monday.com account with KCCF workspace access
+- **Verification:** Check Monday.com boards for form submissions
+
+### Mailchimp
+- **Purpose:** Newsletter email list management
+- **Forms:** Newsletter signup form only
+- **URL:** https://thekccf.us17.list-manage.com/
+- **Verification:** Check Mailchimp audience dashboard
+
+### Zeffy
+- **Purpose:** Donation processing (primary)
+- **Forms:** Donation form (embedded)
+- **Features:** 0% platform fees, embedded iframe
+- **Verification:** Check Zeffy dashboard for donation records
+
+### GiveLively
+- **Purpose:** Donation processing (alternative)
+- **Forms:** Donation form (external redirect)
+- **Features:** External secure page, alternative to Zeffy
+- **Verification:** Check GiveLively dashboard for donation records
+
+---
+
+## Form Testing Summary
+
+### Common Test Steps for All Forms
+1. **Enable Marketing Cookies**: Visit site, accept or customize cookies to enable Marketing cookies
+2. **Navigate to Form Location**: Use the table above to find where each form is located
+3. **Click Form Button**: Trigger the form modal or donation modal
+4. **Verify Modal Opens**: Ensure the modal displays with correct title and embedded form
+5. **Fill and Submit**: Complete the form with test data and submit
+6. **External Verification**: Check the appropriate external service (Monday.com, Mailchimp, Zeffy, or GiveLively)
+
+### Key Testing Notes
+- **All 9 forms are production-ready** and actively used
+- **No custom HTML forms** exist on the site - all forms use external services
+- **Cookie consent is mandatory** for all forms to display
+- **Modal forms (8 of 9)** open in responsive overlays with consistent UX
+- **Donation form is unique** as it offers two provider options (Zeffy embedded, GiveLively redirect)
+- **File uploads** are handled within Monday.com forms (notably aid application)
+- **No server-side form processing** on KCCF website - all handled by external services
+
+### Troubleshooting Forms
+- **Form not displaying**: Check Marketing cookies are enabled
+- **Modal not opening**: Verify FormModalProvider is properly wrapped in layout
+- **Form not loading**: Check external service URLs are accessible
+- **Submission not working**: Verify on external service dashboard (Monday.com, Mailchimp, Zeffy, GiveLively)
+- **Cookie banner not appearing**: Clear browser storage and reload in incognito mode
 
 ## SEO optimization
 The site is optimized for corporate partnerships and CSR programs:
