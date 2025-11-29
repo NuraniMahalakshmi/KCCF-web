@@ -16,6 +16,7 @@ import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
 import ConsentPreferencesModal from "@/components/ConsentPreferencesModal";
 import SubmissionModal from "@/components/SubmissionModal";
 import GoogleTagManager from "@/components/GoogleTagManager";
+import { GTM_ID } from "@/constants/analytics";
 import { Suspense } from "react";
 
 const openSans = Open_Sans({
@@ -52,7 +53,7 @@ export default function RootLayout({
         {/* Google Tag Manager (noscript) - For users with JavaScript disabled */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-P2SBKM7K"
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
