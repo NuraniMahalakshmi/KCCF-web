@@ -1,7 +1,6 @@
 "use client";
 
 import Script from 'next/script'
-import { useCookieConsent } from '@/contexts/CookieConsentContext'
 import { GTM_ID } from '@/constants/analytics'
 
 // Validate GTM ID format (GTM-XXXXXXX)
@@ -10,10 +9,11 @@ const isValidGtmId = (id: string | undefined): id is string => {
 }
 
 export default function GoogleTagManager() {
-  const { consent } = useCookieConsent()
-
-  // Only load GTM when user has consented to analytics and GTM ID is valid
-  if (!isValidGtmId(GTM_ID) || !consent.analytics) {
+  // GTM is loaded automatically as it's a functional/necessary service
+  // that enables essential site features like forms (Zeffy, Monday).
+  // Analytics services (Google Analytics, Microsoft Clarity) are configured
+  // within GTM to respect user consent preferences.
+  if (!isValidGtmId(GTM_ID)) {
     return null
   }
 
@@ -32,8 +32,15 @@ export default function GoogleTagManager() {
           `,
         }}
       />
-      {/* The <noscript> fallback for GTM is intentionally omitted to respect GDPR.
-          Users with JavaScript disabled cannot interact with the consent banner anyway. */}
+      {/* noscript fallback for GTM */}
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+        />
+      </noscript>
     </>
   )
 }
