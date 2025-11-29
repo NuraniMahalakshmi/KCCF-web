@@ -3,7 +3,8 @@
 import Script from 'next/script'
 import { useCookieConsent } from '@/contexts/CookieConsentContext'
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
+// GTM ID for the KCCF website - fallback to hardcoded value if env var not set
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-P2SBKM7K'
 
 // Validate GTM ID format (GTM-XXXXXXX)
 const isValidGtmId = (id: string | undefined): id is string => {
