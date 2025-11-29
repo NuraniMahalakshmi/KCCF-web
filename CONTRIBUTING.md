@@ -22,14 +22,15 @@ We prefer using GitHub Copilot's issue-to-PR functionality for creating pull req
 
 ### Copilot-Based Code Reviews
 
-**All code submissions must undergo Copilot-based reviews.** Contributors should:
+**All code submissions should undergo Copilot-based reviews.** Contributors should:
 1. Request a Copilot code review on their pull request
-2. Address all comments and suggestions provided by Copilot
-3. Re-run the Copilot review after making changes
-4. Repeat this process until no additional comments remain
-5. Only then request human reviewer approval
+2. Review all comments and suggestions provided by Copilot
+3. Address relevant feedback (use your judgment—not all suggestions may apply to the project context)
+4. Re-run the Copilot review after making changes
+5. Repeat this process until no additional actionable comments remain
+6. Then request human reviewer approval
 
-This iterative review process ensures:
+This iterative review process helps ensure:
 - Higher code quality
 - Consistent adherence to coding standards
 - Early detection of potential issues
@@ -54,6 +55,8 @@ For experienced developers who want to leverage additional AI capabilities, GitH
 
 #### Setting Up Alternative AI Providers
 
+GitHub Copilot now supports multiple AI models through its model selector feature. Available models vary based on your subscription and GitHub's current offerings.
+
 1. **Install GitHub Copilot Chat Extension**
    - Ensure you have the GitHub Copilot Chat extension installed in VS Code
    - Sign in with your GitHub account that has Copilot access
@@ -61,20 +64,20 @@ For experienced developers who want to leverage additional AI capabilities, GitH
 2. **Access Model Selection**
    - Open the Copilot Chat panel in VS Code
    - Look for the model selector dropdown (typically at the bottom of the chat input)
-   - Available models may include GPT-4, Claude, Gemini, and others depending on your subscription
+   - Available models may include GPT-4, Claude, Gemini, and others depending on your subscription tier
 
-3. **Using Claude Models**
+3. **Using Claude Models** (when available)
    - Select a Claude model from the model picker
    - Claude excels at detailed code explanations, complex refactoring, and nuanced code reviews
    - Use for tasks requiring deep reasoning about code architecture
 
 4. **Using OpenAI Models**
-   - GPT-4 and GPT-4o models are available through Copilot
+   - GPT-4 and GPT-4o models are the primary models available through Copilot
    - Particularly effective for general coding tasks and broad language support
    - Good for quick iterations and code completion
 
-5. **Using Google Gemini Models**
-   - Gemini models can be accessed through the Copilot interface
+5. **Using Google Gemini Models** (when available)
+   - Gemini models may be accessed through the Copilot interface
    - Strong performance on multi-modal tasks and code understanding
    - Useful for analyzing code alongside documentation or images
 
@@ -100,7 +103,7 @@ For experienced developers who want to leverage additional AI capabilities, GitH
 }
 ```
 
-**Note:** Access to alternative AI providers may require GitHub Copilot Enterprise or specific subscription tiers. Check your GitHub Copilot subscription details for available models.
+**Note:** Access to alternative AI providers may require specific subscription tiers. GitHub Copilot Individual provides access to core models, while GitHub Copilot Business and Enterprise may offer additional model options. Check your GitHub Copilot subscription details and the [GitHub Copilot documentation](https://docs.github.com/copilot) for currently available models.
 
 ## Getting Started
 
