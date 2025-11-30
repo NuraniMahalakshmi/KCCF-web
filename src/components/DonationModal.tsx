@@ -14,7 +14,8 @@ function GiveLivelyWidget() {
   const scriptRef = useRef<HTMLScriptElement | null>(null)
   
   useEffect(() => {
-    if (!containerRef.current) return
+    const container = containerRef.current
+    if (!container) return
     
     // Create and load the GiveLively script
     const gl = document.createElement('script')
@@ -32,11 +33,11 @@ function GiveLivelyWidget() {
         }
       }
       
-      // Clean up widget content - let React handle the container removal
-      if (containerRef.current) {
+      // Clean up widget content - use stored reference as ref may be null during cleanup
+      if (container) {
         try {
           // Clear inner HTML to prevent React from trying to remove GiveLively's DOM
-          containerRef.current.innerHTML = ''
+          container.innerHTML = ''
         } catch (e) {
           // Already cleaned
         }
@@ -186,38 +187,38 @@ export default function DonationModal() {
             <div className="px-6 py-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
               <p className="text-base text-center font-bold text-gray-900 dark:text-white mb-3">Choose your preferred donation platform:</p>
               <div className="flex space-x-4">
-                 <div className="flex flex-col">
-                   <button
-                     onClick={() => setSelectedProvider('zeffy')}
-                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
-                       selectedProvider === 'zeffy'
-                         ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
-                         : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
-                     }`}
-                   >
-                     Zeffy
-                   </button>
-                   <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside">
-                     <li>No fees</li>
-                     <li>Accepts international donations</li>
-                   </ul>
-                 </div>
-                 <div className="flex flex-col">
-                   <button
-                     onClick={() => setSelectedProvider('givelively')}
-                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
-                       selectedProvider === 'givelively'
-                         ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
-                         : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
-                     }`}
-                   >
-                     GiveLively
-                   </button>
-                   <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside">
-                     <li>Standard processing fees</li>
-                     <li>Accepts PayPal / Venmo / DAFs</li>
-                   </ul>
-                 </div>
+                <div className="flex flex-col">
+                  <button
+                    onClick={() => setSelectedProvider('zeffy')}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
+                      selectedProvider === 'zeffy'
+                        ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
+                        : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
+                    }`}
+                  >
+                    Zeffy
+                  </button>
+                  <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside">
+                    <li>No fees</li>
+                    <li>Accepts international donations</li>
+                  </ul>
+                </div>
+                <div className="flex flex-col">
+                  <button
+                    onClick={() => setSelectedProvider('givelively')}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
+                      selectedProvider === 'givelively'
+                        ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
+                        : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
+                    }`}
+                  >
+                    GiveLively
+                  </button>
+                  <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside">
+                    <li>Standard processing fees</li>
+                    <li>Accepts PayPal / Venmo / DAFs</li>
+                  </ul>
+                </div>
               </div>
             </div>
             
