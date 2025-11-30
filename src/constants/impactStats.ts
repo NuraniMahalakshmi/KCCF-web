@@ -27,7 +27,7 @@ export const IMPACT_STATS = {
     },
     {
       value: "2,700+",
-      label: "Hospital visits/ celebrations",
+      label: "Hospital visits / celebrations",
       color: {
         light: "text-violet-600",
         dark: "dark:text-saffron-400"
