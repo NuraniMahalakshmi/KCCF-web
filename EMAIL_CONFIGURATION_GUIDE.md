@@ -207,19 +207,26 @@ For emails to be delivered reliably, ensure proper DNS authentication for `thekc
 
 ### SPF Record
 
-Add sending servers to your SPF record:
+Add sending servers to your SPF record. Example (verify actual include domains with each service):
 
 ```
-v=spf1 include:_spf.google.com include:servers.mcsv.net include:spf.monday.com include:_spf.zeffy.com ~all
+v=spf1 include:_spf.google.com include:servers.mcsv.net include:spf.monday.com ~all
 ```
+
+**Note:** Check with each platform for their current SPF requirements:
+- **Mailchimp**: `servers.mcsv.net` (verify in Mailchimp settings)
+- **Monday.com**: `spf.monday.com` (verify in Monday.com documentation)
+- **Zeffy/GiveLively**: These platforms typically handle email sending internally; check their support documentation for any required DNS records
 
 ### DKIM Records
 
-Configure DKIM for each service:
-- **Google Workspace**: Follow Google's DKIM setup
-- **Mailchimp**: Add the DKIM record from Mailchimp settings
-- **Monday.com**: Add Monday.com's DKIM record
-- **Zeffy**: Follow Zeffy's email authentication guide
+Configure DKIM for each service that requires it:
+- **Google Workspace**: Follow [Google's DKIM setup guide](https://support.google.com/a/answer/174124)
+- **Mailchimp**: Add the DKIM record from Mailchimp **Account** → **Settings** → **Domains** → **Verify Domain**
+- **Monday.com**: Check Monday.com documentation for DKIM requirements
+- **Zeffy/GiveLively**: These platforms typically manage DKIM internally
+
+**Note:** Some donation platforms (like Zeffy and GiveLively) handle email authentication automatically. Contact their support if you experience deliverability issues.
 
 ### DMARC Record
 
