@@ -31,11 +31,10 @@ export default function NewsletterSignup() {
                 </div>
               )}
               <iframe
-                className={`w-full ${!iframeLoaded ? 'invisible' : ''}`}
+                className={`w-full border-0 ${!iframeLoaded ? 'invisible' : ''}`}
                 src="https://thekccf.us17.list-manage.com/subscribe?u=041a777be61cc7e1bc20e3517&id=8696f27783"
                 title="Newsletter Signup Form"
                 height="500"
-                frameBorder={0}
                 scrolling="auto"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
                 onLoad={() => setIframeLoaded(true)}
