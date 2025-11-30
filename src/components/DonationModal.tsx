@@ -223,7 +223,7 @@ export default function DonationModal() {
                    >
                      Zeffy
                    </button>
-                   <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside whitespace-nowrap">
+                   <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc pl-4">
                      <li>No fees</li>
                      <li>International donations</li>
                    </ul>
@@ -239,7 +239,7 @@ export default function DonationModal() {
                    >
                      GiveLively
                    </button>
-                   <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside whitespace-nowrap">
+                   <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc pl-4">
                      <li>Processing fees</li>
                      <li>PayPal / Venmo / DAFs</li>
                    </ul>
