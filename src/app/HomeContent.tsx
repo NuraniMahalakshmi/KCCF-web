@@ -41,8 +41,8 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 text-center lg:text-left relative z-10">
           <div className="max-w-4xl mx-auto lg:mx-0 lg:ml-8">
 
-            <h1 className="text-6xl md:text-7xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
-              Life-saving financial and emotional support to children battling cancer.
+            <h1 className="text-5xl md:text-6xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
+              Life-saving financial and emotional support for children battling cancer.
             </h1>
 
             <p className="text-xl md:text-2xl mb-12 text-black dark:text-gray-200 max-w-3xl mx-auto lg:mx-0 leading-relaxed font-normal">
