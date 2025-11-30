@@ -34,7 +34,7 @@ export default function KCCFFamily() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
-                Meet our founder, Elana Koenig
+                Meet Our Founder, Elana Koenig
               </h2>
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
