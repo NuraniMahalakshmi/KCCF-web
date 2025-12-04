@@ -42,15 +42,7 @@ export default function HomeContent() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
-              <Link
-                href="/aid"
-                className="group bg-violet-600 hover:bg-violet-700 text-white py-4 px-10 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center"
-              >
-                <span>Family Assistance</span>
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
+              
               <DonationButton
                 amount={50}
                 campaign="Donate to save lives"
@@ -65,6 +57,15 @@ export default function HomeContent() {
               >
                 Donate Now
               </DonationButton>
+              <Link
+                href="/aid"
+                className="group bg-violet-600 hover:bg-violet-700 text-white py-4 px-10 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center"
+              >
+                <span>Family Assistance</span>
+                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
             </div>
 
             {/* Impact Stats */}
