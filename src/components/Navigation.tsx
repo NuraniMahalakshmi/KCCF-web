@@ -34,7 +34,6 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isHomePage])
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden'
