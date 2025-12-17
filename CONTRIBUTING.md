@@ -138,10 +138,10 @@ This project uses GitHub's standard permission model to manage contributions. Un
 
 #### GitHub Permission Levels Explained
 
-| Permission Level | Can Read Code | Can Comment | Can Create PRs | Can Push Branches | Can Review PRs | Can Merge PRs | Can Manage Settings |
-|-----------------|---------------|-------------|----------------|-------------------|----------------|---------------|---------------------|
+| Permission Level | Can Read Code | Can Comment | Can Create PRs | Can Push Branches | Can Review PRs | Can Approve/Merge PRs | Can Manage Settings |
+|-----------------|---------------|-------------|----------------|-------------------|----------------|----------------------|---------------------|
 | **Read** (Public) | ✅ | ✅ | ✅ (via fork) | ❌ | ❌ | ❌ | ❌ |
-| **Triage** | ✅ | ✅ | ✅ (via fork) | ❌ | ❌ | ❌ | ❌ |
+| **Triage** | ✅ | ✅ | ✅ (via fork) | ❌ | ✅ (review only) | ❌ | ❌ |
 | **Write** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ❌ | ❌ |
 | **Maintain** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ✅ | Limited |
 | **Admin** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ✅ | ✅ |
@@ -149,9 +149,9 @@ This project uses GitHub's standard permission model to manage contributions. Un
 **Key capabilities by level:**
 
 - **Read (Public)**: Anyone can view public repositories, open issues, and create PRs via forks. This is the default for external contributors.
-- **Triage**: Can manage issues and PRs (labels, assignments) but cannot push code directly.
+- **Triage**: Can manage issues and PRs (labels, assignments, close/reopen) and can submit PR reviews/comments, but cannot approve PRs for merging or push code directly.
 - **Write**: Can push branches directly to the repository and create PRs from those branches. **This is the recommended level for regular contributors** as it enables full GitHub Copilot functionality on PRs.
-- **Maintain**: Can do everything Write can do, plus merge PRs and manage some repository settings.
+- **Maintain**: Can do everything Write can do, plus approve and merge PRs and manage some repository settings.
 - **Admin**: Full repository control including settings, security, and access management.
 
 **For this project, we primarily use:**
