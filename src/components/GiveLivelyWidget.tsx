@@ -7,7 +7,8 @@ export default function GiveLivelyWidget() {
   const scriptRef = useRef<HTMLScriptElement | null>(null)
   
   useEffect(() => {
-    if (!containerRef.current) return
+    const container = containerRef.current
+    if (!container) return
     
     const gl = document.createElement('script')
     gl.src =
@@ -25,7 +26,7 @@ export default function GiveLivelyWidget() {
             parent.removeChild(glModal)
           }
         }
-      } catch (e) {
+      } catch {
         // Silently fail - element may have already been removed
       }
 
@@ -34,18 +35,18 @@ export default function GiveLivelyWidget() {
           '.gl-modal, .gl-simple-donation-widget'
         )
         glElements.forEach((element) => {
-          if (element && element.parentNode && element !== containerRef.current) {
+          if (element && element.parentNode && element !== container) {
             try {
               const parent = element.parentNode
               if (parent.contains && parent.contains(element)) {
                 parent.removeChild(element)
               }
-            } catch (e) {
+            } catch {
               // Silently fail - element may have already been removed or moved
             }
           }
         })
-      } catch (e) {
+      } catch {
         // Silently fail
       }
       
@@ -55,15 +56,15 @@ export default function GiveLivelyWidget() {
           if (parent.contains && parent.contains(scriptRef.current)) {
             parent.removeChild(scriptRef.current)
           }
-        } catch (e) {
+        } catch {
           // Silently fail - script may have already been removed
         }
       }
       
-      if (containerRef.current) {
+      if (container) {
         try {
-          containerRef.current.innerHTML = ''
-        } catch (e) {
+          container.innerHTML = ''
+        } catch {
           // Silently fail
         }
       }

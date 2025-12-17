@@ -15,7 +15,7 @@ interface DonationButtonProps {
 
 export default function DonationButton({
   amount = 50,
-  campaign: _campaign = '',
+  campaign = '',
   variant = 'primary',
   size = 'md',
   className = '',
@@ -37,9 +37,11 @@ export default function DonationButton({
     lg: 'px-8 py-4 text-lg rounded-full'
   }
 
+  const href = campaign ? `/donate?campaign=${encodeURIComponent(campaign)}` : '/donate'
+
   return (
     <Link
-      href="/donate"
+      href={href}
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
     >
       {children || `Donate $${amount}`}
