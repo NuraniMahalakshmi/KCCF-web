@@ -149,7 +149,7 @@ This project uses GitHub's standard permission model to manage contributions. Un
 **Key capabilities by level:**
 
 - **Read (Public)**: Anyone can view public repositories, open issues, and create PRs via forks. This is the default for external contributors.
-- **Triage**: Can manage issues and PRs (labels, assignments, close/reopen) and can review PRs (submit reviews and comments), but cannot approve PRs for merging or push code directly.
+- **Triage**: Can manage issues and PRs (labels, assignments, close/reopen) and can review PRs (submit reviews with comments and suggestions), but cannot formally approve PRs for merging or push code directly.
 - **Write**: Can push branches directly to the repository and create PRs from those branches. **This is the recommended level for regular contributors** as it enables full GitHub Copilot functionality on PRs.
 - **Maintain**: Can do everything Write can do, plus approve and merge PRs and manage some repository settings.
 - **Admin**: Full repository control including settings, security, and access management.
@@ -181,7 +181,7 @@ This project uses GitHub's standard permission model to manage contributions. Un
 - You can create branches directly in the main repository
 - GitHub Copilot features work on your PRs (code reviews, `@copilot` mentions, auto-fixes)
 - Maintainers can push commits to your branches to help you
-- You can review other contributors' PRs and leave comments/suggestions (Maintain/Admin levels can approve and merge)
+- You can review other contributors' PRs and leave comments/suggestions (note: only Maintain/Admin levels can approve and merge PRs)
 - You get better visibility into the project's development process
 
 ### Which Access Level Do I Need?
@@ -443,7 +443,7 @@ When adding new features, ensure they work across:
 
 **Problem:** You want to contribute but don't have permission to push branches to the main repository.
 
-**Solution:** Request Write access! See [Requesting Repository Access](#requesting-repository-access) for instructions. We welcome contributors at all skill levels and typically grant access within 1-2 days.
+**Solution:** Request Write access! See [Requesting Repository Access](#requesting-repository-access) for instructions. We welcome contributors at all skill levels and will review your request as soon as possible.
 
 **Alternative:** If you prefer not to request access or need to contribute immediately, use the [Fork-Based Workflow](#option-2-fork-based-workflow-external-contributors-without-access), but note that GitHub Copilot reviews won't be available on your PRs.
 
