@@ -2,6 +2,16 @@
 
 Thank you for your interest in contributing to the Koenig Childhood Cancer Foundation website! We welcome contributions from the community.
 
+## Overview
+
+**This documentation assumes you have or will request Write access to the repository.** This is our recommended approach for most contributors because it:
+- Enables GitHub Copilot code reviews on your pull requests
+- Provides AI-assisted feedback to help improve code quality
+- Allows better collaboration with maintainers
+- Works especially well for new coders learning to contribute
+
+**Don't have Write access yet?** See [Requesting Repository Access](#requesting-repository-access) to learn how to get it (it's quick and we welcome contributors at all skill levels!). If you prefer to contribute without access, see [Option 2: Fork-Based Workflow](#option-2-fork-based-workflow-external-contributors-without-access).
+
 ## AI-Assisted Development
 
 We encourage the use of AI tools, particularly **GitHub Copilot**, to enhance the quality and efficiency of contributions to this project.
@@ -14,7 +24,9 @@ We prefer using GitHub Copilot's issue-to-PR functionality for creating pull req
 - Reduce manual coding errors
 - Accelerate the development process
 
-**⚠️ Important:** To use GitHub Copilot's AI features on pull requests (including `@copilot` mentions and code reviews), you must have **write access** to this repository. If you're working from a forked repository, Copilot features will be unavailable due to GitHub's cross-repository security restrictions. See the [Fork vs Branch workflow section](#fork-vs-branch-understanding-the-workflow) below for details.
+**⚠️ Important:** To use GitHub Copilot's AI features on pull requests (including `@copilot` mentions and code reviews), you must have **write access** to this repository. If you're working from a forked repository, Copilot features will be unavailable due to GitHub's cross-repository security restrictions. See the [Choosing Your Contribution Workflow](#choosing-your-contribution-workflow) section below for details on how to request access.
+
+**👋 New to Coding?** We welcome developers at all experience levels! Request Write access to the repository to enable GitHub Copilot code reviews on your PRs - this provides AI-assisted feedback that helps you learn and improve your code quality. See [Requesting Repository Access](#requesting-repository-access) below.
 
 **To use Copilot for creating PRs from issues:**
 1. Navigate to an issue in the repository.
@@ -28,7 +40,7 @@ For more details, see [GitHub's documentation on using Copilot to work on issues
 
 ### Copilot-Based Code Reviews
 
-**All code submissions should undergo Copilot-based reviews.** Contributors should:
+**All code submissions should undergo Copilot-based reviews when possible.** This feature is available for contributors with Write access or higher. Contributors should:
 1. Request a Copilot code review on your pull request by selecting Copilot as a reviewer from the "Reviewers" dropdown, or by commenting `@copilot review` on the PR. For more details, see [GitHub Copilot Code Review documentation](https://docs.github.com/en/copilot/using-github-copilot/code-review/using-copilot-code-review).
 2. Review all comments and suggestions provided by Copilot.
 3. Address relevant feedback (use your judgment—not all suggestions may apply to the project context).
@@ -41,6 +53,8 @@ This iterative review process helps ensure that:
 - Coding standards are consistently adhered to
 - Potential issues are detected early
 - Code changes are comprehensively documented
+
+**Note for fork-based contributors:** Copilot code reviews are not available on PRs from forked repositories due to GitHub's security restrictions. Fork contributors should rely on human code reviews or request Write access to enable Copilot reviews.
 
 ### Best Practices for Using GitHub Copilot
 
@@ -116,132 +130,203 @@ GitHub Copilot supports multiple AI models through its model selector feature. A
 - Node.js 20.x or higher
 - npm 10+
 - Git
+- GitHub account
 
-### Fork vs Branch: Understanding the Workflow
+### Understanding GitHub Repository Access Levels
 
-**⚠️ Important: GitHub Copilot Cross-Repository Limitation**
+This project uses GitHub's standard permission model to manage contributions. Understanding these levels helps you know what you can do and how to request appropriate access.
 
-When working with pull requests created from forked repositories, you may encounter the following error when trying to use GitHub Copilot features:
+#### GitHub Permission Levels Explained
 
-> ⚠️ **Copilot isn't available for cross-repository pull requests**
+| Permission Level | Can Read Code | Can Comment | Can Create PRs | Can Push Branches | Can Review PRs | Can Merge PRs | Can Manage Settings |
+|-----------------|---------------|-------------|----------------|-------------------|----------------|---------------|---------------------|
+| **Read** (Public) | ✅ | ✅ | ✅ (via fork) | ❌ | ❌ | ❌ | ❌ |
+| **Triage** | ✅ | ✅ | ✅ (via fork) | ❌ | ❌ | ❌ | ❌ |
+| **Write** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ❌ | ❌ |
+| **Maintain** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ✅ | Limited |
+| **Admin** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ✅ | ✅ |
 
-This is a **security feature** implemented by GitHub, not a bug. Here's what you need to know:
+**Key capabilities by level:**
 
-#### Why Does This Happen?
+- **Read (Public)**: Anyone can view public repositories, open issues, and create PRs via forks. This is the default for external contributors.
+- **Triage**: Can manage issues and PRs (labels, assignments) but cannot push code directly.
+- **Write**: Can push branches directly to the repository and create PRs from those branches. **This is the recommended level for regular contributors** as it enables full GitHub Copilot functionality on PRs.
+- **Maintain**: Can do everything Write can do, plus merge PRs and manage some repository settings.
+- **Admin**: Full repository control including settings, security, and access management.
 
-GitHub restricts Copilot's AI features (including `@copilot` mentions, Copilot code reviews, and Copilot autofix) on pull requests that originate from **forked repositories** (cross-repository PRs) for the following security reasons:
-- **Prevents data leakage** between unrelated repositories
-- **Protects against privilege escalation** and unauthorized access
-- **Enforces repository boundaries** for open-source contributions
-- **Prevents accidental code exposure** in projects where you may not have full write access
+**For this project, we primarily use:**
+- **Write access**: For regular contributors (enables direct PRs with Copilot reviews)
+- **Maintain/Admin access**: For project maintainers and core team members
 
-#### Two Contribution Workflows
+### Requesting Repository Access
 
-##### Option 1: Branch-Based Workflow (Recommended for Copilot Users)
+**We encourage new contributors to request Write access**, especially if you:
+- Plan to contribute regularly (even small contributions count!)
+- Want to use GitHub Copilot for PR reviews and assistance
+- Are new to coding and want AI-assisted code reviews
+- Want to learn from AI-powered feedback on your code
+- Want to collaborate more closely with the team
+- Are working on multiple issues over time
 
-**Best for:** Contributors who need GitHub Copilot AI assistance on pull requests
+**How to request access:**
+1. **Open an issue** with the title "Request for Write Access"
+2. **Include in the issue:**
+   - Your GitHub username
+   - Brief introduction (experience level, how you'd like to contribute)
+   - Whether you have GitHub Copilot access (not required, but helpful to know)
+3. **Wait for approval** - Maintainers will review and grant access (usually within 1-2 days)
+4. **No experience required** - We welcome developers at all skill levels, including those new to coding
 
-**Requirements:** You need **write/push access** to the repository (you must be added as a collaborator)
+**What happens after you get Write access:**
+- You can create branches directly in the main repository
+- GitHub Copilot features work on your PRs (code reviews, `@copilot` mentions, auto-fixes)
+- Maintainers can push commits to your branches to help you
+- You can review other contributors' PRs (Read-only for Write level, but you can comment and suggest)
+- You get better visibility into the project's development process
 
-**Process:**
-1. Request repository access by opening an issue or contacting the maintainers
-2. Once granted access, clone the repository directly (not a fork):
+### Which Access Level Do I Need?
+
+**Most contributors need Write access.** Here's a quick guide:
+
+| Your Situation | Recommended Access Level | How to Get It |
+|----------------|-------------------------|---------------|
+| 🆕 New coder wanting to learn | **Write** | [Request access](#requesting-repository-access) |
+| 🔄 Regular contributor | **Write** | [Request access](#requesting-repository-access) |
+| 🤖 Want Copilot code reviews | **Write** | [Request access](#requesting-repository-access) |
+| 🚀 Quick one-time fix | Read (public) | Use [fork workflow](#option-2-fork-based-workflow-external-contributors-without-access) |
+| 👥 Core team member | Maintain or Admin | Contact project leads |
+| 📝 Issue triaging only | Triage | Contact maintainers |
+
+**Don't see your situation?** Just [request Write access](#requesting-repository-access) - we're friendly and welcome all contributors!
+
+### Choosing Your Contribution Workflow
+
+#### Option 1: Direct Branch Workflow (Recommended for Most Contributors)
+
+**Best for:**
+- Contributors with Write access or higher
+- Anyone who wants GitHub Copilot assistance on PRs
+- Regular contributors and team members
+- New coders who want AI-assisted code reviews
+
+**Requirements:** 
+- Write access to the repository (request if you don't have it)
+
+**Setup Process:**
+1. Clone the repository directly (not a fork):
    ```bash
    git clone https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git
    cd KCCF-web
    ```
-3. Create a feature branch in the main repository:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-4. Make your changes and push to the main repository:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. Create a pull request from your branch to `main`
 
-**✅ Benefits:**
-- Full GitHub Copilot functionality available (including `@copilot` mentions and code reviews)
-- Simpler CI/CD integration
-- Maintainers can directly push to your branch if needed
-- No cross-repository restrictions
-
-##### Option 2: Fork-Based Workflow (External Contributors)
-
-**Best for:** External contributors without repository access, or contributors not using Copilot features
-
-**Process:**
-1. Fork the repository on GitHub
-2. Clone your fork locally:
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/KCCF-web.git
-   cd KCCF-web
-   ```
-3. Create a feature branch in your fork
-4. Make your changes and push to your fork:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. Create a pull request from your fork to the main repository
-
-**⚠️ Limitations:**
-- GitHub Copilot features (`@copilot` mentions, code reviews) **will not work** on the pull request
-- You can still use Copilot in your local IDE (VS Code, JetBrains, etc.)
-- Only you can push to your branch (unless you enable "Allow edits from maintainers")
-
-**Workarounds for Fork-Based Contributors:**
-1. **Use Copilot locally:** GitHub Copilot works normally in your IDE (VS Code, JetBrains, etc.) even when working on a fork. Accept Copilot's suggestions locally, then push to your fork.
-2. **Manual code review:** Request review from human reviewers instead of using `@copilot review`
-3. **Switch to branch-based workflow:** If you need Copilot features on the PR, request repository access from maintainers
-
-#### Which Workflow Should I Use?
-
-| Situation | Recommended Workflow |
-|-----------|---------------------|
-| Regular contributor / Team member | **Branch-based** (request access) |
-| Need GitHub Copilot on PRs | **Branch-based** (request access) |
-| First-time or occasional contributor | **Fork-based** (no access needed) |
-| Quick fixes or small changes | **Fork-based** (no access needed) |
-| Working on sensitive/experimental features | **Branch-based** (with proper branch protection) |
-
-### Setup
-
-#### For Branch-Based Workflow (After Getting Repository Access)
-1. Clone the repository directly:
-   ```bash
-   git clone https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git
-   cd KCCF-web
-   ```
 2. Install dependencies:
    ```bash
    npm install
    ```
+
 3. Start the development server:
    ```bash
    npm run dev
    ```
+
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-#### For Fork-Based Workflow (External Contributors)
-1. Fork the repository on GitHub
+**Creating PRs with Direct Branch Workflow:**
+1. Create a feature branch in the main repository:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. Make your changes and test locally
+
+3. Push to the main repository:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+4. Create a pull request from your branch to `main` on GitHub
+
+5. Request Copilot code review (see [Copilot-Based Code Reviews](#copilot-based-code-reviews) section)
+
+**✅ Benefits:**
+- Full GitHub Copilot functionality (code reviews, `@copilot` mentions, auto-fixes)
+- Simpler CI/CD integration
+- Maintainers can push to your branch to help
+- No cross-repository security restrictions
+- Better collaboration with the team
+
+#### Option 2: Fork-Based Workflow (External Contributors Without Access)
+
+**Best for:**
+- One-time or occasional contributors
+- External contributors who prefer not to request access
+- Quick bug fixes or typo corrections
+- Contributors not using GitHub Copilot on PRs
+
+**Setup Process:**
+1. Fork the repository on GitHub (click "Fork" button)
+
 2. Clone your fork locally:
    ```bash
    git clone https://github.com/YOUR-USERNAME/KCCF-web.git
    cd KCCF-web
    ```
+
 3. Add the upstream repository as a remote:
    ```bash
    git remote add upstream https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git
    ```
+
 4. Install dependencies:
    ```bash
    npm install
    ```
+
 5. Start the development server:
    ```bash
    npm run dev
    ```
+
 6. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+**Creating PRs with Fork Workflow:**
+1. Create a feature branch in your fork:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. Make your changes and test locally
+
+3. Push to your fork:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+4. Create a pull request from your fork to the main repository on GitHub
+
+**⚠️ Limitations:**
+- GitHub Copilot features (`@copilot` mentions, code reviews) **will not work** on the pull request due to GitHub's cross-repository security restrictions
+- You can still use Copilot in your local IDE (VS Code, JetBrains, etc.) for code suggestions
+- Only you can push to your branch (unless you enable "Allow edits from maintainers")
+- Human reviewers will need to review your code instead of Copilot
+
+**Workarounds:**
+1. **Use Copilot locally:** Copilot works normally in your IDE even on forks
+2. **Request Write access:** If you need Copilot on PRs, request repository access (see above)
+3. **Manual review:** Request review from human maintainers
+
+**Note on Copilot Limitations:** GitHub restricts Copilot's AI features on pull requests from forked repositories for security reasons (prevents data leakage, privilege escalation, and unauthorized access). This is a GitHub platform limitation, not specific to this project.
+
+### Quick Start Comparison
+
+| Step | Direct Branch (Write Access) | Fork (No Access) |
+|------|------------------------------|------------------|
+| 1. Setup | `git clone https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git` | Fork on GitHub, then `git clone https://github.com/YOUR-USERNAME/KCCF-web.git` |
+| 2. Branch | `git checkout -b feature/name` | `git checkout -b feature/name` |
+| 3. Push | `git push origin feature/name` | `git push origin feature/name` |
+| 4. PR | Create PR in main repo | Create PR from fork to main repo |
+| 5. Copilot Review | ✅ Works (use `@copilot review`) | ❌ Doesn't work (cross-repo restriction) |
+| 6. Collaboration | ✅ Maintainers can push to your branch | ⚠️ Limited (enable "Allow edits" for help) |
 
 ## Development Workflow
 
@@ -288,17 +373,31 @@ git commit -m "Docs: update README with CI/CD information"
 - [ ] Keep changes focused and atomic
 
 ### Submitting a Pull Request
-1. Push your branch to your fork:
+
+**For Direct Branch Workflow (Write Access):**
+1. Push your branch to the main repository:
    ```bash
    git push origin feature/your-feature-name
    ```
-2. Open a Pull Request against the `main` branch
+2. Open a Pull Request against the `main` branch on GitHub
 3. Fill out the PR template with:
    - Clear description of changes
    - Related issue numbers (if applicable)
    - Screenshots for UI changes
 4. Wait for CI checks to pass
-5. Request review from maintainers
+5. **Request Copilot review first** (see [Copilot-Based Code Reviews](#copilot-based-code-reviews))
+6. Address Copilot feedback and re-run review if needed
+7. Then request review from human maintainers
+
+**For Fork Workflow (No Write Access):**
+1. Push your branch to your fork:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+2. Open a Pull Request from your fork to the main repository's `main` branch
+3. Fill out the PR template (same as above)
+4. Wait for CI checks to pass
+5. Request review from human maintainers (Copilot reviews won't work on fork-based PRs)
 
 ### After Review
 - Address any feedback from reviewers
@@ -342,25 +441,34 @@ When adding new features, ensure they work across:
 
 ## Troubleshooting
 
+### "I don't have Write access to the repository"
+
+**Problem:** You want to contribute but don't have permission to push branches to the main repository.
+
+**Solution:** Request Write access! See [Requesting Repository Access](#requesting-repository-access) for instructions. We welcome contributors at all skill levels and typically grant access within 1-2 days.
+
+**Alternative:** If you prefer not to request access or need to contribute immediately, use the [Fork-Based Workflow](#option-2-fork-based-workflow-external-contributors-without-access), but note that GitHub Copilot reviews won't be available on your PRs.
+
 ### GitHub Copilot "Cross-Repository Pull Requests" Error
 
 **Problem:** When you try to use `@copilot` on a pull request, you see:
 > ⚠️ **Copilot isn't available for cross-repository pull requests**
 
-**Cause:** You created a pull request from a forked repository. GitHub restricts Copilot AI features on cross-repository PRs for security reasons.
+**Cause:** You created a pull request from a forked repository. GitHub restricts Copilot AI features on cross-repository PRs for security reasons (prevents data leakage, privilege escalation, and unauthorized access).
 
 **Solutions:**
 
-1. **Request Repository Access (Recommended for Regular Contributors):**
-   - Open an issue requesting collaborator access
+1. **Request Write Access (Recommended):**
+   - Open an issue with title "Request for Write Access" (see [Requesting Repository Access](#requesting-repository-access))
+   - Include your GitHub username and brief introduction
    - Once granted, close your fork-based PR
-   - Clone the main repository (not your fork)
+   - Clone the main repository directly: `git clone https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git`
    - Create a new branch in the main repository
    - Reapply your changes and create a new PR
    - GitHub Copilot will now work on your PR
 
 2. **Continue with Fork (For One-Time Contributors):**
-   - Use GitHub Copilot in your local IDE (VS Code, JetBrains, etc.) - this still works
+   - Use GitHub Copilot in your local IDE (VS Code, JetBrains, etc.) - this still works for local code suggestions
    - Accept Copilot's suggestions locally and push to your fork
    - Request review from human reviewers instead of `@copilot`
    - Note: `@copilot review` and other PR-based Copilot features will remain unavailable
