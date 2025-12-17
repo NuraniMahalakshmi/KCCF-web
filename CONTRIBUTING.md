@@ -149,7 +149,7 @@ This project uses GitHub's standard permission model to manage contributions. Un
 **Key capabilities by level:**
 
 - **Read (Public)**: Anyone can view public repositories, open issues, and create PRs via forks. This is the default for external contributors.
-- **Triage**: Can manage issues and PRs (labels, assignments, close/reopen) and can submit PR reviews/comments, but cannot approve PRs for merging or push code directly.
+- **Triage**: Can manage issues and PRs (labels, assignments, close/reopen) and can review PRs (submit reviews and comments), but cannot approve PRs for merging or push code directly.
 - **Write**: Can push branches directly to the repository and create PRs from those branches. **This is the recommended level for regular contributors** as it enables full GitHub Copilot functionality on PRs.
 - **Maintain**: Can do everything Write can do, plus approve and merge PRs and manage some repository settings.
 - **Admin**: Full repository control including settings, security, and access management.
@@ -181,7 +181,7 @@ This project uses GitHub's standard permission model to manage contributions. Un
 - You can create branches directly in the main repository
 - GitHub Copilot features work on your PRs (code reviews, `@copilot` mentions, auto-fixes)
 - Maintainers can push commits to your branches to help you
-- You can review other contributors' PRs (Read-only for Write level, but you can comment and suggest)
+- You can review other contributors' PRs and leave comments/suggestions (Maintain/Admin levels can approve and merge)
 - You get better visibility into the project's development process
 
 ### Which Access Level Do I Need?
