@@ -4,13 +4,13 @@ Thank you for your interest in contributing to the Koenig Childhood Cancer Found
 
 ## Overview
 
-**This documentation assumes you have or will request Write access to the repository.** This is our recommended approach for most contributors because it:
+**This documentation primarily focuses on contributors with Write access to the repository.** This is our recommended approach for most contributors because it:
 - Enables GitHub Copilot code reviews on your pull requests
 - Provides AI-assisted feedback to help improve code quality
 - Allows better collaboration with maintainers
 - Works especially well for new coders learning to contribute
 
-**Don't have Write access yet?** See [Requesting Repository Access](#requesting-repository-access) to learn how to get it (it's quick and we welcome contributors at all skill levels!). If you prefer to contribute without access, see [Option 2: Fork-Based Workflow](#option-2-fork-based-workflow-external-contributors-without-access).
+**Choose your approach:** If you'd like to contribute regularly or use Copilot features, see [Requesting Repository Access](#requesting-repository-access) to get Write access (quick and open to all skill levels!). If you prefer to contribute without requesting access or are making a quick one-time contribution, see [Option 2: Fork-Based Workflow](#option-2-fork-based-workflow-external-contributors-without-access).
 
 ## AI-Assisted Development
 
@@ -174,7 +174,7 @@ This project uses GitHub's standard permission model to manage contributions. Un
    - Your GitHub username
    - Brief introduction (experience level, how you'd like to contribute)
    - Whether you have GitHub Copilot access (not required, but helpful to know)
-3. **Wait for approval** - Maintainers will review and grant access (usually within 1-2 days)
+3. **Wait for approval** - Maintainers will review and grant access as soon as possible
 4. **No experience required** - We welcome developers at all skill levels, including those new to coding
 
 **What happens after you get Write access:**
@@ -305,17 +305,15 @@ This project uses GitHub's standard permission model to manage contributions. Un
 4. Create a pull request from your fork to the main repository on GitHub
 
 **⚠️ Limitations:**
-- GitHub Copilot features (`@copilot` mentions, code reviews) **will not work** on the pull request due to GitHub's cross-repository security restrictions
+- GitHub Copilot features (`@copilot` mentions, code reviews) **will not work** on the pull request due to GitHub's cross-repository security restrictions (see [Troubleshooting](#github-copilot-cross-repository-pull-requests-error) for details)
 - You can still use Copilot in your local IDE (VS Code, JetBrains, etc.) for code suggestions
 - Only you can push to your branch (unless you enable "Allow edits from maintainers")
 - Human reviewers will need to review your code instead of Copilot
 
 **Workarounds:**
 1. **Use Copilot locally:** Copilot works normally in your IDE even on forks
-2. **Request Write access:** If you need Copilot on PRs, request repository access (see above)
+2. **Request Write access:** If you need Copilot on PRs, request repository access (see [Requesting Repository Access](#requesting-repository-access))
 3. **Manual review:** Request review from human maintainers
-
-**Note on Copilot Limitations:** GitHub restricts Copilot's AI features on pull requests from forked repositories for security reasons (prevents data leakage, privilege escalation, and unauthorized access). This is a GitHub platform limitation, not specific to this project.
 
 ### Quick Start Comparison
 
