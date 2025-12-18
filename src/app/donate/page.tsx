@@ -160,7 +160,7 @@ export default function Donate() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Donor Advised Funds (DAF)</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                You can make donation through your Donor Advised Funds through this link:
+                You can make a donation through your Donor Advised Funds.
               </p>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
                 To learn more, contact us at{' '}
