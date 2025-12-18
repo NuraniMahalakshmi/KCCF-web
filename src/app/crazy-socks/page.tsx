@@ -78,7 +78,7 @@ export default function CrazySocks() {
         {/* PageHeader */}
         <PageHeader
           title="Crazy Socks Gift Bags"
-          subtitle="Empower your Corporate Social Responsibility program to sponsor and host gift-bag–making events for hospitalized children."
+          subtitle="Sponsor and host a gift bag–making event for hospitalized children."
         />
       </div>
 
@@ -90,8 +90,13 @@ export default function CrazySocks() {
               <div className="mb-6">
                 <FormButton
                   formType="crazy-socks-sponsor"
-                  variant="primary"
+                  variant="violet"
                   size="md"
+                  icon={
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                    </svg>
+                  }
                 >
                   Sponsor Gift Bag Event
                 </FormButton>
@@ -115,8 +120,7 @@ export default function CrazySocks() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
-              <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
+              <div className="relative bg-gradient-to-br from-violet-500/40 to-violet-500/50 dark:from-violet-500/60 dark:to-violet-500/70 p-8 rounded-3xl shadow-2xl">
                 <Image
                   src="/images/crazy-socks.jpg"
                   alt="Crazy Socks Gift Bags"
@@ -272,25 +276,17 @@ export default function CrazySocks() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Corporate Partners
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              We bring the fun event to you! Leading companies partner with us to make a difference.
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              We bring the fun event to you! Leading companies partner with us through employee volunteering, team-building events, and corporate social responsibility programs. Together, we make a meaningful difference in the lives of children battling cancer.
             </p>
-
-            {/* SEO-Optimized Corporate Volunteering Paragraph */}
-            <div className="bg-gradient-to-r from-violet-600/10 to-fandango-600/10 dark:from-violet-600/20 dark:to-violet-600/20 rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4 text-violet-600 dark:text-saffron-400">Corporate Social Responsibility Through Gift Bag Volunteering</h3>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                Our Gift Bag Project offers a powerful way for companies to engage in <strong>Corporate Social Responsibility (CSR)</strong> through <strong>employee volunteering</strong> and <strong>team-building events</strong>. We provide <strong>turnkey opportunities</strong>, where employees can assemble <strong>gift bags for children battling cancer</strong>. This <strong>hands-on experience</strong> supports <strong>children's health and well-being</strong> while delivering <strong>measurable community impact</strong>. Through <strong>Volunteer Days</strong>, <strong>Volunteer Time Off (VTO)</strong>, and skills-based volunteering, companies can strengthen <strong>philanthropy partnerships</strong> and <strong>nonprofit collaboration</strong>. By partnering with KCCF, corporations contribute to <strong>scalable CSR initiatives</strong> that bring hope and joy to young patients while fostering a stronger workplace culture.
-              </p>
-            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Meta Leadership */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/MetaLeadershipMakingfitBags-scaled.jpg"
                     alt="Meta Leadership"
@@ -305,10 +301,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Bank of America */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/bankofamerica-scaled.jpeg"
                     alt="Bank of America"
@@ -323,10 +319,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Aflac Global Investments */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
                   <Image
                     src="/images/AlfacGiftMakingEvent-scaled.jpeg"
                     alt="Aflac Global Investments"
@@ -341,10 +337,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Forvis Mazars Group */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/giftbagevent2-scaled.jpeg"
                     alt="Forvis Mazars Group"
@@ -359,10 +355,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Elana and Olivia */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/sumitomo-csr.jpg"
                     alt="Sumitomo Mitsui Bank CSR Event"
@@ -377,10 +373,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Meta CS Gift Bag Event */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
                   <Image
                     src="/images/ubs-season-of-service.png"
                     alt="UBS Season of Service"
@@ -407,25 +403,27 @@ export default function CrazySocks() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
               Sponsor Gift Bag Event
             </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              For hospitalized children battling cancer
-            </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-gray-900 text-center">
+            <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 text-gray-900 text-center">
               <p className="text-lg text-gray-700 mb-8">
                 Ready to make a difference? Partner with us to sponsor a gift bag event and bring joy to hospitalized children.
               </p>
 
               <FormButton
                 formType="crazy-socks-sponsor"
-                variant="primary"
+                variant="violet"
                 size="lg"
                 className="min-w-[250px]"
+                icon={
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                  </svg>
+                }
               >
                 Sponsor Gift Bag Event
               </FormButton>

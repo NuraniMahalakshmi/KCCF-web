@@ -129,10 +129,10 @@ export default function Footer() {
             
             <FormButton
               formType="newsletter-signup"
-              variant="orange"
+              variant="primary"
               size="md"
               fullWidth={true}
-              className="bg-orange-600 hover:bg-orange-700"
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30"
             >
               Subscribe to Newsletter
             </FormButton>
