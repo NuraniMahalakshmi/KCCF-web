@@ -104,7 +104,7 @@ export default function HomeContent() {
                 <Link href="/our-story" className="btn-primary btn-primary-violet py-3 px-8 rounded-full font-semibold text-center">
                   Read Her Story
                 </Link>
-                <Link href="/our-story/#bookelanaformsection" className="btn-primary btn-outline-violet py-3 px-8 rounded-full font-semibold text-center">
+                <Link href="/our-story#bookelanaformsection" className="btn-primary btn-primary-orange py-3 px-8 rounded-full font-semibold text-center">
                   Book Elana to Speak
                 </Link>
               </div>
@@ -112,8 +112,7 @@ export default function HomeContent() {
 
             <div className="order-1 lg:order-2">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-violet-400 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
-                <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
+                <div className="relative bg-gradient-to-br from-violet-500/40 to-violet-500/50 dark:from-violet-500/60 dark:to-violet-500/70 p-8 rounded-3xl shadow-2xl">
                   <Image
                     src="/images/NUP_206704_00566-scaled.jpg"
                     alt="Elana Koenig"
