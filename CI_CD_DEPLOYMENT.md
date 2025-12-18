@@ -174,7 +174,7 @@ Runs on: `ubuntu-latest`
 **Cache Strategy:**
 
 ```yaml
-key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
+key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
 ```
 
 - Cache invalidates when dependencies or source code changes

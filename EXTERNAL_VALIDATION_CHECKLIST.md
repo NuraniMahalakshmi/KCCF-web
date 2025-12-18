@@ -175,7 +175,7 @@ Verify all form embed IDs are active and functional:
 ### Functional Testing
 
 - [ ] **Navigation** - All menu links work correctly
-- [ ] **Donation modal** - Opens and processes donations
+- [ ] **Donation page** - `/donate` loads and processes donations correctly
 - [ ] **Form modals** - All forms load and submit correctly
 - [ ] **Newsletter signup** - Subscription works
 - [ ] **Dark mode** - Theme toggle works
@@ -195,8 +195,8 @@ Verify all form embed IDs are active and functional:
 
 ## Notes
 
-- Document created: November 2025
-- Last updated: November 2025
+- Document created: December 2025
+- Last updated: December 2025
 - Created as part of production go-live documentation review
 
 ---
