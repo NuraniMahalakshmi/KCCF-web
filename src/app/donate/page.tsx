@@ -115,34 +115,63 @@ export default function Donate() {
                 <span className="text-2xl" aria-hidden="true">🏢</span>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Corporate Matching</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Multiply your impact through your employer.</p>
-              <div className="flex justify-center">
-                <DonationButton campaign="Corporate Matching" variant="primary" size="md">Get Started</DonationButton>
-              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Check if your company offers a matching gift program.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Any questions, contact us at{' '}
+                <a href="mailto:join@thekccf.org" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
+                </a>
+                {' '}or call{' '}
+                <a href="tel:+19177656272" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  (917) 765‑6272
+                </a>
+              </p>
             </div>
 
-            {/* Stock Donation */}
+            {/* Stock Donations */}
             <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">📈</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Stock Donation</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Donate appreciated securities for tax benefits.</p>
-              <div className="flex justify-center">
-                <DonationButton campaign="Stock Donation" variant="primary" size="md">Learn More</DonationButton>
-              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Stock Donations</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                You can donate your appreciated stock here:
+                <br />
+                <span className="font-semibold">RBC DTC # 0235</span>
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Any questions, contact us at{' '}
+                <a href="mailto:join@thekccf.org" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
+                </a>
+                {' '}or call{' '}
+                <a href="tel:+19177656272" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  (917) 765‑6272
+                </a>
+              </p>
             </div>
 
-            {/* Planned or Estate Gift */}
+            {/* Donor Advised Funds (DAF) */}
             <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-fandango-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🎗️</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Planned or Estate Gift</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Leave a lasting legacy for children with cancer.</p>
-              <div className="flex justify-center">
-                <DonationButton campaign="Planned Gift" variant="primary" size="md">Learn More</DonationButton>
-              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Donor Advised Funds (DAF)</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                You can make donation through your Donor Advised Funds through this link:
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                To learn more, contact us at{' '}
+                <a href="mailto:join@thekccf.org" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
+                </a>
+                {' '}or call{' '}
+                <a href="tel:+19177656272" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  (917) 765‑6272
+                </a>
+              </p>
             </div>
           </div>
         </div>

@@ -133,23 +133,19 @@ export default function Camp() {
               <ul className="space-y-3 text-violet-600 dark:text-white">
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
+                  No cost to families
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
                   Medical staff available 24/7
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
-                  All activities adapted for various abilities
+                  Activities adapted for all abilities
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
-                  Nutritious meals and snacks provided
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
-                  Transportation available if needed
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
-                  No cost to families
+                  All dietary options available
                 </li>
               </ul>
             </div>
