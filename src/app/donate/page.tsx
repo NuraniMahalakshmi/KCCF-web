@@ -46,41 +46,50 @@ export default function Donate() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Why Your <span className="text-violet-600 dark:text-saffron-400">Gift</span> Matters
+              Why Your Gift Matters
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Your gift provides emergency financial support to families with children battling cancer. You help cover meals, travel, lodging, and essential care during long hospital stays, bringing comfort, stability, and hope when they need it most.
+              Your gift provides critical financial, emotional, and practical support to children battling cancer and their families such as cancer treatment, meals, travel, lodging and essential care during long hospital stays, bringing comfort, stability, and hope when they need it most.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
+            {/* Help Families Financially */}
             <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-2xl" aria-hidden="true">🏠</span>
+                <span className="text-2xl">🏠</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Keep Families Housed</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Help Families Financially</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Cover rent, utilities, and essentials when parents must miss work to care for their child.
+                <strong>$50</strong> – Provides a warm dinner for a family during their child&apos;s treatment<br/>
+                <strong>$150</strong> – Covers one night of safe lodging near the hospital<br/>
+                <strong>$1,000</strong> – Helps one family afford medical co-pays and critical living expenses
               </p>
             </div>
 
+            {/* Bring Joy Bags to Hospitals */}
             <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-2xl" aria-hidden="true">🚗</span>
+                <span className="text-2xl">🎁</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Fund Critical Travel</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Bring Joy Bags to Hospitals</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Provide rides and gas to life-saving appointments when treatment centers are far from home.
+                <strong>$25</strong> – Sends a Joy Bag to a hospitalized child filled with comfort and love<br/>
+                <strong>$100</strong> – Delivers care bags for both a child and their caregiver during treatment<br/>
+                <strong>$5,000</strong> – Provides Joy Bags for every child on a full hospital floor
               </p>
             </div>
 
+            {/* Heal Emotionally in KCCF Camp */}
             <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-fandango-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-2xl" aria-hidden="true">🎁</span>
+                <span className="text-2xl">🏕️</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Bring Joy in Hospitals</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Heal Emotionally in KCCF Camp</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Sponsor Crazy Socks Gift Bags that brighten long hospital days for brave kids.
+                <strong>$250</strong> – Covers a full day of emotional healing and connection at KCCF Camp<br/>
+                <strong>$1,000</strong> – Sponsors a child&apos;s full Healing Camp experience<br/>
+                <strong>$5,000</strong> – Supports therapeutic programs for an entire KCCF Camp session
               </p>
             </div>
           </div>
@@ -92,7 +101,7 @@ export default function Donate() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Ways to <span className="text-violet-600 dark:text-saffron-400">Give</span>
+              Ways to Give
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Choose the option that works best for you. Every gift makes a real difference.
@@ -100,78 +109,69 @@ export default function Donate() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* One-Time Gift */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
-              <div className="w-14 h-14 bg-violet-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                <span className="text-2xl" aria-hidden="true">💝</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">One-Time Gift</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Make an immediate impact today.</p>
-              <div className="flex flex-wrap gap-3 justify-center">
-                <DonationButton amount={50} campaign="One-Time" variant="primary" size="md">Donate $50</DonationButton>
-                <DonationButton amount={100} campaign="One-Time" variant="outline" size="md" className="rounded-full">Donate $100</DonationButton>
-              </div>
-            </div>
-
-            {/* Monthly Gift */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
-              <div className="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                <span className="text-2xl" aria-hidden="true">🔄</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Monthly Gift</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Provide steady support all year.</p>
-              <div className="flex flex-wrap gap-3 justify-center">
-                <DonationButton amount={20} campaign="Monthly" variant="primary" size="md">Give $20/mo</DonationButton>
-                <DonationButton amount={35} campaign="Monthly" variant="outline" size="md" className="rounded-full">Give $35/mo</DonationButton>
-              </div>
-            </div>
-
-            {/* DAF Donation */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
-              <div className="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                <span className="text-2xl" aria-hidden="true">📋</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">DAF Donation</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Give through your Donor Advised Fund.</p>
-              <div className="flex justify-center">
-                <DonationButton campaign="DAF Donation" variant="primary" size="md">Learn More</DonationButton>
-              </div>
-            </div>
-
             {/* Corporate Matching */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+            <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🏢</span>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Corporate Matching</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Multiply your impact through your employer.</p>
-              <div className="flex justify-center">
-                <DonationButton campaign="Corporate Matching" variant="primary" size="md">Get Started</DonationButton>
-              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Check if your company offers a matching gift program.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Any questions, contact us at{' '}
+                <a href="mailto:join@thekccf.org" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
+                </a>
+                {' '}or call{' '}
+                <a href="tel:+19177656272" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  (917) 765‑6272
+                </a>
+              </p>
             </div>
 
-            {/* Stock Donation */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+            {/* Stock Donations */}
+            <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">📈</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Stock Donation</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Donate appreciated securities for tax benefits.</p>
-              <div className="flex justify-center">
-                <DonationButton campaign="Stock Donation" variant="primary" size="md">Learn More</DonationButton>
-              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Stock Donations</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                You can donate your appreciated stock here:
+                <br />
+                <span className="font-semibold">RBC DTC # 0235</span>
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Any questions, contact us at{' '}
+                <a href="mailto:join@thekccf.org" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
+                </a>
+                {' '}or call{' '}
+                <a href="tel:+19177656272" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  (917) 765‑6272
+                </a>
+              </p>
             </div>
 
-            {/* Planned or Estate Gift */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+            {/* Donor Advised Funds (DAF) */}
+            <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-fandango-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🎗️</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Planned or Estate Gift</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Leave a lasting legacy for children with cancer.</p>
-              <div className="flex justify-center">
-                <DonationButton campaign="Planned Gift" variant="primary" size="md">Learn More</DonationButton>
-              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Donor Advised Funds (DAF)</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                You can make a donation through your Donor Advised Funds.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                To learn more, contact us at{' '}
+                <a href="mailto:join@thekccf.org" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
+                </a>
+                {' '}or call{' '}
+                <a href="tel:+19177656272" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  (917) 765‑6272
+                </a>
+              </p>
             </div>
           </div>
         </div>
