@@ -55,7 +55,7 @@ export default function DonationCard() {
           {platform === 'zeffy' ? (
             <>No platform or processing fees. <span className="font-bold text-violet-600 dark:text-violet-400">100% of your gift supports KCCF.</span></>
           ) : (
-            <>Standard payment processing fees apply. Supports PayPal, Venmo, bank transfers & donor-advised funds.</>
+            <>Standard payment processing fees apply. <span className="font-bold text-violet-600 dark:text-violet-400">Supports PayPal, Venmo, and bank transfers.</span></>
           )}
         </p>
       </div>

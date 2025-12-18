@@ -45,10 +45,10 @@ export default function Donate() {
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-bold mb-6 text-violet-700 dark:text-saffron-600">
               Why Your Gift Matters
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-violet-600 dark:text-white max-w-3xl mx-auto">
               Your gift provides critical financial, emotional, and practical support to children battling cancer and their families such as cancer treatment, meals, travel, lodging and essential care during long hospital stays, bringing comfort, stability, and hope when they need it most.
             </p>
           </div>
@@ -59,8 +59,8 @@ export default function Donate() {
               <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏠</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Help Families Financially</h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Help Families Financially</h3>
+              <p className="text-violet-600 dark:text-white leading-relaxed">
                 <strong>$50</strong> – Provides a warm dinner for a family during their child&apos;s treatment<br/>
                 <strong>$150</strong> – Covers one night of safe lodging near the hospital<br/>
                 <strong>$1,000</strong> – Helps one family afford medical co-pays and critical living expenses
@@ -72,8 +72,8 @@ export default function Donate() {
               <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🎁</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Bring Joy Bags to Hospitals</h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Bring Joy Bags to Hospitals</h3>
+              <p className="text-violet-600 dark:text-white leading-relaxed">
                 <strong>$25</strong> – Sends a Joy Bag to a hospitalized child filled with comfort and love<br/>
                 <strong>$100</strong> – Delivers care bags for both a child and their caregiver during treatment<br/>
                 <strong>$5,000</strong> – Provides Joy Bags for every child on a full hospital floor
@@ -85,8 +85,8 @@ export default function Donate() {
               <div className="w-16 h-16 bg-fandango-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏕️</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Heal Emotionally in KCCF Camp</h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Heal Emotionally in KCCF Camp</h3>
+              <p className="text-violet-600 dark:text-white leading-relaxed">
                 <strong>$250</strong> – Covers a full day of emotional healing and connection at KCCF Camp<br/>
                 <strong>$1,000</strong> – Sponsors a child&apos;s full Healing Camp experience<br/>
                 <strong>$5,000</strong> – Supports therapeutic programs for an entire KCCF Camp session
@@ -100,10 +100,10 @@ export default function Donate() {
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-bold mb-6 text-violet-700 dark:text-saffron-600">
               Ways to Give
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-violet-600 dark:text-white max-w-3xl mx-auto">
               Choose the option that works best for you. Every gift makes a real difference.
             </p>
           </div>
@@ -114,11 +114,11 @@ export default function Donate() {
               <div className="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🏢</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Corporate Matching</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <h3 className="text-xl font-bold mb-3 text-violet-700 dark:text-saffron-600">Corporate Matching</h3>
+              <p className="text-violet-600 dark:text-white mb-4">
                 Check if your company offers a matching gift program.
               </p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-violet-600 dark:text-white text-sm">
                 Any questions, contact us at{' '}
                 <a href="mailto:join@thekccf.org" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
                   join@thekccf.org
@@ -135,13 +135,13 @@ export default function Donate() {
               <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">📈</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Stock Donations</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <h3 className="text-xl font-bold mb-3 text-violet-700 dark:text-saffron-600">Stock Donations</h3>
+              <p className="text-violet-600 dark:text-white mb-4">
                 You can donate your appreciated stock here:
                 <br />
                 <span className="font-semibold">RBC DTC # 0235</span>
               </p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-violet-600 dark:text-white text-sm">
                 Any questions, contact us at{' '}
                 <a href="mailto:join@thekccf.org" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
                   join@thekccf.org
@@ -158,11 +158,11 @@ export default function Donate() {
               <div className="w-14 h-14 bg-fandango-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🎗️</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Donor Advised Funds (DAF)</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <h3 className="text-xl font-bold mb-3 text-violet-700 dark:text-saffron-600">Donor Advised Funds (DAF)</h3>
+              <p className="text-violet-600 dark:text-white mb-4">
                 You can make a donation through your Donor Advised Funds.
               </p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              <p className="text-violet-600 dark:text-white text-sm mb-4">
                 To learn more, contact us at{' '}
                 <a href="mailto:join@thekccf.org" className="relative z-10 text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
                   join@thekccf.org
