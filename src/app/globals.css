@@ -51,7 +51,7 @@
 :root {
   /* KCCF Brand Colors */
   --color-kccf-purple: #6A2752;
-  --color-kccf-purple-hover: #c084fc;
+  --color-kccf-purple-hover: #8B3669;
   --color-kccf-cyan: #0693e3;
   --color-kccf-amber: #fcb900;
   --color-kccf-orange: #ff6900;
@@ -290,10 +290,6 @@ body {
 }
 
 .btn-violet:hover {
-  background-color: var(--color-kccf-purple-hover);
-}
-
-.dark .btn-violet:hover {
   background-color: var(--color-kccf-purple-hover);
 }
 
