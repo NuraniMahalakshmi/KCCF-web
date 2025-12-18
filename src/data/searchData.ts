@@ -64,13 +64,6 @@ export const searchData: SearchItem[] = [
     category: 'Contact'
   },
   {
-    title: 'Newsletter Signup',
-    description: 'Stay updated with our latest news and events',
-    href: '/newsletter-signup',
-    keywords: ['newsletter', 'signup', 'email', 'updates', 'news', 'subscribe'],
-    category: 'Contact'
-  },
-  {
     title: 'Media',
     description: 'Press coverage, videos, and media resources',
     href: '/media',
