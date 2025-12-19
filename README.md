@@ -199,9 +199,8 @@ The site includes a client-side search feature for easy content discovery:
 - **Trigger**: Search icon in navigation bar (magnifying glass icon)
 
 ### Search Features
-- **Keyboard shortcut**: `Cmd/Ctrl + K` to open search
 - **Real-time filtering**: Results update as you type
-- **Category organization**: Results grouped by category (Pages, Programs, About, Get Involved)
+- **Category organization**: Results grouped by category (Pages, Programs, About, Contact)
 - **Keyword matching**: Searches title, description, and keywords
 - **Keyboard navigation**: Arrow keys to navigate results, Enter to select
 - **Responsive design**: Works on desktop and mobile devices
@@ -216,7 +215,7 @@ To add new pages or update search results, edit `src/data/searchData.ts`:
   description: 'Brief description for search results',
   href: '/page-url',
   keywords: ['keyword1', 'keyword2', 'search', 'terms'],
-  category: 'Pages' // or 'Programs', 'About', 'Get Involved'
+  category: 'Pages' // or 'Programs', 'About', 'Contact'
 }
 ```
 
