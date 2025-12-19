@@ -156,7 +156,9 @@ This document identifies technical improvements by comparing KCCF-web with the F
 
 2. **Update jest.setup.js**
    ```typescript
-   import 'jest-axe/extend-expect'
+   import { toHaveNoViolations } from 'jest-axe';
+   
+   expect.extend(toHaveNoViolations);
    ```
 
 3. **Add Accessibility Tests**
