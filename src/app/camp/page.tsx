@@ -169,10 +169,6 @@ export default function Camp() {
                   <span className="text-saffron-500 dark:text-saffron-400 mr-2">•</span>
                   Make a difference in children's lives
                 </li>
-                <li className="flex items-start">
-                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">•</span>
-                  Join a supportive community
-                </li>
               </ul>
             </div>
           </div>
