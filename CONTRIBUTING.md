@@ -24,7 +24,7 @@ We prefer using GitHub Copilot's issue-to-PR functionality for creating pull req
 - Reduce manual coding errors
 - Accelerate the development process
 
-**⚠️ Important:** To use GitHub Copilot's AI features on pull requests (including `@copilot` mentions and code reviews), you must have **write access** to this repository. If you're working from a forked repository, Copilot features will be unavailable due to GitHub's cross-repository security restrictions. See the [Choosing Your Contribution Workflow](#choosing-your-contribution-workflow) section below for details on how to request access.
+**⚠️ Important:** To use GitHub Copilot's AI features on pull requests (including `@copilot` mentions and code reviews), you must have **Write access** to this repository. If you're working from a forked repository, Copilot features will be unavailable due to GitHub's cross-repository security restrictions. See the [Choosing Your Contribution Workflow](#choosing-your-contribution-workflow) section below for details on how to request access.
 
 **👋 New to Coding?** We welcome developers at all experience levels! Request Write access to the repository to enable GitHub Copilot code reviews on your PRs - this provides AI-assisted feedback that helps you learn and improve your code quality. See [Requesting Repository Access](#requesting-repository-access) below.
 
@@ -138,20 +138,20 @@ This project uses GitHub's standard permission model to manage contributions. Un
 
 #### GitHub Permission Levels Explained
 
-| Permission Level | Can Read Code | Can Comment | Can Create PRs | Can Push Branches | Can Review PRs | Can Approve/Merge PRs | Can Manage Settings |
-|-----------------|---------------|-------------|----------------|-------------------|----------------|----------------------|---------------------|
-| **Read** (Public) | ✅ | ✅ | ✅ (via fork) | ❌ | ❌ | ❌ | ❌ |
-| **Triage** | ✅ | ✅ | ✅ (via fork) | ❌ | ✅ (review only) | ❌ | ❌ |
-| **Write** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ❌ | ❌ |
-| **Maintain** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ✅ | Limited |
-| **Admin** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ✅ | ✅ |
+| Permission Level | Can Read Code | Can Comment | Can Create PRs | Can Push Branches | Can Review PRs | Can Approve PRs | Can Merge PRs | Can Manage Settings |
+|-----------------|---------------|-------------|----------------|-------------------|----------------|----------------|--------------|---------------------|
+| **Read** (Public) | ✅ | ✅ | ✅ (via fork) | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Triage** | ✅ | ✅ | ✅ (via fork) | ❌ | ✅ (review only) | ❌ | ❌ | ❌ |
+| **Write** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ✅ | ❌ | ❌ |
+| **Maintain** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ✅ | ✅ | Limited |
+| **Admin** | ✅ | ✅ | ✅ (direct) | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 **Key capabilities by level:**
 
 - **Read (Public)**: Anyone can view public repositories, open issues, and create PRs via forks. This is the default for external contributors.
 - **Triage**: Can manage issues and PRs (labels, assignments, close/reopen) and can review PRs (submit reviews with comments and suggestions), but cannot formally approve PRs for merging or push code directly.
-- **Write**: Can push branches directly to the repository and create PRs from those branches. **This is the recommended level for regular contributors** as it enables full GitHub Copilot functionality on PRs.
-- **Maintain**: Can do everything Write can do, plus approve and merge PRs and manage some repository settings.
+- **Write**: Can push branches directly to the repository and create PRs from those branches, and can approve pull requests but cannot merge them. **This is the recommended level for regular contributors** as it enables full GitHub Copilot functionality on PRs.
+- **Maintain**: Can do everything Write can do, plus merge PRs and manage some repository settings.
 - **Admin**: Full repository control including settings, security, and access management.
 
 **For this project, we primarily use:**
@@ -181,7 +181,7 @@ This project uses GitHub's standard permission model to manage contributions. Un
 - You can create branches directly in the main repository
 - GitHub Copilot features work on your PRs (code reviews, `@copilot` mentions, auto-fixes)
 - Maintainers can push commits to your branches to help you
-- You can review other contributors' PRs and leave comments/suggestions (note: only Maintain/Admin levels can approve and merge PRs)
+- You can review and approve other contributors' PRs (note: only Maintain/Admin levels can merge PRs)
 - You get better visibility into the project's development process
 
 ### Which Access Level Do I Need?
