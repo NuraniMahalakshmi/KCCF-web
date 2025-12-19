@@ -56,7 +56,7 @@ export default function Donate() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Help Families Financially */}
             <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-              <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-violet-100 dark:bg-violet-900 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏠</span>
               </div>
               <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Help Families Financially</h3>
@@ -69,7 +69,7 @@ export default function Donate() {
 
             {/* Bring Joy Bags to Hospitals */}
             <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🎁</span>
               </div>
               <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Bring Joy Bags to Hospitals</h3>
@@ -82,7 +82,7 @@ export default function Donate() {
 
             {/* Heal Emotionally in KCCF Camp */}
             <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-              <div className="w-16 h-16 bg-fandango-500 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-fandango-100 dark:bg-fandango-900 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏕️</span>
               </div>
               <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Heal Emotionally in KCCF Camp</h3>
