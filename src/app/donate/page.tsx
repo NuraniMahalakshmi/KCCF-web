@@ -111,7 +111,7 @@ export default function Donate() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Corporate Matching */}
             <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
-              <div className="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
+              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🏢</span>
               </div>
               <h3 className="text-xl font-bold mb-3 text-violet-700 dark:text-saffron-600">Corporate Matching</h3>
@@ -132,7 +132,7 @@ export default function Donate() {
 
             {/* Stock Donations */}
             <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
-              <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">📈</span>
               </div>
               <h3 className="text-xl font-bold mb-3 text-violet-700 dark:text-saffron-600">Stock Donations</h3>
@@ -155,7 +155,7 @@ export default function Donate() {
 
             {/* Donor Advised Funds (DAF) */}
             <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
-              <div className="w-14 h-14 bg-fandango-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
+              <div className="w-14 h-14 bg-fandango-100 dark:bg-fandango-900 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🎗️</span>
               </div>
               <h3 className="text-xl font-bold mb-3 text-violet-700 dark:text-saffron-600">Donor Advised Funds (DAF)</h3>
