@@ -59,11 +59,11 @@ export default function Donate() {
               <div className="w-16 h-16 bg-violet-100 dark:bg-violet-900 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏠</span>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Help Families Financially</h3>
+              <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Support Families Financially</h3>
               <p className="text-violet-600 dark:text-white leading-relaxed">
-                <strong>$50</strong> – Provides a warm dinner for a family during their child&apos;s treatment<br/>
-                <strong>$150</strong> – Covers one night of safe lodging near the hospital<br/>
-                <strong>$1,000</strong> – Helps one family afford medical co-pays and critical living expenses
+                <strong>$50</strong> – A warm meal for a family<br/>
+                <strong>$150</strong> – One night of safe lodging<br/>
+                <strong>$1,000</strong> – Average co-pay for a child
               </p>
             </div>
 
@@ -74,22 +74,22 @@ export default function Donate() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Bring Joy Bags to Hospitals</h3>
               <p className="text-violet-600 dark:text-white leading-relaxed">
-                <strong>$25</strong> – Sends a Joy Bag to a hospitalized child filled with comfort and love<br/>
-                <strong>$100</strong> – Delivers care bags for both a child and their caregiver during treatment<br/>
-                <strong>$5,000</strong> – Provides Joy Bags for every child on a full hospital floor
+                <strong>$25</strong> – A gift bag for one child<br/>
+                <strong>$100</strong> – Gift bags for a child and caregiver<br/>
+                <strong>$5,000</strong> – Gift bags for an entire hospital floor
               </p>
             </div>
 
-            {/* Heal Emotionally in KCCF Camp */}
+            {/* Heal Emotionally at KCCF Camp */}
             <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
               <div className="w-16 h-16 bg-fandango-100 dark:bg-fandango-900 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏕️</span>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Heal Emotionally in KCCF Camp</h3>
+              <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Heal Emotionally at KCCF Camp</h3>
               <p className="text-violet-600 dark:text-white leading-relaxed">
-                <strong>$250</strong> – Covers a full day of emotional healing and connection at KCCF Camp<br/>
-                <strong>$1,000</strong> – Sponsors a child&apos;s full Healing Camp experience<br/>
-                <strong>$5,000</strong> – Supports therapeutic programs for an entire KCCF Camp session
+                <strong>$250</strong> – One day of healing camp<br/>
+                <strong>$1,000</strong> – One week of camp for a child<br/>
+                <strong>$5,000</strong> – Therapeutic programs during camp
               </p>
             </div>
           </div>
