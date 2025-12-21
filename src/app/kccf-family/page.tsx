@@ -96,7 +96,6 @@ export default function KCCFFamily() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Board Members
             </h2>
-          
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
