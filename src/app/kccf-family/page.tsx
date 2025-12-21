@@ -79,9 +79,7 @@ export default function KCCFFamily() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Board Members
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Dedicated professionals guiding KCCF's mission and strategic direction.
-            </p>
+          
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
