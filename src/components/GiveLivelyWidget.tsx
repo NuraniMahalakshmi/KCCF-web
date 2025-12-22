@@ -26,6 +26,7 @@ export default function GiveLivelyWidget() {
     gl.referrerPolicy = 'strict-origin-when-cross-origin'
     
     // Declare timeout handle before setting up handlers to avoid race conditions
+    // Must use 'let' as it's assigned later; disable incorrect eslint warning
     // eslint-disable-next-line prefer-const
     let loadingTimeout: ReturnType<typeof setTimeout> | undefined
     
@@ -39,9 +40,7 @@ export default function GiveLivelyWidget() {
     }
     
     gl.onload = () => {
-      if (loadingTimeout !== undefined) {
-        clearTimeout(loadingTimeout)
-      }
+      clearTimeout(loadingTimeout)
       // Wait a bit for the widget to render after script loads
       setTimeout(() => {
         setIsLoading(false)
@@ -54,9 +53,7 @@ export default function GiveLivelyWidget() {
     }
     
     gl.onerror = () => {
-      if (loadingTimeout !== undefined) {
-        clearTimeout(loadingTimeout)
-      }
+      clearTimeout(loadingTimeout)
       setIsLoading(false)
       setHasError(true)
       console.error('Failed to load GiveLively widget script')
@@ -76,9 +73,7 @@ export default function GiveLivelyWidget() {
     
     // Cleanup function
     return () => {
-      if (loadingTimeout !== undefined) {
-        clearTimeout(loadingTimeout)
-      }
+      clearTimeout(loadingTimeout)
       // Don't reset scriptLoadedRef to prevent double loading on remount
       
       // Remove the widget modal if it exists
