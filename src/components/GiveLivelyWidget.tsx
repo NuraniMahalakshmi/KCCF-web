@@ -28,9 +28,10 @@ export default function GiveLivelyWidget() {
     // Set a timeout to hide loading spinner after timeout regardless
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false)
-      // If still loading after timeout, check if widget loaded
-      const widgetContent = container.querySelector('*')
-      if (!widgetContent) {
+      // If still loading after timeout, check if widget loaded successfully
+      // Look for actual GiveLively widget content, not just any element
+      const widgetContent = container.querySelector('[class*="gl-"], .givelively-widget')
+      if (!widgetContent || !widgetContent.children.length) {
         setHasError(true)
         console.error('GiveLively widget failed to load within timeout period')
       }
@@ -110,7 +111,7 @@ export default function GiveLivelyWidget() {
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Unable to Load Donation Form</h3>
             <p className="text-gray-600 mb-4">
-              We&apos;re having trouble loading the GiveLively donation form. This could be due to network issues or browser security settings.
+              We're having trouble loading the GiveLively donation form. This could be due to network issues or browser security settings.
             </p>
             <p className="text-sm text-gray-500 mb-4">
               Please try switching to Zeffy (no fees!) or refresh the page.
