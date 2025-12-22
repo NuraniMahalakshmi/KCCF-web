@@ -42,7 +42,7 @@ export default function KCCFFamily() {
         {/* PageHeader */}
         <PageHeader
           title="KCCF Family"
-          subtitle="Meet the incredible team that drives our mission."
+          subtitle="Meet the incredible team behind our mission."
         />
       </div>
 
