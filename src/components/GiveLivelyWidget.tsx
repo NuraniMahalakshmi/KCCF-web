@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+const WIDGET_LOADING_TIMEOUT_MS = 5000 // 5 seconds
+
 export default function GiveLivelyWidget() {
   const containerRef = useRef<HTMLDivElement>(null)
   const scriptLoadedRef = useRef(false)
@@ -22,10 +24,10 @@ export default function GiveLivelyWidget() {
     gl.async = true
     gl.referrerPolicy = 'strict-origin-when-cross-origin'
     
-    // Set a timeout to hide loading spinner after 5 seconds regardless
+    // Set a timeout to hide loading spinner after timeout regardless
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false)
-    }, 5000)
+    }, WIDGET_LOADING_TIMEOUT_MS)
     
     gl.onload = () => {
       clearTimeout(loadingTimeout)
@@ -56,12 +58,10 @@ export default function GiveLivelyWidget() {
       // Remove any widget elements that were injected
       try {
         const glElements = document.querySelectorAll(
-          '.gl-modal, .gl-simple-donation-widget > *'
+          '.gl-modal'
         )
         glElements.forEach((element) => {
-          if (element && element.parentNode && element !== container) {
-            element.remove()
-          }
+          element.remove()
         })
       } catch {
         // Silently fail
@@ -74,9 +74,9 @@ export default function GiveLivelyWidget() {
         // Silently fail
       }
       
-      // Clear the container
+      // Clear the container using replaceChildren for proper cleanup
       if (container) {
-        container.innerHTML = ''
+        container.replaceChildren()
       }
     }
   }, [])
