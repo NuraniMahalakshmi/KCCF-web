@@ -25,36 +25,61 @@ export default function GiveLivelyWidget() {
     gl.async = true
     gl.referrerPolicy = 'strict-origin-when-cross-origin'
     
-    // Set a timeout to hide loading spinner after timeout regardless
-    const loadingTimeout = setTimeout(() => {
-      setIsLoading(false)
-      // If still loading after timeout, check if widget loaded successfully
-      // Look for actual GiveLively widget content, not just any element
-      const widgetContent = container.querySelector('[class*="gl-"], .givelively-widget')
-      if (!widgetContent || !widgetContent.children.length) {
-        setHasError(true)
-        console.error('GiveLively widget failed to load within timeout period')
-      }
-    }, WIDGET_LOADING_TIMEOUT_MS)
+    // Declare timeout handle before setting up handlers to avoid race conditions
+    // eslint-disable-next-line prefer-const
+    let loadingTimeout: ReturnType<typeof setTimeout> | undefined
+    
+    // Helper function to verify widget loaded successfully
+    const checkWidgetLoaded = () => {
+      // Look for specific GiveLively widget elements
+      const widgetContent = container.querySelector(
+        '.gl-simple-donation-widget, #gl-widget-modal, .gl-modal, .givelively-widget'
+      )
+      return widgetContent && widgetContent.children.length > 0
+    }
     
     gl.onload = () => {
-      clearTimeout(loadingTimeout)
-      setIsLoading(false)
+      if (loadingTimeout !== undefined) {
+        clearTimeout(loadingTimeout)
+      }
+      // Wait a bit for the widget to render after script loads
+      setTimeout(() => {
+        setIsLoading(false)
+        // Verify widget actually rendered
+        if (!checkWidgetLoaded()) {
+          setHasError(true)
+          console.error('GiveLively script loaded but widget failed to render')
+        }
+      }, 500)
     }
     
     gl.onerror = () => {
-      clearTimeout(loadingTimeout)
+      if (loadingTimeout !== undefined) {
+        clearTimeout(loadingTimeout)
+      }
       setIsLoading(false)
       setHasError(true)
       console.error('Failed to load GiveLively widget script')
     }
     
+    // Set a timeout to hide loading spinner after timeout regardless
+    loadingTimeout = setTimeout(() => {
+      setIsLoading(false)
+      // If still loading after timeout, check if widget loaded successfully
+      if (!checkWidgetLoaded()) {
+        setHasError(true)
+        console.error('GiveLively widget failed to load within timeout period')
+      }
+    }, WIDGET_LOADING_TIMEOUT_MS)
+    
     document.body.appendChild(gl)
     
     // Cleanup function
     return () => {
-      clearTimeout(loadingTimeout)
-      scriptLoadedRef.current = false
+      if (loadingTimeout !== undefined) {
+        clearTimeout(loadingTimeout)
+      }
+      // Don't reset scriptLoadedRef to prevent double loading on remount
       
       // Remove the widget modal if it exists
       try {
@@ -95,7 +120,11 @@ export default function GiveLivelyWidget() {
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-violet-600 mx-auto mb-4"></div>
+            <div
+              className="animate-spin rounded-full h-16 w-16 border-b-4 border-violet-600 mx-auto mb-4"
+              role="status"
+              aria-label="Loading donation form"
+            ></div>
             <p className="text-lg font-medium text-gray-700">Loading donation form...</p>
             <p className="text-sm text-gray-500 mt-2">Please wait while we prepare the form</p>
           </div>
@@ -104,8 +133,8 @@ export default function GiveLivelyWidget() {
       {!isLoading && hasError && (
         <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
           <div className="text-center max-w-md px-4">
-            <div className="text-red-500 mb-4">
-              <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="text-red-500 mb-4" aria-label="Error loading donation form">
+              <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
             </div>
