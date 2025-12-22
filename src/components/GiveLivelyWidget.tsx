@@ -22,19 +22,27 @@ export default function GiveLivelyWidget() {
     gl.async = true
     gl.referrerPolicy = 'strict-origin-when-cross-origin'
     
+    // Set a timeout to hide loading spinner after 5 seconds regardless
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false)
+    }, 5000)
+    
     gl.onload = () => {
+      clearTimeout(loadingTimeout)
       setIsLoading(false)
     }
     
     gl.onerror = () => {
+      clearTimeout(loadingTimeout)
       setIsLoading(false)
-      console.error('Failed to load GiveLively widget')
+      console.error('Failed to load GiveLively widget script')
     }
     
     document.body.appendChild(gl)
     
     // Cleanup function
     return () => {
+      clearTimeout(loadingTimeout)
       scriptLoadedRef.current = false
       
       // Remove the widget modal if it exists
