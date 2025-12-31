@@ -5,6 +5,7 @@ import Link from 'next/link';
 import DonationButton from '@/components/DonationButton';
 import PartnersCarousel from '@/components/PartnersCarousel';
 import CallToAction from '@/components/CallToAction';
+import FormButton from '@/components/FormButton';
 import { IMPACT_STATS } from '@/constants/impactStats';
 
 export default function HomeContent() {
@@ -104,9 +105,14 @@ export default function HomeContent() {
                 <Link href="/our-story" className="btn-primary btn-primary-violet py-3 px-8 rounded-full font-semibold text-center">
                   Read Her Story
                 </Link>
-                <Link href="/our-story#bookelanaformsection" className="btn-primary btn-primary-orange py-3 px-8 rounded-full font-semibold text-center">
+                <FormButton 
+                  formType="book-elana"
+                  variant="orange"
+                  size="md"
+                  className="py-3 px-8"
+                >
                   Book Elana to Speak
-                </Link>
+                </FormButton>
               </div>
             </div>
 
