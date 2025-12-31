@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import ThemeToggle from './ThemeToggle'
 import { useTheme } from '@/contexts/ThemeContext'
@@ -18,7 +18,8 @@ export default function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileExpandedItems, setMobileExpandedItems] = useState<string[]>([])
   const [isScrolled, setIsScrolled] = useState(false)
-  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
+  const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const isHoveringRef = useRef(false)
   const { theme } = useTheme()
   const { openModal: openSearchModal } = useSearchModal()
   const { openModal } = useFormModal()
@@ -114,6 +115,7 @@ export default function Navigation() {
         { name: 'Volunteer', href: '/volunteer' },
         { name: 'Sponsor Gift Bag Event', formType: 'crazy-socks-sponsor' },
         { name: 'Book Elana for Event', formType: 'book-elana' },
+        { name: 'Newsletter Signup', href: '/newsletter-signup' },
       ]
     },
     { name: 'MEDIA', href: '/media' },
@@ -121,22 +123,29 @@ export default function Navigation() {
   ]
 
   const handleMouseEnter = (itemName: string) => {
-    if (itemName === 'ABOUT' || itemName === 'PROGRAMS' || itemName === 'CONTACT') {
-      // Clear any existing timeout
-      if (dropdownTimeout) {
-        clearTimeout(dropdownTimeout)
-        setDropdownTimeout(null)
-      }
-      setActiveDropdown(itemName)
+    // Mark as hovering
+    isHoveringRef.current = true
+
+    // Clear any pending close timer
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current)
+      dropdownTimeoutRef.current = null
     }
+
+    setActiveDropdown(itemName)
   }
 
   const handleMouseLeave = () => {
-    // Add a small delay before closing the dropdown
-    const timeout = setTimeout(() => {
-      setActiveDropdown(null)
-    }, 150) // 150ms delay
-    setDropdownTimeout(timeout)
+    // Mark as not hovering
+    isHoveringRef.current = false
+
+    // Schedule close only if still not hovering after 150ms
+    dropdownTimeoutRef.current = setTimeout(() => {
+      if (!isHoveringRef.current) {
+        setActiveDropdown(null)
+      }
+      dropdownTimeoutRef.current = null
+    }, 150)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent, itemName: string) => {
@@ -243,14 +252,6 @@ export default function Navigation() {
                   <div 
                     role="menu"
                     className="absolute top-full left-0 mt-1 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
-                    onMouseEnter={() => {
-                      // Clear timeout when entering dropdown
-                      if (dropdownTimeout) {
-                        clearTimeout(dropdownTimeout)
-                        setDropdownTimeout(null)
-                      }
-                    }}
-                    onMouseLeave={handleMouseLeave}
                     onKeyDown={(e) => {
                       if (e.key === 'Escape') {
                         setActiveDropdown(null)
