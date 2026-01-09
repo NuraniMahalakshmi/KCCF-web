@@ -1,7 +1,7 @@
 "use client"
 
 import { type ReactNode } from 'react'
-import Link from 'next/link'
+import { useDonationModal } from '@/contexts/DonationModalContext'
 
 interface DonationButtonProps {
   amount?: number
@@ -22,6 +22,8 @@ export default function DonationButton({
   children,
   icon
 }: DonationButtonProps) {
+  const { openModal } = useDonationModal()
+
   const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#732154] cursor-pointer'
 
   const variantClasses = {
@@ -37,15 +39,18 @@ export default function DonationButton({
     lg: 'px-8 py-4 text-lg rounded-full'
   }
 
-  const href = campaign ? `/donate?campaign=${encodeURIComponent(campaign)}` : '/donate'
+  const handleClick = () => {
+    openModal(campaign || undefined)
+  }
 
   return (
-    <Link
-      href={href}
+    <button
+      type="button"
+      onClick={handleClick}
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
     >
       {children || `Donate $${amount}`}
       {icon && <span className="btn-icon" aria-hidden="true">{icon}</span>}
-    </Link>
+    </button>
   )
 }

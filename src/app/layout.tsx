@@ -17,6 +17,8 @@ import GoogleTagManager from "@/components/GoogleTagManager";
 import { Suspense, type ReactNode } from "react";
 import { SearchModalProvider } from "@/contexts/SearchModalContext";
 import SearchModal from "@/components/SearchModal";
+import { DonationModalProvider } from "@/contexts/DonationModalContext";
+import DonationModal from "@/components/DonationModal";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -62,26 +64,29 @@ export default function RootLayout({
           <CookieConsentProvider>
             <GoogleTagManager />
             <SearchModalProvider>
-              <FormModalProvider>
-                <ArticleModalProvider>
-                  <SlideshowProvider>
-                  <LoadingSpinner />
-                  <Navigation />
-                  <main className="min-h-screen">
-                    {children}
-                  </main>
-                  <CookieConsentBanner />
-                  <ConsentPreferencesModal />
-                  <Footer />
-                  <FormModal />
-                  <ArticleModal />
-                  <SearchModal />
-                  <Suspense fallback={null}>
-                    <SubmissionModal />
-                  </Suspense>
-                  </SlideshowProvider>
-                </ArticleModalProvider>
-              </FormModalProvider>
+              <DonationModalProvider>
+                <FormModalProvider>
+                  <ArticleModalProvider>
+                    <SlideshowProvider>
+                    <LoadingSpinner />
+                    <Navigation />
+                    <main className="min-h-screen">
+                      {children}
+                    </main>
+                    <CookieConsentBanner />
+                    <ConsentPreferencesModal />
+                    <Footer />
+                    <FormModal />
+                    <ArticleModal />
+                    <SearchModal />
+                    <DonationModal />
+                    <Suspense fallback={null}>
+                      <SubmissionModal />
+                    </Suspense>
+                    </SlideshowProvider>
+                  </ArticleModalProvider>
+                </FormModalProvider>
+              </DonationModalProvider>
             </SearchModalProvider>
           </CookieConsentProvider>
         </ThemeProvider>
