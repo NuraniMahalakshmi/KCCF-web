@@ -110,7 +110,7 @@ export default function DonationModal() {
       />
       
       {/* Modal */}
-      <div className="relative rounded-t-2xl sm:rounded-3xl max-w-5xl w-full h-[calc(100vh-2rem)] sm:h-[75vh] min-[1800px]:h-[65vh] overflow-hidden flex items-stretch gap-4"
+      <div className="relative rounded-t-2xl sm:rounded-3xl max-w-5xl w-full h-[100dvh] sm:h-[75vh] min-[1800px]:h-[65vh] overflow-hidden flex items-stretch gap-4"
            style={{ WebkitOverflowScrolling: 'touch' }}>
         {/* Campaign Card - Left Side */}
          <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[#732154] to-violet-600 text-white p-8 flex-col justify-between rounded-2xl">
