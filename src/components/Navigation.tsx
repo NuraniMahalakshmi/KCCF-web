@@ -275,7 +275,7 @@ export default function Navigation() {
             <button
               onClick={openSearchModal}
               aria-label="Search"
-              className={`p-2 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 ${
+              className={`p-2 rounded-lg transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 ${
                 isScrolled 
                   ? 'text-violet-600 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800' 
                   : 'text-white drop-shadow-[0_0_4px_rgba(0,0,0,0.6)] hover:bg-white/10'

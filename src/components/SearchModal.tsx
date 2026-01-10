@@ -118,13 +118,14 @@ export default function SearchModal() {
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Search pages..."
-              className="w-full px-4 py-4 text-base bg-transparent border-none outline-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+              className="w-full px-4 py-4 text-base bg-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+              style={{ outline: 'none', border: 'none' }}
               aria-label="Search pages"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 dark:text-gray-500"
+                className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 dark:text-gray-500 cursor-pointer"
                 aria-label="Clear search"
               >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -134,7 +135,7 @@ export default function SearchModal() {
             )}
             <button
               onClick={closeModal}
-              className="ml-2 px-2 py-1 text-xs font-medium text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-800 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="ml-2 px-2 py-1 text-xs font-medium text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-800 rounded hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer"
               aria-label="Close search"
             >
               ESC
@@ -158,7 +159,7 @@ export default function SearchModal() {
                   <button
                     onClick={() => handleNavigate(item.href)}
                     onMouseEnter={() => setSelectedIndex(index)}
-                    className={`w-full px-4 py-3 flex items-start gap-3 text-left transition-colors ${
+                    className={`w-full px-4 py-3 flex items-start gap-3 text-left transition-colors cursor-pointer ${
                       index === selectedIndex 
                         ? 'bg-violet-50 dark:bg-violet-900/30' 
                         : 'hover:bg-gray-50 dark:hover:bg-gray-800'
