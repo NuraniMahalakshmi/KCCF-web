@@ -110,32 +110,22 @@ export default function DonationModal() {
       />
       
       {/* Modal */}
-      <div className="relative rounded-t-2xl sm:rounded-3xl max-w-5xl w-full h-[100dvh] sm:h-[75vh] min-[1800px]:h-[65vh] overflow-hidden flex items-stretch gap-4"
+      <div className="relative rounded-t-2xl sm:rounded-3xl max-w-5xl w-full h-[100dvh] sm:h-[75vh] md:h-[70vh] lg:h-[65vh] min-[1800px]:h-[55vh] overflow-hidden flex items-stretch gap-4"
            style={{ WebkitOverflowScrolling: 'touch' }}>
         {/* Campaign Card - Left Side */}
-         <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[#732154] to-violet-600 text-white p-8 flex-col justify-between rounded-2xl">
+         <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[#732154] to-violet-600 text-white flex-col justify-between rounded-2xl overflow-hidden">
           <div>
-            <div className="mb-6">
+            <div className="campaign-image-holder">
               <Image 
-                src="/images/cropped-Koenig-Foundation-Logo-01.png"
-                alt="Koenig Childhood Cancer Foundation Logo"
-                className="h-12 w-auto mb-4"
-                width={200}
-                height={48}
-              />
-            </div>
-            
-            <div className="campaign-image-holder mb-6">
-              <Image 
-                className="w-full h-64 object-cover rounded-xl shadow-lg"
+                className="w-full h-72 object-cover"
                 src="/images/ElanaOliviaGiftBags-scaled.jpg"
                 alt="Elana and Olivia preparing gift bags"
                 width="516"
-                height="289"
+                height="288"
               />
             </div>
             
-            <div className="campaign-body">
+            <div className="campaign-body p-8 pt-6">
               <h2 className="text-2xl font-bold mb-4">
                 {campaign || "Help hospitalized children with cancer"}
               </h2>
@@ -147,7 +137,7 @@ export default function DonationModal() {
             </div>
           </div>
           
-          <div className="mt-8 pt-6 border-t border-white/20">
+          <div className="mx-8 mb-8 pt-6 border-t border-white/20">
             <div className="flex items-center justify-between text-sm text-white/80">
               <div className="flex items-center space-x-4">
                 <div className="flex items-center">
