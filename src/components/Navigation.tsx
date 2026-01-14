@@ -8,6 +8,7 @@ import ThemeToggle from './ThemeToggle'
 import { useTheme } from '@/contexts/ThemeContext'
 import { useSearchModal } from '@/contexts/SearchModalContext'
 import { useFormModal, FormType } from '@/contexts/FormModalContext'
+import { useDonationModal } from '@/contexts/DonationModalContext'
 
 type DropdownItem = 
   | { name: string; href: string }
@@ -23,6 +24,7 @@ export default function Navigation() {
   const { theme } = useTheme()
   const { openModal: openSearchModal } = useSearchModal()
   const { openModal } = useFormModal()
+  const { openModal: openDonationModal } = useDonationModal()
   const pathname = usePathname()
   const isHomePage = pathname === '/'
 
@@ -273,7 +275,7 @@ export default function Navigation() {
             <button
               onClick={openSearchModal}
               aria-label="Search"
-              className={`p-2 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 ${
+              className={`p-2 rounded-lg transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 ${
                 isScrolled 
                   ? 'text-violet-600 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800' 
                   : 'text-white drop-shadow-[0_0_4px_rgba(0,0,0,0.6)] hover:bg-white/10'
@@ -283,20 +285,21 @@ export default function Navigation() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
-            <Link
-              href="/donate"
-              className={`px-6 py-2 rounded-full text-sm font-semibold leading-none transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full ${
+            <button
+              type="button"
+              onClick={() => openDonationModal()}
+              className={`px-6 py-3 rounded-full text-sm font-semibold leading-none transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full ${
                 isScrolled 
                   ? 'bg-orange-600 hover:bg-orange-700 text-white' 
                   : 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
               }`}
             >
               DONATE
-            </Link>
+            </button>
             <ThemeToggle className={
               !isScrolled 
-                ? "p-2 rounded-full border border-white/30 bg-white/20 hover:bg-white/30 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:rounded-full drop-shadow-[0_0_4px_rgba(0,0,0,0.6)] [&_svg]:text-white" 
-                : "p-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-800/80 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full [&_svg]:text-gray-700 dark:[&_svg]:text-gray-300"
+                ? "p-2 rounded-full border border-white/30 bg-white/20 hover:bg-white/30 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:rounded-full drop-shadow-[0_0_4px_rgba(0,0,0,0.6)] [&_svg]:text-white cursor-pointer" 
+                : "p-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-800/80 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full [&_svg]:text-gray-700 dark:[&_svg]:text-gray-300 cursor-pointer"
             } />
           </div>
 
@@ -412,13 +415,16 @@ export default function Navigation() {
               
               {/* Donate Button */}
               <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700">
-                <Link
-                  href="/donate"
-                  onClick={() => setIsMenuOpen(false)}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    openDonationModal()
+                  }}
                   className="block w-full px-4 py-4 rounded-lg text-base font-semibold transition-all duration-200 hover:opacity-90 text-center bg-orange-600 hover:bg-orange-700 text-white cursor-pointer touch-manipulation"
                 >
                   DONATE
-                </Link>
+                </button>
               </div>
 
               {/* Theme Toggle (Mobile) */}
