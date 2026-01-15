@@ -146,6 +146,13 @@ export default function DonationModal() {
             </div>
             
             <div className="campaign-body p-4 xl:p-6 min-[1800px]:p-8 pt-4 xl:pt-5 min-[1800px]:pt-6 flex-1 min-h-0">
+              <Image
+                src="/kccf_logo_light.png"
+                alt="KCCF Logo"
+                width={120}
+                height={40}
+                className="mb-3 xl:mb-4"
+              />
               <h2 
                 className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl"
               >
