@@ -81,7 +81,7 @@ export default function DonationModal() {
   const { isOpen, closeModal, campaign } = useDonationModal()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const [iframeLoaded, setIframeLoaded] = useState(false)
-  const [isProviderSectionOpen, setIsProviderSectionOpen] = useState(false)
+  const [isProviderSectionOpen, setIsProviderSectionOpen] = useState(true)
 
   // Reset iframeLoaded when modal opens or provider changes
   useEffect(() => {
@@ -130,50 +130,53 @@ export default function DonationModal() {
       />
       
       {/* Modal */}
-      <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[400px] flex items-stretch gap-4 my-auto">
+      <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[600px] flex items-stretch gap-4 my-auto">
         {/* Campaign Card - Left Side */}
          <div className="hidden lg:flex lg:w-1/2 h-full bg-gradient-to-br from-[#732154] to-violet-600 text-white flex-col justify-between rounded-2xl overflow-hidden">
-          <div className="overflow-auto">
-            <div className="campaign-image-holder">
+          <div className="flex-1 min-h-0 flex flex-col">
+            <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-72">
               <Image 
-                className="w-full h-40 xl:h-56 min-[1800px]:h-72 object-cover"
-                style={{ objectPosition: 'center 30%' }}
-                src="/images/ElanaOliviaGiftBags-scaled.jpg"
-                alt="Elana and Olivia preparing gift bags"
+                className="w-full h-72 object-cover scale-[1.3] origin-left"
+                style={{ objectPosition: 'left 20%' }}
+                src="/images/elana-charlotte.jpg"
+                alt="Elana and Charlotte"
                 width="516"
                 height="288"
               />
             </div>
             
-            <div className="campaign-body p-4 xl:p-6 min-[1800px]:p-8 pt-4 xl:pt-5 min-[1800px]:pt-6">
+            <div className="campaign-body p-4 xl:p-6 min-[1800px]:p-8 pt-4 xl:pt-5 min-[1800px]:pt-6 flex-1 min-h-0">
+              <Image
+                src="/kccf_logo_light.png"
+                alt="KCCF Logo"
+                width={120}
+                height={40}
+                className="mb-3 xl:mb-4"
+              />
               <h2 
-                className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4"
-                style={{ fontSize: 'clamp(1rem, 1.5vw, 1.5rem)' }}
+                className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl"
               >
-                {campaign || "Help hospitalized children with cancer"}
+                {campaign || "Your Donation Saves Lives!"}
               </h2>
               <p 
-                className="text-white/90 leading-relaxed"
-                style={{ fontSize: 'clamp(0.75rem, 1vw, 1rem)' }}
+                className="text-white/90 leading-relaxed text-sm xl:text-base"
               >
-                Your donation helps provide support and resources to hospitalized children battling cancer. 
-                Your generosity brings joy, comfort, and hope to children during their difficult hospital stays. 
-                Every donation makes a real difference in a child's life.
+                KCCF supports children fighting cancer by paying for medical bills, lodging, and food. Whether large or small, every donation makes a real difference for a family in need.
               </p>
             </div>
           </div>
           
-          <div className="mx-4 xl:mx-6 min-[1800px]:mx-8 mb-4 xl:mb-6 min-[1800px]:mb-8 pt-4 xl:pt-5 min-[1800px]:pt-6 border-t border-white/20 flex-shrink-0">
-            <div className="flex items-center justify-between text-white/80" style={{ fontSize: 'clamp(0.65rem, 0.9vw, 0.875rem)' }}>
-              <div className="flex items-center space-x-2 xl:space-x-4">
+          <div className="mx-4 xl:mx-6 min-[1800px]:mx-8 mb-4 xl:mb-6 min-[1800px]:mb-8 pt-4 xl:pt-5 min-[1800px]:pt-6 border-t border-white/20 flex-shrink-0 text-center">
+            <div className="flex items-center justify-center text-white/80 text-sm xl:text-base">
+              <div className="flex items-center space-x-4 xl:space-x-6">
                 <div className="flex items-center">
-                  <svg className="w-3 h-3 xl:w-4 xl:h-4 min-[1800px]:w-5 min-[1800px]:h-5 mr-1 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>Secure & Trusted</span>
                 </div>
                 <div className="flex items-center">
-                  <svg className="w-3 h-3 xl:w-4 xl:h-4 min-[1800px]:w-5 min-[1800px]:h-5 mr-1 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>Tax Deductible</span>
@@ -184,11 +187,10 @@ export default function DonationModal() {
               <Link 
                 href="/donate"
                 onClick={closeModal}
-                className="inline-flex items-center text-white/90 hover:text-white underline underline-offset-2 transition-colors"
-                style={{ fontSize: 'clamp(0.65rem, 0.9vw, 0.875rem)' }}
+                className="inline-flex items-center text-white/90 hover:text-white underline underline-offset-2 transition-colors font-semibold text-sm xl:text-base"
               >
                 Other ways to donate
-                <svg className="w-3 h-3 xl:w-4 xl:h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 xl:w-5 xl:h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
@@ -218,10 +220,6 @@ export default function DonationModal() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              
-              <span className="ml-1 sm:ml-2 text-gray-500 dark:text-gray-400 text-[10px] sm:text-xs">
-                ▾ Change
-              </span>
               
               {campaign && (
                 <p 
@@ -280,7 +278,7 @@ export default function DonationModal() {
                     </button>
                     <ul className="mt-1.5 sm:mt-2 text-xs text-gray-600 dark:text-gray-300 list-disc list-inside leading-relaxed">
                       <li>Standard fees</li>
-                      <li>PayPal/Venmo</li>
+                      <li>Paypal / Venmo / DAF</li>
                     </ul>
                   </div>
                 </div>
