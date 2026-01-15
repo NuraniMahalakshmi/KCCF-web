@@ -130,13 +130,13 @@ export default function DonationModal() {
       />
       
       {/* Modal */}
-      <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[400px] flex items-stretch gap-4 my-auto">
+      <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[600px] flex items-stretch gap-4 my-auto">
         {/* Campaign Card - Left Side */}
          <div className="hidden lg:flex lg:w-1/2 h-full bg-gradient-to-br from-[#732154] to-violet-600 text-white flex-col justify-between rounded-2xl overflow-hidden">
           <div className="flex-1 min-h-0 flex flex-col">
-            <div className="campaign-image-holder overflow-hidden flex-shrink-0">
+            <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-72">
               <Image 
-                className="w-full h-40 xl:h-56 min-[1800px]:h-72 object-cover scale-[1.3] origin-left"
+                className="w-full h-72 object-cover scale-[1.3] origin-left"
                 style={{ objectPosition: 'left 20%' }}
                 src="/images/elana-charlotte.jpg"
                 alt="Elana and Charlotte"
