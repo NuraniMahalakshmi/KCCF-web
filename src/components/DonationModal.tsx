@@ -221,14 +221,8 @@ export default function DonationModal() {
                 </svg>
               </button>
               
-              {campaign && (
-                <p 
-                  className="flex-1 text-gray-600 dark:text-gray-400 truncate mx-2 text-center"
-                  style={{ fontSize: 'clamp(0.625rem, 1.5vw, 0.875rem)' }}
-                >
-                  {campaign}
-                </p>
-              )}
+              {/* Spacer to keep close button on the right */}
+              <div className="flex-1" />
               
               <button
                 onClick={closeModal}
