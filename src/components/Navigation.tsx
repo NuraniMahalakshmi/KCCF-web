@@ -261,7 +261,7 @@ export default function Navigation() {
                     }}
                   >
                     {item.dropdown.map((dropdownItem) => {
-                      const itemClasses = "block px-4 py-3 text-sm transition-colors duration-150 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-inset focus:bg-gray-50 dark:focus:bg-gray-700"
+                      const itemClasses = "block px-4 py-3 text-sm transition-colors duration-150 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-inset focus:bg-gray-50 dark:focus:bg-gray-700 cursor-pointer"
                       return renderDropdownItem(dropdownItem, itemClasses, () => setActiveDropdown(null))
                     })}
                   </div>
@@ -395,7 +395,7 @@ export default function Navigation() {
                       {mobileExpandedItems.includes(item.name) && (
                         <div className="ml-4 mt-2 space-y-2">
                           {item.dropdown.map((dropdownItem) => {
-                            const itemClasses = "block px-4 py-3 text-sm rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 touch-manipulation"
+                            const itemClasses = "block px-4 py-3 text-sm rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 touch-manipulation cursor-pointer"
                             return renderDropdownItem(dropdownItem, itemClasses, () => setIsMenuOpen(false))
                           })}
                         </div>
