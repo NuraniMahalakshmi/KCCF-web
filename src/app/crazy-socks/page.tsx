@@ -78,7 +78,7 @@ export default function CrazySocks() {
         {/* PageHeader */}
         <PageHeader
           title="Crazy Socks Gift Bags"
-          subtitle="Sponsor and host a gift bag–making event for hospitalized children."
+          subtitle="Sponsor gift bag–making event for hospitalized children."
         />
       </div>
 
