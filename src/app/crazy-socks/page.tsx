@@ -146,7 +146,7 @@ export default function CrazySocks() {
           <div className="grid md:grid-cols-3 gap-8">
             {IMPACT_STATS.CRAZY_SOCKS.map((stat, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center">
-                <div className={`text-4xl font-bold ${stat.color.light} ${stat.color.dark} mb-4`}>
+                <div className="text-4xl font-bold text-[#732154] dark:text-saffron-400 mb-4">
                   {stat.value}
                 </div>
                 <p className="text-gray-600 dark:text-gray-200 text-lg">{stat.label}</p>
