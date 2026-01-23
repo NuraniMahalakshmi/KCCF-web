@@ -185,7 +185,7 @@ export default function DonationModal() {
             </div>
             <div className="mt-2 xl:mt-3 min-[1800px]:mt-4">
               <Link 
-                href="/donate"
+                href="/donate?nomodal=1"
                 onClick={closeModal}
                 className="inline-flex items-center text-white/90 hover:text-white underline underline-offset-2 transition-colors font-semibold text-sm xl:text-base"
               >
@@ -241,7 +241,10 @@ export default function DonationModal() {
                 isProviderSectionOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="px-3 sm:px-4 lg:px-6 pt-2 sm:pt-3 pb-3 sm:pb-4">
+              <div>
+                <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-3">
+                  Choose your preferred donation platform:
+                </p>
                 <div className="flex justify-center gap-3 sm:gap-4">
                   <div className="flex flex-col items-center flex-1 max-w-[150px] sm:max-w-[180px]">
                     <button

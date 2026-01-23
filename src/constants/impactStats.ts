@@ -7,10 +7,6 @@
 export interface ImpactStat {
   value: string;
   label: string;
-  color: {
-    light: string;
-    dark: string;
-  };
 }
 
 // Centralized impact statistics for all pages
@@ -18,64 +14,36 @@ export const IMPACT_STATS = {
   // Home page impact statistics
   HOME: [
     {
-      value: "3,700+",
-      label: "Families Supported Financially",
-      color: {
-        light: "text-violet-600",
-        dark: "dark:text-saffron-400"
-      }
+      value: "3,800+",
+      label: "Families Supported Financially"
     },
     {
-      value: "2,700+",
-      label: "Hospital visits / celebrations",
-      color: {
-        light: "text-violet-600",
-        dark: "dark:text-saffron-400"
-      }
+      value: "2,900+",
+      label: "Hospital visits / celebrations"
     },
     {
-      value: "85,000+",
-      label: "Care Packages",
-      color: {
-        light: "text-violet-600",
-        dark: "dark:text-saffron-400"
-      }
+      value: "95,000+",
+      label: "Care Packages"
     },
     {
       value: "80+",
-      label: "Summer Camp Children",
-      color: {
-        light: "text-violet-600",
-        dark: "dark:text-saffron-400"
-      }
+      label: "Summer Camp Children"
     }
   ] as ImpactStat[],
 
   // Crazy Socks page impact statistics
   CRAZY_SOCKS: [
     {
-      value: "85,000+",
-      label: "Gift Bags Delivered",
-      color: {
-        light: "text-[#732154]",
-        dark: "dark:text-saffron-400"
-      }
+      value: "95,000+",
+      label: "Gift Bags Delivered"
     },
     {
       value: "200,000+",
-      label: "Items Distributed",
-      color: {
-        light: "text-[#732154]",
-        dark: "dark:text-saffron-400"
-      }
+      label: "Items Distributed"
     },
     {
       value: "Worldwide",
-      label: "Global Reach",
-      color: {
-        light: "text-[#732154]",
-        dark: "dark:text-saffron-400"
-      }
+      label: "Global Reach"
     }
   ] as ImpactStat[],
 
