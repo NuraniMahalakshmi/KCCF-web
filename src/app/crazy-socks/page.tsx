@@ -44,12 +44,7 @@ export default function CrazySocks() {
             sizes="100vw"
             priority
           />
-          {/* Gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         </div>
-
-        {/* Warm overlay matching hero section */}
-        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
 
         {/* PageHeader */}
         <PageHeader
