@@ -91,10 +91,17 @@ export default function CrazySocks() {
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
-                  Crazy Socks Gift Bag is KCCF's signature project, inspired by founder Elana's personal journey with cancer at the age of 7. While battling Ewing's sarcoma, a rare and aggressive bone cancer, Elana was struck by how the dull hospital socks mirrored the monotony and sadness of her days.
+                  Crazy Socks Gift Bag is KCCF's signature project, inspired by
+                  founder Elana's personal journey with cancer at the age of 7.
+                  While battling Ewing's sarcoma, a rare and aggressive bone
+                  cancer, Elana was struck by how the dull hospital socks
+                  mirrored the monotony and sadness of her days.
                 </p>
                 <p>
-                  The moment she got home, she would pull them off and throw them away, hoping to leave behind the needles, pain, and fear. She was determined to change that experience for other children fighting cancer.
+                  The moment she got home, she would pull them off and throw
+                  them away, hoping to leave behind the needles, pain, and fear.
+                  She was determined to change that experience for other
+                  children fighting cancer.
                 </p>
                 <p className="text-xl font-semibold text-[#732154] dark:text-saffron-400">
                   To date, more than {IMPACT_STATS.CRAZY_SOCKS[0].value.toLowerCase()} gift bags, containing over {IMPACT_STATS.CRAZY_SOCKS[1].value.toLowerCase()} items, have been delivered to hospitalized children across the United States and around the world.
