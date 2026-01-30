@@ -81,22 +81,9 @@ export default function CrazySocks() {
       {/* About Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
-              <div className="mb-6">
-                <FormButton
-                  formType="crazy-socks-sponsor"
-                  variant="violet"
-                  size="md"
-                  icon={
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                    </svg>
-                  }
-                >
-                  Sponsor Gift Bag Event
-                </FormButton>
-              </div>
+              <div className="mb-6"></div>
 
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
                 Why Crazy Socks Gift Bags?
@@ -112,6 +99,29 @@ export default function CrazySocks() {
                 <p className="text-xl font-semibold text-[#732154] dark:text-saffron-400">
                   To date, more than {IMPACT_STATS.CRAZY_SOCKS[0].value.toLowerCase()} gift bags, containing over {IMPACT_STATS.CRAZY_SOCKS[1].value.toLowerCase()} items, have been delivered to hospitalized children across the United States and around the world.
                 </p>
+              </div>
+              <div className="mt-10 flex-1 flex flex-col items-start sm:items-start">
+                <FormButton
+                  formType="crazy-socks-sponsor"
+                  variant="violet"
+                  size="md"
+                  className="text-lg pr-4 2xl:text-[1.3rem] 2xl:px-6 2xl:py-3 2xl:pr-5"
+                  icon={
+                    // <!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE -->
+                    <svg
+                      className="w-6 h-6 ml-1 2xl:w-7 2xl:h-7 mt-0.5 lg:mt-0 xl:mt-0.5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m48-88a8 8 0 0 1-8 8h-32v32a8 8 0 0 1-16 0v-32H88a8 8 0 0 1 0-16h32V88a8 8 0 0 1 16 0v32h32a8 8 0 0 1 8 8"
+                      />
+                    </svg>
+                  }
+                >
+                  Learn More
+                </FormButton>
               </div>
             </div>
 
