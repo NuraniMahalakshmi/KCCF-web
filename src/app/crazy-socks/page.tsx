@@ -309,8 +309,13 @@ export default function CrazySocks() {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Meta Leadership</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">Elana, teen founder presents!</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Meta Leadership
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
+                "I can not stop myself from crying - what an inspirational
+                speech, what impact!" — Meta Executive
+              </p>
             </div>
 
             {/* Bank of America */}
@@ -327,8 +332,14 @@ export default function CrazySocks() {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Bank of America</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">You make a difference!</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Bank of America
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
+                "We will do it again and again! We will partner in more areas
+                with Elana and KCCF outside Crazy Socks Gift Bags project." —
+                BoA Executive
+              </p>
             </div>
 
             {/* Aflac Global Investments */}
@@ -345,8 +356,12 @@ export default function CrazySocks() {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Aflac Global Investments</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">Hospitalized kids love it!</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Aflac Global Investments
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
+                Hospitalized kids love it!
+              </p>
             </div>
 
             {/* Forvis Mazars Group */}
@@ -363,8 +378,12 @@ export default function CrazySocks() {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Forvis Mazars Group</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">Making a difference together!</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Forvis Mazars Group
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
+                Making a difference together!
+              </p>
             </div>
 
             {/* Elana and Olivia */}
@@ -381,8 +400,12 @@ export default function CrazySocks() {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Sumitomo Mitsui Bank</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">CSR Event</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Sumitomo Mitsui Bank
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
+                CSR Event
+              </p>
             </div>
 
             {/* Meta CS Gift Bag Event */}
@@ -399,8 +422,13 @@ export default function CrazySocks() {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">UBS</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">Season of Service</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                UBS
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
+                "The most impactful 60 minutes our team has spent together this
+                year." — UBS Executive
+              </p>
             </div>
           </div>
         </div>
