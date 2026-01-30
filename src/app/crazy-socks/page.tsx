@@ -104,7 +104,16 @@ export default function CrazySocks() {
                   children fighting cancer.
                 </p>
                 <p className="text-xl font-semibold text-[#732154] dark:text-saffron-400">
-                  To date, more than {IMPACT_STATS.CRAZY_SOCKS[0].value.toLowerCase()} gift bags, containing over {IMPACT_STATS.CRAZY_SOCKS[1].value.toLowerCase()} items, have been delivered to hospitalized children across the United States and around the world.
+                  To date, more than{' '}
+                  <span className="font-bold text-orange-600 text-2xl">
+                    {IMPACT_STATS.CRAZY_SOCKS[0].value.toLowerCase()}
+                  </span>{' '}
+                  gift bags, containing over{' '}
+                  <span className="font-bold text-orange-600 text-2xl">
+                    {IMPACT_STATS.CRAZY_SOCKS[1].value.toLowerCase()}
+                  </span>{' '}
+                  items, have been delivered to hospitalized children across the
+                  United States and around the world.
                 </p>
               </div>
               <div className="mt-10 flex-1 flex flex-col items-start sm:items-start">
