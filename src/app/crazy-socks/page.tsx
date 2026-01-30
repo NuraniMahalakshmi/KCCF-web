@@ -287,7 +287,10 @@ export default function CrazySocks() {
               Corporate Partners
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We bring the fun event to you! Leading companies partner with us through employee volunteering, team-building events, and corporate social responsibility programs. Together, we make a meaningful difference in the lives of children battling cancer.
+              We bring the fun event to you! Leading companies partner with us
+              through employee volunteering, team-building events, and corporate
+              social responsibility programs. Together, we make a meaningful
+              difference in the lives of children battling cancer.
             </p>
           </div>
 
@@ -420,8 +423,9 @@ export default function CrazySocks() {
 
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 text-gray-900 text-center">
-              <p className="text-lg text-gray-700 mb-8">
-                Ready to make a difference? Partner with us to sponsor a gift bag event and bring joy to hospitalized children.
+              <p className="text-lg 2xl:text-2xl text-gray-700 mb-8">
+                Ready to make a difference? Partner with us to sponsor a gift
+                bag event and bring joy to hospitalized children.
               </p>
 
               <FormButton
