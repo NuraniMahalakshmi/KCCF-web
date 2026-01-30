@@ -8,13 +8,15 @@ interface PageHeaderProps {
   subtitle?: string
   image?: string
   childrenRight?: React.ReactNode
+  button?: React.ReactNode
 }
 
 export default function PageHeader({
   title,
   subtitle,
   image,
-  childrenRight
+  childrenRight,
+  button,
 }: PageHeaderProps) {
   return (
     <header className="relative w-full max-w-screen-2xl mx-auto px-4 py-12">
@@ -36,6 +38,11 @@ export default function PageHeader({
             <p className="mt-4 text-white/90 text-lg md:text-xl leading-relaxed drop-shadow-md max-w-[42ch] break-words">
               {subtitle}
             </p>
+          )}
+          {button && (
+            <div className="mt-16">
+              {button}
+            </div>
           )}
         </div>
         {/* RIGHT COLUMN */}
