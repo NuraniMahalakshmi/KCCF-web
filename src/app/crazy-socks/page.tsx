@@ -1,58 +1,34 @@
-"use client"
+'use client'
 
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
-import PageHeader from '@/components/PageHeader'
-import FormButton from '@/components/FormButton'
-import { IMPACT_STATS } from '@/constants/impactStats'
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
+import PageHeader from '@/components/PageHeader';
+import FormButton from '@/components/FormButton';
+import { IMPACT_STATS } from '@/constants/impactStats';
 
 export default function CrazySocks() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  const slideshowImages = [
-    "/images/MetaLeadershipMakingfitBags-scaled.jpg",
-    "/images/bankofamerica-scaled.jpeg",
-    "/images/AlfacGiftMakingEvent-scaled.jpeg",
-    "/images/ElanaOliviaGiftBags-scaled.jpg",
-    "/images/MetaCSGiftBagEvent-scaled.jpg",
-    "/images/giftbagevent2-scaled.jpeg",
-    "/images/IMG_6861-scaled.jpeg",
-    "/images/IMG_6703-scaled.jpeg",
-    "/images/IMG_5046-scaled.jpg",
-    "/images/IMG_2841-scaled.jpg",
-    "/images/IMG_1850-scaled.jpg",
-    "/images/IMG_0875-scaled.jpeg"
-  ]
-
-  const collageImages = [
-    "/images/MetaLeadershipMakingfitBags-scaled.jpg",
-    "/images/bankofamerica-scaled.jpeg",
-    "/images/AlfacGiftMakingEvent-scaled.jpeg",
-    "/images/ElanaOliviaGiftBags-scaled.jpg",
-    "/images/MetaCSGiftBagEvent-scaled.jpg",
-    "/images/giftbagevent2-scaled.jpeg",
-    "/images/IMG_6861-scaled.jpeg",
-    "/images/IMG_6703-scaled.jpeg",
-    "/images/IMG_5046-scaled.jpg",
-    "/images/IMG_2841-scaled.jpg",
-    "/images/IMG_1850-scaled.jpg",
-    "/images/IMG_0875-scaled.jpeg"
-  ]
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slideshowImages.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [slideshowImages.length])
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoRef.current?.play();
+          } else {
+            videoRef.current?.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }, // 50% of video must be visible for autoplay
+    );
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slideshowImages.length)
-  }
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slideshowImages.length) % slideshowImages.length)
-  }
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
@@ -156,115 +132,30 @@ export default function CrazySocks() {
         </div>
       </section>
 
-      {/* Image Gallery Section */}
-      <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Gallery Showcase
+      {/* Video Section */}
+      <section className='py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700'>
+        <div className='container mx-auto px-4'>
+          <div className='text-center mb-16'>
+            <h2 className='text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white'>
+              Event Showcase
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              See the joy and impact of our Crazy Socks Gift Bag events in action.
+            <p className='text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto'>
+              See the joy and impact of our Crazy Socks Gift Bag events in
+              action.
             </p>
           </div>
-
-          {/* Slideshow */}
-          <div className="mb-20">
-            <div className="relative max-w-4xl mx-auto" role="region" aria-label="Event gallery slideshow">
-              <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl" aria-live="polite" aria-atomic="true">
-                {slideshowImages.map((image, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
-                      }`}
-                  >
-                    <Image
-                      src={image}
-                      alt={`Crazy Socks Event ${index + 1} of ${slideshowImages.length}`}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 896px"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  </div>
-                ))}
-
-                {/* Navigation Arrows */}
-                <button
-                  onClick={prevSlide}
-                  aria-label="Previous slide"
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button
-                  onClick={nextSlide}
-                  aria-label="Next slide"
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-
-                {/* Slide Indicators */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10" role="tablist" aria-label="Slide navigation">
-                  {slideshowImages.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSlide(index)}
-                      role="tab"
-                      aria-selected={index === currentSlide}
-                      aria-label={`Go to slide ${index + 1}`}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent ${index === currentSlide ? 'bg-white' : 'bg-white/50'
-                        }`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Animated Collage */}
-          <div className="relative">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
-              {collageImages.map((image, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                    animation: 'fadeInUp 0.6s ease-out forwards'
-                  }}
-                  onClick={() => setCurrentSlide(index)}
-                  aria-label={`View event ${index + 1} in slideshow`}
-                >
-                  <div className="aspect-square relative">
-                    <Image
-                      src={image}
-                      alt={`Crazy Socks Collage ${index + 1}`}
-                      fill
-                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16.66vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                      Event {index + 1}
-                    </div>
-                    {/* Click indicator */}
-                    <div className="absolute top-2 right-2 bg-white/20 backdrop-blur-sm rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                </button>
-              ))}
-            </div>
+          <div className='mb-6'>
+            <video
+              ref={videoRef}
+              controls
+              autoPlay
+              muted
+              loop
+              className='w-auto h-auto max-h-[75vh] mx-auto rounded-2xl shadow-lg'
+            >
+              <source src='/videos/Crazy-Socks-Video.mp4' type='video/mp4' />
+              Your browser doesn't support video.
+            </video>
           </div>
         </div>
       </section>
