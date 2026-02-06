@@ -9,6 +9,17 @@ import { IMPACT_STATS } from '@/constants/impactStats';
 export default function CrazySocks() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
+  const collageImages = [
+    '/images/yellow-shirt.jpg',
+    '/images/IMG_6861-scaled.jpeg',
+    '/images/IMG_6703-scaled.jpeg',
+    '/images/IMG_5046-scaled.jpg',
+    '/images/IMG_2841-scaled.jpg',
+    '/images/IMG_1850-scaled.jpg',
+    '/images/IMG_0875-scaled.jpeg',
+    '/images/hss-crazy-socks.jpg',
+  ];
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,7 +44,7 @@ export default function CrazySocks() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       {/* Hero Section with Background */}
-      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
@@ -50,12 +61,14 @@ export default function CrazySocks() {
         <PageHeader
           title="Crazy Socks Gift Bags"
           subtitle="Sponsor a gift bag–making event for hospitalized children."
+          headerStyle="pt-72 xl:pt-84 pb-12 xl:pl-28 2xl:pl-32"
+          gridStyle="gap-0 lg:grid-cols-1"
           button={
             <FormButton
               formType="crazy-socks-sponsor"
               variant="orange"
               size="md"
-              className="text-lg 2xl:text-[1.3rem]"
+              className="text-lg 2xl:text-[1.3rem] mt-12"
               icon={
                 <svg
                   className="w-6 h-6 lg:w-6 lg:h-6 2xl:w-6.5 2xl:h-6.5"
@@ -80,16 +93,14 @@ export default function CrazySocks() {
 
       {/* About Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="container mx-auto px-4 xl:px-28 2xl:px-32">
+          <div className="grid lg:grid-cols-2 gap-14 2xl:gap-26 items-center">
             <div>
-              <div className="mb-6"></div>
-
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
+              <h2 className="text-4xl md:text-5xl lg:text-[2.5rem] font-bold mb-8 text-violet-600 dark:text-white">
                 Why Crazy Socks Gift Bags?
               </h2>
 
-              <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+              <div className="space-y-6 text-lg xl:text-[1.15rem] 2xl:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
                   Crazy Socks Gift Bag is KCCF's signature project, inspired by
                   founder Elana's personal journey with cancer at the age of 7.
@@ -103,13 +114,13 @@ export default function CrazySocks() {
                   She was determined to change that experience for other
                   children fighting cancer.
                 </p>
-                <p className="text-xl font-semibold text-[#732154] dark:text-saffron-400">
+                <p className="text-xl 2xl:text-[1.7rem] font-semibold text-[#732154] dark:text-saffron-400">
                   To date, more than{' '}
-                  <span className="font-bold text-orange-600 text-2xl">
+                  <span className="font-bold text-orange-600">
                     {IMPACT_STATS.CRAZY_SOCKS[0].value.toLowerCase()}
                   </span>{' '}
                   gift bags, containing over{' '}
-                  <span className="font-bold text-orange-600 text-2xl">
+                  <span className="font-bold text-orange-600">
                     {IMPACT_STATS.CRAZY_SOCKS[1].value.toLowerCase()}
                   </span>{' '}
                   items, have been delivered to hospitalized children across the
@@ -120,8 +131,8 @@ export default function CrazySocks() {
                 <FormButton
                   formType="crazy-socks-sponsor"
                   variant="violet"
-                  size="md"
-                  className="text-lg pr-4 2xl:text-[1.3rem] 2xl:px-6 2xl:py-3 2xl:pr-5"
+                  size="lg"
+                  className="text-lg pr-4 2xl:text-[1.35rem] 2xl:px-6 2xl:py-3 2xl:pr-5"
                   icon={
                     // <!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE -->
                     <svg
@@ -179,10 +190,10 @@ export default function CrazySocks() {
                 <br className="mb-2" />
                 <span className="ml-2 text-black dark:text-white font-normal">
                   <span className="text-violet-700 dark:text-saffron-400 font-semibold">
-                    We Coordinate
+                    KCCF Coordinates
                   </span>{' '}
-                  <br className="mb-2" /> KCCF brings all supplies to your
-                  office
+                  <br className="mb-2" /> We deliver supplies and handle the
+                  setup
                 </span>
               </li>
               <li className="list-item font-semibold mb-8 md:mb-10 text-center text-violet-600 dark:text-saffron-400">
@@ -202,8 +213,8 @@ export default function CrazySocks() {
                   <span className="text-violet-700 dark:text-saffron-400 font-semibold">
                     Elana Inspires
                   </span>{' '}
-                  <br className="mb-1" /> A 15-minute keynote that resets office
-                  culture
+                  <br className="mb-1" /> Our teen-founder and survivor shares
+                  the "why"
                 </span>
               </li>
               <li className="list-item font-semibold mb-9 sm:mb-11 md:mb-12 text-center text-violet-600 dark:text-saffron-400">
@@ -223,8 +234,8 @@ export default function CrazySocks() {
                   <span className="text-violet-700 dark:text-saffron-400 font-semibold">
                     Team Builds
                   </span>{' '}
-                  <br className="mb-1" /> Employees pack bags and write notes of
-                  hope
+                  <br className="mb-1" /> Participants write notes of hope and
+                  assemble bags
                 </span>
               </li>
             </ol>
@@ -256,12 +267,8 @@ export default function CrazySocks() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Event Showcase
+              Meta Leadership Event
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              See the joy and impact of our Crazy Socks Gift Bag events in
-              action.
-            </p>
           </div>
           <div className="mb-6">
             <video
@@ -278,6 +285,40 @@ export default function CrazySocks() {
           </div>
         </div>
       </section>
+      {/* Image Gallery Section */}
+      <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
+        <div className="relative">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Your Impact
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8 max-w-6xl mx-auto px-2 sm:px-8">
+            {collageImages.map((image, index) => (
+              <button
+              //TODO: Make these clickable to open the full-sized image in a modal
+                key={index}
+                type="button"
+                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl hover:scale-110 transform transition-all duration-300 opacity-0"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animation: 'fadeInUp 0.6s ease-out forwards',
+                }}
+              >
+                <div className="aspect-square relative">
+                  <Image
+                    src={image}
+                    alt={`Crazy Socks Collage ${index + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16.66vw"
+                    className="object-cover"
+                  />
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Corporate Partners */}
       <section className="py-20 bg-white dark:bg-gray-800">
@@ -287,16 +328,15 @@ export default function CrazySocks() {
               Corporate Partners
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We bring the fun event to you! Leading companies partner with us
-              through employee volunteering, team-building events, and corporate
-              social responsibility programs. Together, we make a meaningful
+              Companies partner with us through employee volunteering,
+              team-building events, and CSR programs. Together, we make a
               difference in the lives of children battling cancer.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Meta Leadership */}
-            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
@@ -313,13 +353,17 @@ export default function CrazySocks() {
                 Meta Leadership
               </h3>
               <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
-                "I can not stop myself from crying - what an inspirational
-                speech, what impact!" — Meta Executive
+                <span className="italic">
+                  "Elana’s story moved us all to tears. Our leadership team
+                  traveled from all over the country to connect through this
+                  special mission."
+                </span>{' '}
+                — Participant
               </p>
             </div>
 
             {/* Bank of America */}
-            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
@@ -336,14 +380,17 @@ export default function CrazySocks() {
                 Bank of America
               </h3>
               <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
-                "We will do it again and again! We will partner in more areas
-                with Elana and KCCF outside Crazy Socks Gift Bags project." —
-                BoA Executive
+                <span className="italic">
+                  "We love the Crazy Socks project. My daughter was so inspired
+                  that she donated her hair to the cause! We look forward to a
+                  long-term partnership."
+                </span>{' '}
+                — Organizer
               </p>
             </div>
 
             {/* Aflac Global Investments */}
-            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
@@ -360,12 +407,17 @@ export default function CrazySocks() {
                 Aflac Global Investments
               </h3>
               <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
-                Hospitalized kids love it!
+                <span className="italic">
+                  "I am going through cancer treatment myself at the moment. I
+                  am so glad we can give our Aflac ducks to children along with
+                  these gifts."
+                </span>{' '}
+                — Organizer
               </p>
             </div>
 
             {/* Forvis Mazars Group */}
-            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
@@ -382,12 +434,17 @@ export default function CrazySocks() {
                 Forvis Mazars Group
               </h3>
               <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
-                Making a difference together!
+                <span className="italic">
+                  "This project is truly growing with purpose! So many people
+                  signed up that we decided to host two separate events. We are
+                  so proud to help with this cause."
+                </span>{' '}
+                — CEO
               </p>
             </div>
 
             {/* Elana and Olivia */}
-            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
@@ -404,12 +461,17 @@ export default function CrazySocks() {
                 Sumitomo Mitsui Bank
               </h3>
               <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
-                CSR Event
+                <span className="italic">
+                  "I have never seen so many employees sign up for a single
+                  event! They were all so excited to learn from Elana’s
+                  experience and join the cause."
+                </span>{' '}
+                — Organizer
               </p>
             </div>
 
             {/* Meta CS Gift Bag Event */}
-            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
@@ -426,8 +488,12 @@ export default function CrazySocks() {
                 UBS
               </h3>
               <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">
-                "The most impactful 60 minutes our team has spent together this
-                year." — UBS Executive
+                <span className="italic">
+                  "KCCF brought a care package to my daughter; it was the
+                  brightest moment during her cancer treatment. We wanted to
+                  make an impact through KCCF."
+                </span>{' '}
+                — Leader
               </p>
             </div>
           </div>

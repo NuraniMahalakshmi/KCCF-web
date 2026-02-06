@@ -9,18 +9,21 @@ interface PageHeaderProps {
   image?: string
   childrenRight?: React.ReactNode
   button?: React.ReactNode
+  headerStyle?: string
+  gridStyle?: string
 }
-
 export default function PageHeader({
   title,
   subtitle,
   image,
   childrenRight,
   button,
+  headerStyle,
+  gridStyle,
 }: PageHeaderProps) {
   return (
-    <header className="relative w-full max-w-screen-2xl mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:items-start">
+    <header className={`relative w-full max-w-screen-2xl mx-auto px-4 py-12 ${headerStyle || ''}`}>
+      <div className={`grid grid-cols-1 lg:items-start ${gridStyle || 'gap-8 lg:grid-cols-2'}`}>
         {/* LEFT COLUMN */}
         <div className="flex flex-col">
           {image && (
@@ -40,7 +43,7 @@ export default function PageHeader({
             </p>
           )}
           {button && (
-            <div className="mt-16">
+            <div>
               {button}
             </div>
           )}
