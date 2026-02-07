@@ -51,7 +51,7 @@ export default function CrazySocks() {
             src="/images/header_image_crazy_socks.jpg"
             alt="Crazy Socks Gift Bags"
             fill
-            className="object-cover object-[45%_center] sm:object-[70%_center] lg:object-[90%_center] 2xl:object-[center_30%]"
+            className="object-cover object-[45%_center] sm:object-[70%_center] lg:object-[90%_center] xl:object-[center_10%] "
             sizes="100vw"
             priority
           />
