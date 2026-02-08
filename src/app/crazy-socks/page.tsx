@@ -261,7 +261,7 @@ export default function CrazySocks() {
           </div>
         </div>
       </section>
-      
+
       {/* Image Gallery Section */}
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
         <div className="relative">
@@ -273,7 +273,7 @@ export default function CrazySocks() {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8 max-w-6xl mx-auto px-2 sm:px-8">
             {collageImages.map((image, index) => (
               <button
-              //TODO: Make these clickable to open the full-sized image in a modal
+                //TODO: Make these clickable to open the full-sized image in a modal
                 key={index}
                 type="button"
                 className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl hover:scale-110 transform transition-all duration-300 opacity-0"
@@ -306,8 +306,9 @@ export default function CrazySocks() {
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl lg:max-w-[100vw] mx-auto">
               Companies partner with us through employee volunteering,
-              team-building events, and CSR programs. <br className="hidden lg:inline" /> Together, we make a
-              difference in the lives of children battling cancer.
+              team-building events, and CSR programs.{' '}
+              <br className="hidden lg:inline" /> Together, we make a difference
+              in the lives of children battling cancer.
             </p>
           </div>
 
