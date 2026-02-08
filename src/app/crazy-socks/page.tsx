@@ -304,9 +304,9 @@ export default function CrazySocks() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Corporate Partners
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl lg:max-w-[100vw] mx-auto">
               Companies partner with us through employee volunteering,
-              team-building events, and CSR programs. Together, we make a
+              team-building events, and CSR programs. <br className="hidden lg:inline" /> Together, we make a
               difference in the lives of children battling cancer.
             </p>
           </div>
