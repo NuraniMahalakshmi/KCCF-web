@@ -261,30 +261,7 @@ export default function CrazySocks() {
           </div>
         </div>
       </section>
-
-      {/* Video Section */}
-      <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Meta Leadership Event
-            </h2>
-          </div>
-          <div className="mb-6">
-            <video
-              ref={videoRef}
-              controls
-              autoPlay
-              muted
-              loop
-              className="w-auto h-auto max-h-[75vh] mx-auto rounded-2xl shadow-lg"
-            >
-              <source src="/videos/Crazy-Socks-Video.mp4" type="video/mp4" />
-              Your browser doesn't support video.
-            </video>
-          </div>
-        </div>
-      </section>
+      
       {/* Image Gallery Section */}
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
         <div className="relative">
