@@ -55,11 +55,11 @@ export default function Volunteer() {
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    <strong>Ages:</strong> 18+
+                    <strong>Ages:&nbsp;</strong> 18+
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    <strong>Under 18?</strong> Parental consent is required for teen volunteers. Youth roles may have limitations.
+                    <strong>Under 18?&nbsp;</strong> Parental consent is required for teen volunteers. Youth roles may have limitations.
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
