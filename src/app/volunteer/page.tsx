@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -6,6 +6,12 @@ import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 import { useFormModal } from '@/contexts/FormModalContext';
+
+// Narrowly-typed fallback for older browsers' MediaQueryList legacy API
+type LegacyMediaQueryList = MediaQueryList & {
+  addListener?: (listener: (e: MediaQueryListEvent) => void) => void
+  removeListener?: (listener: (e: MediaQueryListEvent) => void) => void
+}
 
 export default function Volunteer() {
   const { openModal } = useFormModal();
@@ -23,16 +29,14 @@ export default function Volunteer() {
     if (mql.addEventListener) {
       mql.addEventListener('change', onChange);
     } else {
-      // Safari fallback
-      // @ts-ignore
-      mql.addListener(onChange);
+      // Safari fallback (legacy API)
+      (mql as LegacyMediaQueryList).addListener?.(onChange);
     }
     return () => {
       if (mql.removeEventListener) {
         mql.removeEventListener('change', onChange);
       } else {
-        // @ts-ignore
-        mql.removeListener(onChange);
+        (mql as LegacyMediaQueryList).removeListener?.(onChange);
       }
     };
   }, []);
@@ -69,20 +73,28 @@ export default function Volunteer() {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">Give Hope</h2>
+            <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">
+              Give Hope
+            </h2>
 
             <div className="prose prose-lg max-w-none text-violet-700">
               <p className="text-xl leading-relaxed mb-8">
-                Koenig Childhood Cancer Foundation (KCCF) is a 100% volunteer-run organization. Volunteers are at the heart of everything we do — your time, energy, and commitment directly impact children battling cancer and their families.
+                Koenig Childhood Cancer Foundation (KCCF) is a 100%
+                volunteer-run organization. Volunteers are at the heart of
+                everything we do — your time, energy, and commitment directly
+                impact children battling cancer and their families.
               </p>
 
               <p className="mb-6">
-                Whether you have a few hours a month or want to make a more significant commitment,
-                there are many ways to get involved and help children battling cancer and their families.
+                Whether you have a few hours a month or want to make a more
+                significant commitment, there are many ways to get involved and
+                help children battling cancer and their families.
               </p>
 
               <div className="bg-saffron-50 rounded-lg p-6 my-8">
-                <h3 className="text-xl font-bold text-violet-700 mb-4">Volunteer Requirements</h3>
+                <h3 className="text-xl font-bold text-violet-700 mb-4">
+                  Volunteer Requirements
+                </h3>
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
@@ -90,29 +102,36 @@ export default function Volunteer() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    <strong>Under 18?&nbsp;</strong> Parental consent is required for teen volunteers. Youth roles may have limitations.
+                    <strong>Under 18?&nbsp;</strong> Parental consent is
+                    required for teen volunteers. Youth roles may have
+                    limitations.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>A minimum
+                    one-year commitment is requested for all volunteer roles.
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    A minimum one-year commitment is requested for all volunteer roles.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
-                    Optional Background Check (A Social Security Number will be required)
+                    Optional Background Check (A Social Security Number will be
+                    required)
                   </li>
                 </ul>
               </div>
 
               <div className="bg-saffron-50 rounded-lg p-6 my-8">
-                <h3 className="text-xl font-bold text-violet-700 mb-4">Volunteer Benefits</h3>
+                <h3 className="text-xl font-bold text-violet-700 mb-4">
+                  Volunteer Benefits
+                </h3>
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Make a direct impact on the lives of families facing pediatric cancer.
+                    Make a direct impact on the lives of families facing
+                    pediatric cancer.
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Join a supportive community of passionate, mission-driven individuals.
+                    Join a supportive community of passionate, mission-driven
+                    individuals.
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
@@ -120,7 +139,8 @@ export default function Volunteer() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Recognition opportunities for outstanding dedication and service.
+                    Recognition opportunities for outstanding dedication and
+                    service.
                   </li>
                 </ul>
               </div>
@@ -143,7 +163,9 @@ export default function Volunteer() {
       {/* Volunteer Opportunities */}
       <section className="py-16 bg-platinum-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-violet-700 mb-12">Volunteer Opportunities</h2>
+          <h2 className="text-3xl font-bold text-center text-violet-700 mb-12">
+            Volunteer Opportunities
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Crazy Socks Events */}
@@ -151,9 +173,12 @@ export default function Volunteer() {
               <div className="w-16 h-16 bg-fandango-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl">🧦</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">Crazy Socks Events</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">
+                Crazy Socks Events
+              </h3>
               <p className="text-violet-600 mb-4">
-                Help organize and participate in hospital visits to deliver care packages and bring smiles to children's faces.
+                Help organize and participate in hospital visits to deliver care
+                packages and bring smiles to children's faces.
               </p>
               <ul className="text-sm text-violet-600 space-y-1">
                 <li>• Hospital visits and gift delivery</li>
@@ -167,9 +192,12 @@ export default function Volunteer() {
               <div className="w-16 h-16 bg-violet-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl">📋</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">Administrative Support</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">
+                Administrative Support
+              </h3>
               <p className="text-violet-600 mb-4">
-                Provide behind-the-scenes support to help our programs run smoothly and efficiently.
+                Provide behind-the-scenes support to help our programs run
+                smoothly and efficiently.
               </p>
               <ul className="text-sm text-violet-600 space-y-1">
                 <li>• Data entry and record keeping</li>
@@ -183,9 +211,12 @@ export default function Volunteer() {
               <div className="w-16 h-16 bg-orange-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl">💰</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">Fundraising Events</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">
+                Fundraising Events
+              </h3>
               <p className="text-violet-600 mb-4">
-                Help raise funds and awareness through various events and campaigns throughout the year.
+                Help raise funds and awareness through various events and
+                campaigns throughout the year.
               </p>
               <ul className="text-sm text-violet-600 space-y-1">
                 <li>• Event planning and execution</li>
@@ -199,9 +230,12 @@ export default function Volunteer() {
               <div className="w-16 h-16 bg-saffron-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl">🏕️</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">Camp Support</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">
+                Camp Support
+              </h3>
               <p className="text-violet-600 mb-4">
-                Support our international summer camp program for children diagnosed with cancer.
+                Support our international summer camp program for children
+                diagnosed with cancer.
               </p>
               <ul className="text-sm text-violet-600 space-y-1">
                 <li>• Camp planning and logistics</li>
@@ -215,9 +249,12 @@ export default function Volunteer() {
               <div className="w-16 h-16 bg-fandango-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl">📱</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">Social Media & Marketing</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">
+                Social Media & Marketing
+              </h3>
               <p className="text-violet-600 mb-4">
-                Help spread awareness and share our mission through digital platforms and marketing efforts.
+                Help spread awareness and share our mission through digital
+                platforms and marketing efforts.
               </p>
               <ul className="text-sm text-violet-600 space-y-1">
                 <li>• Content creation and curation</li>
@@ -231,9 +268,12 @@ export default function Volunteer() {
               <div className="w-16 h-16 bg-violet-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl">⭐</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">Special Projects</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4 text-center">
+                Special Projects
+              </h3>
               <p className="text-violet-600 mb-4">
-                Contribute your unique skills and expertise to special initiatives and projects.
+                Contribute your unique skills and expertise to special
+                initiatives and projects.
               </p>
               <ul className="text-sm text-violet-600 space-y-1">
                 <li>• Grant writing and research</li>
@@ -248,42 +288,73 @@ export default function Volunteer() {
       {/* Volunteer Application Form */}
       <section className="py-16 bg-violet-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Become a Volunteer</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Become a Volunteer
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Individual Volunteering Card */}
-            <div 
+            <div
               onClick={() => openModal('volunteer')}
               className="card-interactive bg-white rounded-lg p-8 flex flex-col group"
             >
-              <h3 className="text-2xl font-bold text-violet-700 mb-4 text-center">Individual ⭐</h3>
+              <h3 className="text-2xl font-bold text-violet-700 mb-4 text-center">
+                Individual ⭐
+              </h3>
               <p className="text-violet-600 mb-6 flex-grow">
-                Individual volunteering includes opportunities to contribute your skills and/or participate in events that support our mission.
+                Individual volunteering includes opportunities to contribute
+                your skills and/or participate in events that support our
+                mission.
               </p>
               <div className="text-center mt-auto">
                 <span className="inline-flex items-center text-violet-600 group-hover:text-violet-700 font-semibold transition-colors">
                   Click to Apply
-                  <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  <svg
+                    className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
                   </svg>
                 </span>
               </div>
             </div>
 
             {/* Group Volunteering Card */}
-            <Link 
+            <Link
               href="/crazy-socks"
               className="card-interactive bg-white rounded-lg p-8 flex flex-col group"
             >
-              <h3 className="text-2xl font-bold text-violet-700 mb-4 text-center">Group 🤝</h3>
+              <h3 className="text-2xl font-bold text-violet-700 mb-4 text-center">
+                Group 🤝
+              </h3>
               <p className="text-violet-600 mb-6 flex-grow">
-                Group volunteering usually involves corporate sponsorship of care bag supplies and assembling packages, writing notes for children in the hospital. Check with your company's Corporate Social Responsibility team.
+                Group volunteering usually involves corporate sponsorship of
+                care bag supplies and assembling packages, writing notes for
+                children in the hospital. Check with your company's Corporate
+                Social Responsibility team.
               </p>
               <div className="text-center mt-auto">
                 <span className="inline-flex items-center text-violet-600 group-hover:text-violet-700 font-semibold transition-colors">
                   Click to learn
-                  <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  <svg
+                    className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
                   </svg>
                 </span>
               </div>
@@ -295,7 +366,9 @@ export default function Volunteer() {
       {/* Testimonials */}
       <section className="py-16 bg-platinum-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-violet-700 mb-12">What Our Volunteers Say</h2>
+          <h2 className="text-3xl font-bold text-center text-violet-700 mb-12">
+            What Our Volunteers Say
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-8">
@@ -305,12 +378,15 @@ export default function Volunteer() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-violet-700">Sarah M.</h4>
-                  <p className="text-violet-600 text-sm">Crazy Socks Volunteer</p>
+                  <p className="text-violet-600 text-sm">
+                    Crazy Socks Volunteer
+                  </p>
                 </div>
               </div>
               <p className="text-violet-600 italic">
-                "Volunteering with KCCF has been one of the most rewarding experiences of my life.
-                Seeing the smiles on children's faces when we deliver care packages is priceless."
+                "Volunteering with KCCF has been one of the most rewarding
+                experiences of my life. Seeing the smiles on children's faces
+                when we deliver care packages is priceless."
               </p>
             </div>
 
@@ -321,17 +397,20 @@ export default function Volunteer() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-violet-700">Michael R.</h4>
-                  <p className="text-violet-600 text-sm">Administrative Volunteer</p>
+                  <p className="text-violet-600 text-sm">
+                    Administrative Volunteer
+                  </p>
                 </div>
               </div>
               <p className="text-violet-600 italic">
-                "I love being able to contribute my skills to such a meaningful cause.
-                The KCCF team is amazing and makes every volunteer feel valued and appreciated."
+                "I love being able to contribute my skills to such a meaningful
+                cause. The KCCF team is amazing and makes every volunteer feel
+                valued and appreciated."
               </p>
             </div>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
