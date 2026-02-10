@@ -1,37 +1,68 @@
 "use client"
 
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 import { useFormModal } from '@/contexts/FormModalContext';
 
 export default function Volunteer() {
-  const { openModal } = useFormModal()
+  const { openModal } = useFormModal();
+  const [isLgUp, setIsLgUp] = useState<boolean>(() =>
+    typeof window !== 'undefined'
+      ? window.matchMedia('(min-width: 1024px)').matches
+      : false,
+  );
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mql = window.matchMedia('(min-width: 1024px)');
+    const onChange = (e: MediaQueryListEvent) => setIsLgUp(e.matches);
+    setIsLgUp(mql.matches);
+    if (mql.addEventListener) {
+      mql.addEventListener('change', onChange);
+    } else {
+      // Safari fallback
+      // @ts-ignore
+      mql.addListener(onChange);
+    }
+    return () => {
+      if (mql.removeEventListener) {
+        mql.removeEventListener('change', onChange);
+      } else {
+        // @ts-ignore
+        mql.removeListener(onChange);
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section with Background */}
-      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+      <div className="relative min-h-[66vh] flex justify-center text-center lg:text-left overflow-hidden pt-0">
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
             src="/images/header_image_volunteer.jpg"
             alt="Volunteer"
             fill
-            className="object-cover"
+            className="object-cover object-[45%_center] sm:object-[45%_center] lg:object-[45%_center] xl:object-[center_10%] 2xl:object-[center_100%]"
             sizes="100vw"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         </div>
-        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
 
-        {/* PageHeader */}
-        <PageHeader
-          title="Volunteer"
-          subtitle="Join us to change a life. May be even your own."
-        />
+        <div className="mx-auto lg:ml-20">
+          {/* PageHeader */}
+          <PageHeader
+            title="Volunteer"
+            subtitle={`Join us to change a life.${isLgUp ? ' ' : '<br/>'}Maybe even your own.`}
+            headerStyle="pt-64 sm:pt-72 md:pt-68 lg:pt-64 xl:pt-68 2xl:pt-92 pb-12 xl:pl-28 2xl:pl-32"
+            gridStyle="gap-0 lg:grid-cols-1"
+          />
+        </div>
       </div>
 
       {/* About Volunteering */}
