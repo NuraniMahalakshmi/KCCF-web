@@ -33,28 +33,56 @@ export default function Aid() {
 
       {/* About Our Aid Program */}
       <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">Family Assistance</h2>
-            
-            <div className="prose prose-lg max-w-none text-violet-700">
-              {/* Storytelling Section */}
-              <div className="bg-violet-50 rounded-lg p-6 mb-8 border-l-4 border-violet-400">
-                <p className="italic text-lg leading-relaxed mb-4">
-                  "When I was going through cancer treatment, all I wanted was to have my parents by my side and they wanted the same. They put their lives on hold to be with me. For most families, that means stepping away from jobs, bills, and daily responsibilities. But the bills still come. That’s why we offer financial assistance to families of children with cancer so they can focus on what matters most: healing."
-                </p>
-                <p className="text-right text-violet-600 font-semibold">
-                  —  Elana, founder & child cancer survivor<br />
-                 {/* —  Emanuel, 20xx-202xx */}
-                </p>
-              </div>
-
-              <p className="mb-6">
-            We provide financial assistance to eligible families to help cover expenses related to their child’s cancer diagnosis.
-              </p>
-
-              <div className="bg-orange-50 rounded-lg p-6 my-8">
-                <h3 className="text-xl font-bold text-violet-700 mb-4">What We Cover</h3>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-12">
+          <div className="card-static border border-gray-100 bg-white rounded-xl shadow-2xl p-8 md:p-12">
+            <p className="italic text-lg leading-relaxed mb-4 text-violet-600">
+              "When I was going through cancer treatment,{' '}
+              <span className="font-semibold">
+                all I wanted was to have my parents by my side
+              </span>{' '}
+              and they wanted the same. <br />
+              <br />
+              <span className="font-semibold">
+                They put their lives on hold to be with me.
+              </span>{' '}
+              For most families, that means stepping away from jobs, bills, and
+              daily responsibilities.
+              <br />
+              <br /> But the bills still come. That’s why we offer financial
+              assistance to families of children with cancer so they can{' '}
+              <span className="font-semibold">
+                focus on what matters most: healing.
+              </span>
+              "
+            </p>
+            <p className="text-right text-lg text-violet-600 font-semibold">
+              — Elana, founder & childhood cancer survivor
+              {/* —  Emanuel, 20xx-202xx */}
+            </p>
+          </div>
+          <div className="pt-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white w-100% text-center">
+              Financial Assistance
+            </h2>
+            <div className="prose prose-lg max-w-none text-violet-700 flex flex-col lg:grid lg:grid-cols-2 gap-8">
+              <div className="card-static border border-gray-100 bg-white rounded-xl shadow-2xl p-8 md:p-12">
+                <div className="p-4 w-fit mx-auto bg-gray-200 rounded-full flex items-center justify-center mb-6">
+                  {/* <!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --> */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M244.24 60a8 8 0 0 0-7.75-.4c-42.93 21-73.59 11.16-106 .78c-34-10.89-69.25-22.14-117.95 1.64A8 8 0 0 0 8 69.24v119.93a8 8 0 0 0 11.51 7.19c42.93-21 73.59-11.16 106.05-.78c19.24 6.15 38.84 12.42 61 12.42c17.09 0 35.73-3.72 56.91-14.06a8 8 0 0 0 4.49-7.18V66.83a8 8 0 0 0-3.72-6.83M232 181.67c-40.6 18.17-70.25 8.69-101.56-1.32c-19.24-6.15-38.84-12.42-61-12.42a122 122 0 0 0-45.4 9V74.33c40.6-18.17 70.25-8.69 101.56 1.32S189.14 96 232 79.09ZM128 96a32 32 0 1 0 32 32a32 32 0 0 0-32-32m0 48a16 16 0 1 1 16-16a16 16 0 0 1-16 16M56 96v48a8 8 0 0 1-16 0V96a8 8 0 1 1 16 0m144 64v-48a8 8 0 1 1 16 0v48a8 8 0 1 1-16 0"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-violet-700 mb-4 w-100% text-center">
+                  Covered Expenses
+                </h3>
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
