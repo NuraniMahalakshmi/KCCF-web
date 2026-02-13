@@ -8,7 +8,7 @@ export default function Aid() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section with Background */}
-      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+      <div className="relative min-h-[66vh] flex justify-center overflow-hidden pt-0">
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
@@ -21,13 +21,13 @@ export default function Aid() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         </div>
-        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
 
         {/* PageHeader */}
-        <PageHeader 
+        <PageHeader
           title="Family Assistance"
-          subtitle="We can assist with emergency medical expenses during your child's cancer treatment,
-          such as medical bills, transportation, lodging, food, and more."
+          subtitle="Let us ease your financial burden during your family's time of need."
+          headerStyle="pt-92 sm:pt-100 2xl:pt-92 lg:pl-24"
+          gridStyle="gap-0 lg:grid-cols-1"
         />
       </div>
 
