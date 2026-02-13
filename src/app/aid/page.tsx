@@ -85,45 +85,62 @@ export default function Aid() {
                 </h3>
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
-                    <span className="text-orange-500 mr-2">•</span>
+                    <span className="text-violet-600 mr-2">•</span>
                     Medical treatments or medications not covered by insurance
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-500 mr-2">•</span>
+                    <span className="text-violet-600 mr-2">•</span>
                     Travel costs for care
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-500 mr-2">•</span>
+                    <span className="text-violet-600 mr-2">•</span>
                     Rent or mortgage payments
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-500 mr-2">•</span>
+                    <span className="text-violet-600 mr-2">•</span>
                     And more
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-saffron-50 rounded-lg p-6 my-8">
-                <h3 className="text-xl font-bold text-violet-700 mb-4">Criteria to Receive Assistance</h3>
+              <div className="card-static border border-gray-100 bg-white rounded-xl shadow-2xl p-8 md:p-12">
+                <div className="p-4 w-fit mx-auto bg-gray-200 rounded-full flex items-center justify-center mb-6">
+                  {/* <!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --> */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M224 128a8 8 0 0 1-8 8h-88a8 8 0 0 1 0-16h88a8 8 0 0 1 8 8m-96-56h88a8 8 0 0 0 0-16h-88a8 8 0 0 0 0 16m88 112h-88a8 8 0 0 0 0 16h88a8 8 0 0 0 0-16M82.34 42.34L56 68.69L45.66 58.34a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32 0l32-32a8 8 0 0 0-11.32-11.32m0 64L56 132.69l-10.34-10.35a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32 0l32-32a8 8 0 0 0-11.32-11.32m0 64L56 196.69l-10.34-10.35a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32 0l32-32a8 8 0 0 0-11.32-11.32"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-violet-700 mb-4 w-100% text-center">
+                  Eligibility Requirements
+                </h3>
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
+                    <span className="text-violet-600 mr-2">•</span>
                     Child must be under the age of 21 and diagnosed with cancer
                   </li>
                   <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
-                    Assistance must be needed for expenses directly related to the child’s diagnosis
+                    <span className="text-violet-600 mr-2">•</span>
+                    Expenses must be directly related to the child’s diagnosis
                   </li>
                   <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
+                    <span className="text-violet-600 mr-2">•</span>
                     Child must be receiving treatment at a credentialed hospital
                   </li>
                   <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
-                    The application must be fully completed by both the family and the social worker
+                    <span className="text-violet-600 mr-2">•</span>
+                    The application must be fully completed by both the family
+                    and the social worker
                   </li>
                   <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
+                    <span className="text-violet-600 mr-2">•</span>
                     Funds are paid directly to creditors or service providers
                   </li>
                 </ul>
