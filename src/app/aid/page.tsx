@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
@@ -153,14 +153,18 @@ export default function Aid() {
       {/* Application Process */}
       <section className="py-16 bg-platinum-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-violet-700 mb-12">Application Process</h2>
-          
+          <h2 className="text-3xl font-bold text-center text-violet-700 mb-12">
+            Application Process
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <div className="w-16 h-16 bg-orange-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">1</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4">Family Completes Part 1</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4">
+                Family Completes Part 1
+              </h3>
               <p className="text-violet-600">
                 Qualified families fill out their part of the application.
               </p>
@@ -170,9 +174,13 @@ export default function Aid() {
               <div className="w-16 h-16 bg-saffron-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4">Email Confirmation</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4">
+                Email Confirmation
+              </h3>
               <p className="text-violet-600">
-                Once complete, the family will receive an email confirming completion of part 1, and the social worker listed on the application will automatically receive part 2 via email.
+                Once complete, the family will receive an email confirming
+                completion of part 1, and the social worker listed on the
+                application will automatically receive part 2 via email.
               </p>
             </div>
 
@@ -180,9 +188,13 @@ export default function Aid() {
               <div className="w-16 h-16 bg-fandango-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">3</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4">Social Worker Completes Part 2</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4">
+                Social Worker Completes Part 2
+              </h3>
               <p className="text-violet-600">
-                Once part 1 is completed by the family and part 2 is completed by the social worker, both parties will receive confirmation of completion.
+                Once part 1 is completed by the family and part 2 is completed
+                by the social worker, both parties will receive confirmation of
+                completion.
               </p>
             </div>
 
@@ -190,7 +202,9 @@ export default function Aid() {
               <div className="w-16 h-16 bg-violet-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">4</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4">Board Review</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4">
+                Board Review
+              </h3>
               <p className="text-violet-600">
                 The board will review the complete application for a decision.
               </p>
@@ -200,7 +214,8 @@ export default function Aid() {
           {/* Important Notice */}
           <div className="mt-12 bg-red-50 border-l-4 border-red-500 rounded-lg p-6 max-w-4xl mx-auto">
             <p className="text-lg font-bold text-red-700 text-center">
-              *APPLICATIONS WILL NOT BE CONSIDERED UNTIL BOTH PARTS ARE COMPLETE*
+              *APPLICATIONS WILL NOT BE CONSIDERED UNTIL BOTH PARTS ARE
+              COMPLETE*
             </p>
           </div>
         </div>
@@ -210,32 +225,47 @@ export default function Aid() {
       <section className="py-16 bg-violet-500 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Apply for Family Assistance</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Apply for Family Assistance
+            </h2>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 text-center">
-            <h3 className="text-2xl font-bold text-violet-700 mb-4">Start Your Application</h3>
+            <h3 className="text-2xl font-bold text-violet-700 mb-4">
+              Start Your Application
+            </h3>
             <p className="text-lg text-violet-600 mb-8 max-w-2xl mx-auto">
-              Complete our comprehensive application form to apply for family assistance during your child's cancer treatment. All information will be kept confidential.
+              Complete our comprehensive application form to apply for family
+              assistance during your child's cancer treatment. All information
+              will be kept confidential.
             </p>
-            
+
             <FormButton
               formType="aid-application"
               variant="violet"
               size="lg"
               className="min-w-[250px]"
               icon={
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
                 </svg>
               }
             >
               Family Assistance
             </FormButton>
-            
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
