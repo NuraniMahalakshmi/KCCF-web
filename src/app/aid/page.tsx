@@ -62,7 +62,7 @@ export default function Aid() {
           </div>
           <div className="pt-4">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white w-100% text-center">
-              Financial Assistance
+              Financial Aid Coverage and Eligibility
             </h2>
             <div className="prose prose-lg max-w-none text-violet-700 flex flex-col lg:grid lg:grid-cols-2 gap-8">
               <div className="card-static border border-gray-100 bg-white rounded-xl shadow-2xl p-8 md:p-12">
@@ -124,20 +124,11 @@ export default function Aid() {
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-violet-600 mr-2">•</span>
-                    Child must be under the age of 21 and diagnosed with cancer
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-violet-600 mr-2">•</span>
                     Expenses must be directly related to the child’s diagnosis
                   </li>
                   <li className="flex items-start">
                     <span className="text-violet-600 mr-2">•</span>
                     Child must be receiving treatment at a credentialed hospital
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-violet-600 mr-2">•</span>
-                    The application must be fully completed by both the family
-                    and the social worker
                   </li>
                   <li className="flex items-start">
                     <span className="text-violet-600 mr-2">•</span>
@@ -153,20 +144,20 @@ export default function Aid() {
       {/* Application Process */}
       <section className="py-16 bg-platinum-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-violet-700 mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white w-100% text-center">
             Application Process
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <div className="w-16 h-16 bg-orange-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">1</span>
               </div>
               <h3 className="text-xl font-bold text-violet-700 mb-4">
-                Family Completes Part 1
+                Family Applies
               </h3>
               <p className="text-violet-600">
-                Qualified families fill out their part of the application.
+                The family completes and submits their portion.
               </p>
             </div>
 
@@ -175,12 +166,10 @@ export default function Aid() {
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
               <h3 className="text-xl font-bold text-violet-700 mb-4">
-                Email Confirmation
+                Social Worker (SW) Verifies
               </h3>
               <p className="text-violet-600">
-                Once complete, the family will receive an email confirming
-                completion of part 1, and the social worker listed on the
-                application will automatically receive part 2 via email.
+                The listed SW receives and submits their portion.
               </p>
             </div>
 
@@ -189,24 +178,10 @@ export default function Aid() {
                 <span className="text-white text-2xl font-bold">3</span>
               </div>
               <h3 className="text-xl font-bold text-violet-700 mb-4">
-                Social Worker Completes Part 2
+                Board Reviews
               </h3>
               <p className="text-violet-600">
-                Once part 1 is completed by the family and part 2 is completed
-                by the social worker, both parties will receive confirmation of
-                completion.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-              <div className="w-16 h-16 bg-violet-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">4</span>
-              </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4">
-                Board Review
-              </h3>
-              <p className="text-violet-600">
-                The board will review the complete application for a decision.
+                The Board reviews the application and decides.
               </p>
             </div>
           </div>
@@ -214,37 +189,39 @@ export default function Aid() {
           {/* Important Notice */}
           <div className="mt-12 bg-red-50 border-l-4 border-red-500 rounded-lg p-6 max-w-4xl mx-auto">
             <p className="text-lg font-bold text-red-700 text-center">
-              *APPLICATIONS WILL NOT BE CONSIDERED UNTIL BOTH PARTS ARE
-              COMPLETE*
+              Applications will not be reviewed until both the parent and social
+              worker portions are fully completed.
             </p>
           </div>
         </div>
       </section>
 
       {/* Application Form */}
-      <section className="py-16 bg-violet-500 text-white">
+
+      <section className="py-20 bg-violet-600 dark:bg-gray-700 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-white"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-white"></div>
+        </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Apply for Family Assistance
+              Apply for Family Aid
             </h2>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 text-center">
-            <h3 className="text-2xl font-bold text-violet-700 mb-4">
-              Start Your Application
-            </h3>
-            <p className="text-lg text-violet-600 mb-8 max-w-2xl mx-auto">
-              Complete our comprehensive application form to apply for family
-              assistance during your child's cancer treatment. All information
-              will be kept confidential.
+            <p className="text-lg 2xl:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
+              Thank you for trusting us to be part of your journey. We are here
+              for you.
             </p>
 
             <FormButton
               formType="aid-application"
               variant="violet"
               size="lg"
-              className="min-w-[250px]"
+              className="min-w-[250px] lg:text-lg 2xl:text-xl"
               icon={
                 <svg
                   className="w-5 h-5"
@@ -261,7 +238,7 @@ export default function Aid() {
                 </svg>
               }
             >
-              Family Assistance
+              Family Aid
             </FormButton>
           </div>
         </div>
