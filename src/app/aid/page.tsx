@@ -15,7 +15,7 @@ export default function Aid() {
             src="/images/header_image_family_assistance.png"
             alt="Family Aid"
             fill
-            className="object-cover"
+            className="object-cover 2xl:object-[center_0%]"
             sizes="100vw"
             priority
           />
@@ -24,8 +24,8 @@ export default function Aid() {
 
         {/* PageHeader */}
         <PageHeader
-          title="Family Assistance"
-          subtitle="Let us ease your financial burden during your family's time of need."
+          title="Family Aid"
+          subtitle="Let us ease your financial burden during your child’s cancer treatment."
           headerStyle="pt-92 sm:pt-100 2xl:pt-92 lg:pl-24"
           gridStyle="gap-0 lg:grid-cols-1"
         />
