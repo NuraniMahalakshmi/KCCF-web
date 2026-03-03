@@ -12,8 +12,8 @@ export default function Aid() {
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
-            src="/images/header_image_family_assistance.jpg"
-            alt="Family Assistance"
+            src="/images/header_image_family_assistance.png"
+            alt="Family Aid"
             fill
             className="object-cover"
             sizes="100vw"
