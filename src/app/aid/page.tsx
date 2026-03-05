@@ -204,7 +204,7 @@ export default function Aid() {
           <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-white"></div>
           <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-white"></div>
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Apply for Family Aid
