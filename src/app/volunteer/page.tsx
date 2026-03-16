@@ -48,10 +48,10 @@ export default function Volunteer() {
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
-            src="/images/header_image_volunteer.jpg"
+            src="/images/header_image_volunteer.png"
             alt="Volunteer"
             fill
-            className="object-cover object-[45%_center] sm:object-[45%_center] lg:object-[45%_center] xl:object-[center_10%] 2xl:object-[center_100%]"
+            className="object-cover object-[45%_center] sm:object-[45%_center] lg:object-[45%_center] xl:object-[center_10%] 2xl:object-[center_10%]"
             sizes="100vw"
             priority
           />
