@@ -9,9 +9,9 @@ import { useFormModal } from '@/contexts/FormModalContext';
 
 // Narrowly-typed fallback for older browsers' MediaQueryList legacy API
 type LegacyMediaQueryList = MediaQueryList & {
-  addListener?: (listener: (e: MediaQueryListEvent) => void) => void
-  removeListener?: (listener: (e: MediaQueryListEvent) => void) => void
-}
+  addListener?: (listener: (e: MediaQueryListEvent) => void) => void;
+  removeListener?: (listener: (e: MediaQueryListEvent) => void) => void;
+};
 
 export default function Volunteer() {
   const { openModal } = useFormModal();
@@ -58,12 +58,12 @@ export default function Volunteer() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         </div>
 
-        <div className="mx-auto lg:ml-20">
+        <div className="mx-auto lg:ml-20 xl:ml-0">
           {/* PageHeader */}
           <PageHeader
             title="Volunteer"
             subtitle={`Join us to change a life.${isLgUp ? ' ' : '<br/>'}Maybe even your own.`}
-            headerStyle="pt-64 sm:pt-72 md:pt-68 lg:pt-64 xl:pt-68 2xl:pt-92 pb-12 xl:pl-28 2xl:pl-32"
+            headerStyle="pt-76 sm:pt-84 md:pt-84 lg:pt-64 xl:pt-68 2xl:pt-76 pb-12 xl:pl-24 2xl:pl-32"
             gridStyle="gap-0 lg:grid-cols-1"
           />
         </div>
