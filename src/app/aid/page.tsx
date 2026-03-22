@@ -88,19 +88,27 @@ export default function Aid() {
               </h3>
               <ul className="space-y-2 text-violet-600 dark:text-white">
                 <li className="flex items-start">
-                  <span className="text-violet-600 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-violet-600 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Medical treatments or medications not covered by insurance
                 </li>
                 <li className="flex items-start">
-                  <span className="text-violet-600 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-violet-600 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Travel costs for care
                 </li>
                 <li className="flex items-start">
-                  <span className="text-violet-600 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-violet-600 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Rent or mortgage payments
                 </li>
                 <li className="flex items-start">
-                  <span className="text-violet-600 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-violet-600 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   And more
                 </li>
               </ul>
@@ -126,15 +134,21 @@ export default function Aid() {
               </h3>
               <ul className="space-y-2 text-violet-600 dark:text-white">
                 <li className="flex items-start">
-                  <span className="text-violet-600 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-violet-600 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Expenses must be directly related to the child’s diagnosis
                 </li>
                 <li className="flex items-start">
-                  <span className="text-violet-600 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-violet-600 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Child must be receiving treatment at a credentialed hospital
                 </li>
                 <li className="flex items-start">
-                  <span className="text-violet-600 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-violet-600 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Funds are paid directly to creditors or service providers
                 </li>
               </ul>
