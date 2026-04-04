@@ -182,14 +182,16 @@ export default function KCCFFamily() {
 
       {/* Advisers Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              <span className="text-[#732154] dark:text-saffron-400">Advisers</span>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+              <span className="text-[#732154] dark:text-saffron-400">
+                Advisers
+              </span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Mike Blumenfeld */}
             <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
@@ -204,7 +206,17 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Mike Blumenfeld, MBA</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Mike Blumenfeld, MBA
+              </h3>
+              <p className="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
+                A graduate of Wharton and NYU Stern, Mike leverages over 30
+                years of experience in strategic planning to assist KCCF with
+                organizational growth. Since 1981, he has specialized in helping
+                entrepreneurs build profitable businesses and positive cultures.
+                Mike focuses on practical, results-driven solutions to help
+                small-to-midsized companies thrive.
+              </p>
             </div>
 
             {/* Clarke Moyer */}
@@ -221,7 +233,17 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Clarke Moyer, MBA-ITM</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Clarke Moyer, MBA-ITM
+              </h3>
+              <p className="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
+                A U.S. Army veteran, Clarke is a Principal Investigator at Penn
+                State Applied Research Laboratory. He holds an MBA-ITM from
+                Western Governors University and is currently an eDBA candidate
+                at PSU Smeal. Clarke leverages his deep technical expertise to
+                lead robust cybersecurity and automation solutions that drive
+                organizational growth.
+              </p>
             </div>
 
             {/* Oliwia Caes */}
