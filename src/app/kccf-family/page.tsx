@@ -4,46 +4,64 @@ import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import CallToAction from '@/components/CallToAction';
 
-export const metadata: Metadata = {
-  title: "KCCF Family - Meet Our Brave Warriors | Koenig Childhood Cancer Foundation",
-  description: "Meet the incredible children and families whose lives have been touched by KCCF's support. See the real impact of our programs on families battling childhood cancer.",
-  keywords: ["KCCF family", "brave warriors", "childhood cancer", "cancer families", "survivors", "warriors", "impact stories"],
-  openGraph: {
-    title: "KCCF Family - Meet Our Brave Warriors | Koenig Childhood Cancer Foundation",
-    description: "Meet the incredible children and families whose lives have been touched by KCCF's support. See the real impact of our programs on families battling childhood cancer.",
-    type: "website",
-    url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/kccf-family` : "https://thekccf.org/kccf-family",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+type LegacyMediaQueryList = MediaQueryList & {
+  addListener?: (listener: (e: MediaQueryListEvent) => void) => void;
+  removeListener?: (listener: (e: MediaQueryListEvent) => void) => void;
 };
 
 export default function KCCFFamily() {
+  const [isLgUp, setIsLgUp] = useState<boolean>(() =>
+    typeof window !== 'undefined'
+      ? window.matchMedia('(min-width: 1024px)').matches
+      : false,
+  );
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mql = window.matchMedia('(min-width: 1024px)');
+    const onChange = (e: MediaQueryListEvent) => setIsLgUp(e.matches);
+    setIsLgUp(mql.matches);
+    if (mql.addEventListener) {
+      mql.addEventListener('change', onChange);
+    } else {
+      // Safari fallback (legacy API)
+      (mql as LegacyMediaQueryList).addListener?.(onChange);
+    }
+    return () => {
+      if (mql.removeEventListener) {
+        mql.removeEventListener('change', onChange);
+      } else {
+        (mql as LegacyMediaQueryList).removeListener?.(onChange);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       {/* Hero Section with Background */}
-      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+      <div className="relative min-h-[66vh] xl:min-h-[80vh] 2xl:min-h-[85vh] 3xl:h-[90vh] flex justify-center overflow-hidden pt-28">
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
-            src="/images/header_image_kccf_family.jpg"
+            src="/images/header_image_kccf_family.png"
             alt="KCCF Family"
             fill
-            className="object-cover"
+            className="object-cover object-[40%_center] xl:object-[55%_0%]"
             sizes="100vw"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         </div>
-        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
 
         {/* PageHeader */}
-        <PageHeader
-          title="KCCF Family"
-          subtitle="Meet the incredible team that drives our mission."
-        />
+        <div className="mx-auto lg:ml-0 xl:ml-0">
+          <PageHeader
+            title="KCCF Family"
+            subtitle={`The incredible team${isLgUp ? ' ' : '<br/>'}that drives our mission.`}
+            headerStyle="text-center lg:text-left pt-0 lg:pt-8 2xl:pt-8 pb-12 lg:pl-8 xl:pl-16 2xl:pl-16"
+            gridStyle="gap-0 lg:grid-cols-1"
+          />
+        </div>
       </div>
 
       {/* Elana Section */}
