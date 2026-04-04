@@ -224,21 +224,31 @@ export default function KCCFFamily() {
               <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Clarke Moyer, MBA-ITM</h3>
             </div>
 
-            {/* Jim Kowalski */}
+            {/* Oliwia Caes */}
             <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-40 h-40 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
                   <Image
-                    src="/images/cropped-JKowalski.png"
-                    alt="Jim Kowalski"
+                    src="/images/Oliwia-Caes.JPEG"
+                    alt="Oliwia Caes"
                     width={160}
                     height={160}
-                    className="rounded-full w-full h-full object-cover relative z-10"
+                    className="rounded-full w-full h-full object-cover object-[0%_30%] relative z-10"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Jim Kowalski – IT</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Oliwia Caes
+              </h3>
+              <p className="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
+                A UCLA Biochemistry student, Oliwia is passionate about
+                medicinal chemistry, oncology, and biomedical research. She
+                manages vital communications for oncology families and donors,
+                ensuring clear and compassionate outreach. Oliwia is a dedicated
+                advocate for the cause and has been a proud member of the KCCF
+                family since its inception.
+              </p>
             </div>
           </div>
         </div>
