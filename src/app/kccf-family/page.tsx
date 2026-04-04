@@ -1,4 +1,6 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
@@ -127,9 +129,9 @@ export default function KCCFFamily() {
 
       {/* Board Members Section */}
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Board Members
             </h2>
           </div>
@@ -149,9 +151,14 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">Rena Koenig, EMBA</h3>
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Rena Koenig, EMBA
+              </h3>
               <p className="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
-                An NYU Stern graduate with 20 years of corporate leadership at firms like KPMG. She spent the past decade co-running a family business before fully dedicating herself to her daughter Elana's mission—Koenig Childhood Cancer Foundation.
+                An NYU Stern graduate with 20 years of corporate leadership at
+                firms like KPMG. She spent the past decade co-running a family
+                business before fully dedicating herself to her daughter Elana's
+                mission—Koenig Childhood Cancer Foundation.
               </p>
             </div>
 
@@ -169,9 +176,14 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">Scott Koenig, MBA</h3>
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Scott Koenig, MBA
+              </h3>
               <p className="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
-                A Weatherhead School of Management graduate, Scott began his career on Wall Street, later owned and ran a 75-year-old lighting company, sold it in 2018, and now focuses on business planning and growth strategy for startups.
+                A Weatherhead School of Management graduate, Scott began his
+                career on Wall Street, later owned and ran a 75-year-old
+                lighting company, sold it in 2018, and now focuses on business
+                planning and growth strategy for startups.
               </p>
             </div>
 
@@ -189,9 +201,14 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">Bradley Bailyn, Esq</h3>
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Bradley Bailyn, Esq
+              </h3>
               <p className="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
-                A graduate of NYU Stern and Brooklyn Law School, Bradley is a leading corporate attorney, litigator, and founder of Bailyn Law. A proud lifelong Brooklyn resident, with his wife, two kids and a dog.
+                A graduate of NYU Stern and Brooklyn Law School, Bradley is a
+                leading corporate attorney, litigator, and founder of Bailyn
+                Law. A proud lifelong Brooklyn resident, with his wife, two kids
+                and a dog.
               </p>
             </div>
           </div>
@@ -296,13 +313,14 @@ export default function KCCFFamily() {
 
       {/* Honorary Directors Section */}
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Honorary Directors
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              The medical professionals who saved Elana's life and continue to support our mission.
+              The medical professionals who saved Elana's life and continue to
+              support our mission.
             </p>
           </div>
 
@@ -321,10 +339,15 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">Dr. Wexler</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">Saved Elana's Life</p>
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Dr. Wexler
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+                Saved Elana's Life
+              </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">
-                Pediatric Hematologist – Oncologist<br />
+                Pediatric Hematologist – Oncologist
+                <br />
                 Memorial Sloan Kettering Cancer Center
               </p>
             </div>
@@ -343,10 +366,15 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">Dr. Morris</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">Removed Elana's Tumor</p>
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Dr. Morris
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+                Removed Elana's Tumor
+              </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">
-                Orthopaedic Surgeon<br />
+                Orthopaedic Surgeon
+                <br />
                 Memorial Sloan Kettering Cancer Center
               </p>
             </div>
@@ -365,10 +393,15 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">Dr. Prince</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">Elana's Second Surgeon</p>
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Dr. Prince
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+                Elana's Second Surgeon
+              </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">
-                Orthopaedic Surgeon<br />
+                Orthopaedic Surgeon
+                <br />
                 Memorial Sloan Kettering Cancer Center
               </p>
             </div>
@@ -387,10 +420,15 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">Dr. Charas</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">Volunteer Shani's dad</p>
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Dr. Charas
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+                Volunteer Shani's dad
+              </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">
-                Radiation Oncologist<br />
+                Radiation Oncologist
+                <br />
                 Rambam Health Care Campus, Israel
               </p>
             </div>
@@ -409,10 +447,15 @@ export default function KCCFFamily() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">Dr. Kearney</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">Elana's Therapist</p>
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Dr. Kearney
+              </h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+                Elana's Therapist
+              </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">
-                Pediatric Psychiatrist<br />
+                Pediatric Psychiatrist
+                <br />
                 Memorial Sloan Kettering Cancer Center
               </p>
             </div>
@@ -422,10 +465,12 @@ export default function KCCFFamily() {
 
       {/* Financials Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              <span className="text-[#732154] dark:text-saffron-400">Financials</span>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+              <span className="text-[#732154] dark:text-saffron-400">
+                Financials
+              </span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Transparency and accountability in everything we do.
@@ -435,20 +480,59 @@ export default function KCCFFamily() {
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* 990 Forms */}
             <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">990 Forms</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                990 Forms
+              </h3>
               <div className="space-y-4">
-                <a href="/documents/990-2024-kccf.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">2024</a>
-                <a href="/documents/990-2023-kccf.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">2023</a>
-                <a href="/documents/990-2022-kccf.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">2022</a>
+                <a
+                  href="/documents/990-2024-kccf.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-fit underline text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors"
+                >
+                  2024
+                </a>
+                <a
+                  href="/documents/990-2023-kccf.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-fit underline text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors"
+                >
+                  2023
+                </a>
+                <a
+                  href="/documents/990-2022-kccf.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-fit underline text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors"
+                >
+                  2022
+                </a>
               </div>
             </div>
 
             {/* Other Forms */}
             <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Other Forms</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                Other Forms
+              </h3>
               <div className="space-y-4">
-                <a href="/documents/irs-determination.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">IRS Determination</a>
-                <a href="/documents/w9-kccf.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">W9</a>
+                <a
+                  href="/documents/irs-determination.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-fit underline text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors"
+                >
+                  IRS Determination
+                </a>
+                <a
+                  href="/documents/w9-kccf.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-fit underline text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors"
+                >
+                  W9
+                </a>
               </div>
             </div>
           </div>
