@@ -66,28 +66,46 @@ export default function KCCFFamily() {
 
       {/* Elana Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
-                Meet Our Founder, Elana Koenig
-              </h2>
-
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="lg:text-center text-4xl lg:text-5xl font-bold mb-8 lg:mb-16 text-violet-600 dark:text-saffron-400">
+            Meet Our Founder, Elana Koenig
+          </h2>
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="xl:mx-16">
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-                <p className="text-xl font-semibold text-[#732154] dark:text-saffron-400">
+                <p className="text-xl lg:text-2xl xl:text-[1.6rem] 2xl:text-4xl font-semibold text-[#732154] dark:text-saffron-400">
                   Cancer Survivor, Singer, Influencer
                 </p>
-                <p>
-                  At just 11 years old, Elana founded KCCF with $900 from her piggy bank after surviving cancer herself. Today, she continues to lead our mission as a thriving 14-year-old cancer survivor.
+                <p className="space-y-6 text-lg xl:text-[1.4rem] 2xl:text-[1.8rem] text-gray-700 dark:text-gray-200 leading-relaxed">
+                  At just 11 years old, Elana founded KCCF in 2020 with $900
+                  from her piggy bank after surviving cancer herself. Today, she
+                  continues to lead our mission as a thriving cancer survivor.
                 </p>
-                <p>
-                  Elana's personal experience with cancer drives her passion for helping other families facing similar challenges. She is a powerful advocate and speaker who shares her story to inspire hope and action.
+                <p className="space-y-6 text-lg xl:text-[1.4rem] 2xl:text-[1.8rem] text-gray-700 dark:text-gray-200 leading-relaxed">
+                  Elana's personal experience with cancer drives her passion for
+                  helping other families facing similar financial and emotional
+                  challenges. Additionally, she is a powerful advocate, singer,
+                  and speaker—who shares her story to inspire hope and action.
                 </p>
               </div>
 
               <div className="mt-10">
-                <Link href="/our-story" className="bg-[#732154] hover:bg-[#732154]/90 dark:bg-[#732154] dark:hover:bg-[#732154]/90 text-white py-3 px-8 rounded-full transition duration-300 font-semibold text-center inline-block">
+                <Link
+                  href="/our-story"
+                  className="text-lg lg:text-xl 2xl:text-2xl btn-violet rounded-full px-4 py-2 lg:px-5 lg:py-3 font-semibold text-violet-700 text-center flex items-center justify-center group w-fit"
+                >
                   Read Elana's Story
+                  {/* <!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --> */}
+                  <svg
+                    className="w-5 h-5 ml-1 lg:mt-0 xl:mt-0.5 group-hover:translate-x-1 transition-transform"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="m220.24 132.24l-72 72a6 6 0 0 1-8.48-8.48L201.51 134H40a6 6 0 0 1 0-12h161.51l-61.75-61.76a6 6 0 0 1 8.48-8.48l72 72a6 6 0 0 1 0 8.48"
+                    />
+                  </svg>
                 </Link>
               </div>
             </div>
