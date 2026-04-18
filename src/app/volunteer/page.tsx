@@ -67,7 +67,7 @@ export default function Volunteer() {
             gridStyle="gap-0 lg:grid-cols-1"
             button={
               <FormButton
-                formType="crazy-socks-sponsor"
+                formType="volunteer"
                 variant="orange"
                 size="md"
                 className="text-lg 2xl:text-[1.3rem] mt-12"
